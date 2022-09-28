@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-09-28T20:01:10.282Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36" etag="a0w-7QauR3c_oue_aTO4" version="20.3.7" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2022-09-28T20:01:54.232Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36" etag="-2z9Xtn5u8Jvz-DxPNWO" version="20.3.7" type="github" pages="2">
   <diagram id="ORDFwmXIXseVwWkwiaNf" name="Page-1">
     <mxGraphModel dx="609" dy="581" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -40,8 +40,8 @@
         <mxCell id="QshrlUQndgBQl6B-oCbw-9" value="&lt;b style=&quot;text-align: center;&quot;&gt;Thoughts/Questions&lt;/b&gt;&lt;br style=&quot;text-align: center;&quot;&gt;&lt;br style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;- Sidebar instead of keeping stuff in header?&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;" parent="1" vertex="1">
           <mxGeometry x="170" y="450" width="390" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="QshrlUQndgBQl6B-oCbw-10" value="&lt;b&gt;Needs&lt;br&gt;&lt;br&gt;- &lt;/b&gt;card set&lt;br&gt;- title image?&lt;br&gt;- how to save&amp;nbsp; &amp;nbsp; &amp;nbsp; matched cards (card-level state or higher?)&lt;br&gt;- persistence or new game on full page reload&lt;br&gt;- how to indicate incorrect&lt;br&gt;- penalty for incorrect?&lt;br&gt;- possible to game over?" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;" parent="1" vertex="1">
-          <mxGeometry x="30" y="200" width="120" height="330" as="geometry" />
+        <mxCell id="QshrlUQndgBQl6B-oCbw-10" value="&lt;b&gt;Needs&lt;br&gt;&lt;br&gt;- &lt;/b&gt;card set&lt;br&gt;- title image?&lt;br&gt;- how to save&amp;nbsp; &amp;nbsp; &amp;nbsp; matched cards (card-level state or higher?)&lt;br&gt;- persistence or new game on full page reload&lt;br&gt;- how to indicate incorrect&lt;br&gt;- penalty for incorrect?&lt;br&gt;- possible to game over?&lt;br&gt;- HOW TO RANDOMLY GEN CARD LAYOUT (array randomization?)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="30" y="30" width="120" height="500" as="geometry" />
         </mxCell>
         <mxCell id="QshrlUQndgBQl6B-oCbw-11" value="&lt;b&gt;Header&lt;/b&gt;&lt;br&gt;&lt;br&gt;- Title&lt;br&gt;- start new game button&lt;br&gt;-score?&lt;br&gt;-timer?&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;" parent="1" vertex="1">
           <mxGeometry x="170" y="200" width="120" height="170" as="geometry" />

@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# Matching Game
+
+[project planning document link](https://docs.google.com/document/d/1d4QEYZF-QRuYKTf7SXuEKn750GEH0iaqfxNKgfR8QHk/edit#)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

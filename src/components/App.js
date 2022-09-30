@@ -1,4 +1,5 @@
-import logo from './logo.svg';
+import logo from '../logo.svg';
+import pumpkinImg1 from '../images/pumpkins/pumpkins-1.png'
 import './App.css';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <img src={pumpkinImg1} />
         <a
           className="App-link"
           href="https://reactjs.org"

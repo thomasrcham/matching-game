@@ -1,4 +1,4 @@
-function Card({ cardSets }) {
+function Card({ cardSets, cardSetID }) {
   let thing = cardSets[0].frontCard;
   console.log({ thing });
   return <img src={thing} alt={cardSets[0].setName} />;

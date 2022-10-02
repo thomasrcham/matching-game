@@ -15,6 +15,18 @@
   padding-right: 10px;
 }
 
+.mainWindow {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 240px;
+  left: 20%;
+  background-color: rgb(233, 255, 182);
+  padding: 10%;
+  overflow-y: scroll;
+}
+
 .header {
   height: 175px;
   position: fixed;
@@ -47,4 +59,13 @@ padding: 8px;
 background-color: #FFFACD;
 border-radius: 30px;
 width: 150px;
+
+img.card {
+  width: 75px;
+}
+
+.displayWrapper {
+  border-width: 1px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }

@@ -1,7 +1,13 @@
-function Card({ cardSets, cardSetID }) {
-  let thing = cardSets[0].frontCard;
-  console.log({ thing });
-  return <img src={thing} alt={cardSets[0].setName} />;
+import { useState } from "react";
+
+function Card({ card, frontCard, setName }) {
+  const [clicked, setClicked] = useState(false);
+
+  return clicked ? (
+    <img src={card.image} alt={card.alt} onClick={() => setClicked(false)} />
+  ) : (
+    <img src={frontCard} alt={setName} onClick={() => setClicked(true)} />
+  );
 }
 
 export default Card;

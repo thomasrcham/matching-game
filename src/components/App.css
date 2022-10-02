@@ -10,6 +10,18 @@
   padding-top: 20px;
 }
 
+.mainWindow {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 240px;
+  left: 20%;
+  background-color: rgb(233, 255, 182);
+  padding: 10%;
+  overflow-y: scroll;
+}
+
 .header {
   padding: 40px;
   text-align: center;
@@ -20,9 +32,9 @@
 
 .sidebar {
   position: relative;
-
 }
+
 .sidebar button {
-display: block;
-margin: auto
+  display: block;
+  margin: auto;
 }

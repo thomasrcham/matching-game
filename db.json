@@ -1,0 +1,17 @@
+{
+  "cardSets": [
+    {
+      "id": 1,
+      "setName": "pumpkins",
+      "frontCard": "../images/pumpkins/pumpkins-card-front.png",
+      "cards": {
+        "card-1": "./images/pumpkins/pumpkins-1.png",
+        "card-2": "./images/pumpkins/pumpkins-2.png",
+        "card-3": "./images/pumpkins/pumpkins-3.png",
+        "card-4": "./images/pumpkins/pumpkins-4.png",
+        "card-5": "./images/pumpkins/pumpkins-5.png",
+        "card-6": "./images/pumpkins/pumpkins-6.png"
+      }
+    }
+  ]
+}

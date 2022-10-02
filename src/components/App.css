@@ -38,3 +38,13 @@
   display: block;
   margin: auto;
 }
+
+img.card {
+  width: 75px;
+}
+
+.displayWrapper {
+  border-width: 1px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}

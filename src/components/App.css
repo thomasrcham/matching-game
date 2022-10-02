@@ -1,28 +1,50 @@
 .sidebarComponent {
-  height: 100%;
-  width: 20%;
+  width: fixed;
+  float: left;
   position: fixed;
-  z-index: 1;
-  top: 240px;
-  left: 0;
-  background-color: rgb(94, 91, 91);
+  /* z-index: 1; */
+  top: 175px;
+  /* left: 0; */
+  height: 100vh;
+  background-color: #8B4513;
+  color: #FFFACD;
   overflow-x: hidden;
   padding-top: 20px;
+  font-family: "Optima", Optima;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .header {
-  padding: 40px;
+  height: 175px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right:0;
   text-align: center;
   background: #1abc9c;
-  color: white;
+  color: #8B4513;
   font-size: 30px;
+  background-image: linear-gradient(45deg, #f3ec78, #af4261);
+  font-family: "Optima", Optima;
+  z-index: 3;
+  -webkit-text-stroke: 0.8px brown;
+  text-shadow: 2px 2px #FFFACD;
 }
+
 
 .sidebar {
   position: relative;
-
+  padding-bottom: 8px;
+  /* padding-left: 10px; */
 }
+
 .sidebar button {
 display: block;
-margin: auto
+margin: auto;
+font-family: "Optima", Optima;
+padding: 8px;
+background-color: #FFFACD;
+border-radius: 30px;
+width: 150px;
 }

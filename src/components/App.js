@@ -1,9 +1,7 @@
 import "./App.css";
 import { useEffect, useState } from "react";
-import Card from "./Card";
 import Header from "./Header";
-import Sidebar from "./Sidebar";
-import CardContainer from "./CardContainer";
+import Game from "./Game";
 
 function App() {
   const [cards, setCards] = useState(null);
@@ -20,12 +18,7 @@ function App() {
       <header className="header">
         <Header />
       </header>
-      <div className="sidebar">
-        <Sidebar />
-      </div>
-      <div className="mainWindow">
-        {cards ? <CardContainer set={cards[cardSetID]} /> : null}
-      </div>
+      <Game />
     </div>
   );
 }

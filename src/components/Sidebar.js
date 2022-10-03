@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
 function Sidebar() {
-  //  const [dropDown, setDropDown] = useState(false);
+   const [dropDown, setDropDown] = useState(false);
 
-  //  function handleDropDown() {
-  //   setDropDown((dropDown) => !dropDown)
-  //  }
+   function handleDropDown() {
+    setDropDown((dropDown) => !dropDown)
+   }
 
   return (
     <div className="sidebarComponent">
@@ -31,16 +31,25 @@ function Sidebar() {
           Timer: <br /> 3:45
         </h3>
       </div>
-      {/* <div className="dd-wrapper">
+      <div className="dd-wrapper">
         <div className="dd-header">
           <div className="dd-header-title"></div>
         </div>
-        <div className="dd-list">
-          <button className="dd-list-item"></button>
-          <button className="dd-list-item"></button>
-          <button className="dd-list-item"></button>
-        </div> */}
-      {/* </div> --> in case we want a dropdown for multiple sets... can work with this */}
+        
+        {dropDown ? (
+          <div className="dd-list">
+            <button onClick={handleDropDown} id="choose-theme-button">Choose a Theme!</button>
+            <button id="halloween-button" className="dd-list-item">Halloween</button>
+            <button id="leaves-button" className="dd-list-item">Autumn Leaves</button>
+            <button id="misc-button" className="dd-list-item">Misc</button>
+          </div>
+          ) : (
+        <div className="dd-closed">
+          <button onClick={handleDropDown} className="dd">Choose a Theme!</button>
+        </div>
+        )
+      }
+      </div> 
     </div>
   );
 }

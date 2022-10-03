@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 
 function CardContainer({ deck, cardsID }) {
   let cardArray = [0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3];
-  // const [cardSet, setCardSet] = useState(null);
   const [flippedOne, setFlippedOne] = useState(null);
   const [flippedTwo, setFlippedTwo] = useState(null);
   const [matched, setMatched] = useState(null);
@@ -12,7 +11,7 @@ function CardContainer({ deck, cardsID }) {
     setFlippedOne(id);
   }
   function flipTwo(id) {
-    setFlippedOne(id);
+    setFlippedTwo(id);
     compareFlipped();
   }
 
@@ -36,21 +35,9 @@ function CardContainer({ deck, cardsID }) {
     ))
     : null;
 
-  // let displayCards = deck
-  //   ? deck.cards.map((card) => (
-  //       <td>
-  //         <Card
-  //           card={card}
-  //           setName={deck.setName}
-  //           frontCard={deck.frontCard}
-  //           key={card.alt + card.id}
-  //         />
-  //       </td>
-  //     ))
-  //   : null;
 
   return <div className="displayWrapper">{arrayCards}</div>;
-  // return null;
+
 }
 
 export default CardContainer;

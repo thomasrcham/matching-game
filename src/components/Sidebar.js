@@ -1,4 +1,12 @@
+import React, { useState } from "react";
+
 function Sidebar() {
+  //  const [dropDown, setDropDown] = useState(false);
+
+  //  function handleDropDown() {
+  //   setDropDown((dropDown) => !dropDown)
+  //  }
+
   return (
     <div className="sidebarComponent">
       <div className="sidebar div top">
@@ -23,6 +31,16 @@ function Sidebar() {
           Timer: <br /> 3:45
         </h3>
       </div>
+      {/* <div className="dd-wrapper">
+        <div className="dd-header">
+          <div className="dd-header-title"></div>
+        </div>
+        <div className="dd-list">
+          <button className="dd-list-item"></button>
+          <button className="dd-list-item"></button>
+          <button className="dd-list-item"></button>
+        </div> */}
+      {/* </div> --> in case we want a dropdown for multiple sets... can work with this */}
     </div>
   );
 }

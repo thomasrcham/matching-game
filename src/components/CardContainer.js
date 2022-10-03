@@ -3,7 +3,26 @@ import { useEffect, useState } from "react";
 
 function CardContainer({ set, cardsID }) {
   let cardArray = [0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3];
-  const [table, setTable] = useState([]);
+  const [cardSet, setCardSet] = useState(null);
+  const [flippedOne, setFlippedOne] = useState(null);
+  const [flippedTwo, setFlippedTwo] = useState(null);
+  const [matched, setMatched] = useState(null);
+
+  function flipOne(id) {
+    setFlippedOne(id);
+  }
+  function flipTwo(id) {
+    setFlippedOne(id);
+    compareFlipped();
+  }
+
+  function compareFlipped() {
+    flippedOne === flippedTwo ? console.log("true") : console.log("false");
+  }
+
+  function handleFlippedCard(id) {
+    flippedOne ? flipTwo(id) : flipOne(id);
+  }
 
   let arrayCards = set
     ? cardArray.map((id) => (
@@ -11,25 +30,24 @@ function CardContainer({ set, cardsID }) {
           card={set.cards[id]}
           setName={set.setName}
           frontCard={set.frontCard}
-          key={set.cards[id]}
+          handleFlippedCard={handleFlippedCard}
+          matched={matched}
         />
       ))
     : null;
 
-  console.log(table);
-
-  let displayCards = set
-    ? set.cards.map((card) => (
-        <td>
-          <Card
-            card={card}
-            setName={set.setName}
-            frontCard={set.frontCard}
-            key={card.id}
-          />
-        </td>
-      ))
-    : null;
+  // let displayCards = set
+  //   ? set.cards.map((card) => (
+  //       <td>
+  //         <Card
+  //           card={card}
+  //           setName={set.setName}
+  //           frontCard={set.frontCard}
+  //           key={card.alt + card.id}
+  //         />
+  //       </td>
+  //     ))
+  //   : null;
 
   return <div className="displayWrapper">{arrayCards}</div>;
   // return null;

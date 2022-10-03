@@ -19,7 +19,7 @@ function Game() {
             <Sidebar CurrentScore={CurrentScore} />
         </div>
         <div className="mainWindow">
-            {cards ? <CardContainer set={cards[cardSetID]} /> : null}
+            {cards ? <CardContainer deck={cards[cardSetID]} /> : null}
         </div>
     </div>
     );

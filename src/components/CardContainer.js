@@ -1,9 +1,9 @@
 import Card from "./Card.js";
 import { useEffect, useState } from "react";
 
-function CardContainer({ set, cardsID }) {
+function CardContainer({ deck, cardsID }) {
   let cardArray = [0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3];
-  const [cardSet, setCardSet] = useState(null);
+  // const [cardSet, setCardSet] = useState(null);
   const [flippedOne, setFlippedOne] = useState(null);
   const [flippedTwo, setFlippedTwo] = useState(null);
   const [matched, setMatched] = useState(null);
@@ -24,25 +24,25 @@ function CardContainer({ set, cardsID }) {
     flippedOne ? flipTwo(id) : flipOne(id);
   }
 
-  let arrayCards = set
+  let arrayCards = deck
     ? cardArray.map((id) => (
-        <Card
-          card={set.cards[id]}
-          setName={set.setName}
-          frontCard={set.frontCard}
-          handleFlippedCard={handleFlippedCard}
-          matched={matched}
-        />
-      ))
+      <Card
+        card={deck.cards[id]}
+        setName={deck.setName}
+        frontCard={deck.frontCard}
+        handleFlippedCard={handleFlippedCard}
+        matched={matched}
+      />
+    ))
     : null;
 
-  // let displayCards = set
-  //   ? set.cards.map((card) => (
+  // let displayCards = deck
+  //   ? deck.cards.map((card) => (
   //       <td>
   //         <Card
   //           card={card}
-  //           setName={set.setName}
-  //           frontCard={set.frontCard}
+  //           setName={deck.setName}
+  //           frontCard={deck.frontCard}
   //           key={card.alt + card.id}
   //         />
   //       </td>

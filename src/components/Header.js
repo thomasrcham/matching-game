@@ -1,7 +1,7 @@
 function Header() {
   return (
     <h1>
-      <span class="gradient-text">Memories of Autumn</span>
+      <span className="gradient-text">Memories of Autumn</span>
     </h1>
   );
   // return (

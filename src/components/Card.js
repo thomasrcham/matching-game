@@ -1,21 +1,31 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-function Card({ card, frontCard, setName }) {
+function Card({ card, frontCard, setName, handleFlippedCard, matched }) {
   const [clicked, setClicked] = useState(false);
+
+  useEffect(() => {
+    setTimeout(setClicked(false), 1000);
+  }, [matched]);
 
   return clicked ? (
     <img
+      className="card"
       src={card.image}
       alt={card.alt}
-      onClick={() => setClicked(false)}
-      className="card"
+      onClick={() => {
+        handleFlippedCard(card.id);
+        setClicked(false);
+      }}
     />
   ) : (
     <img
+      className="card"
       src={frontCard}
       alt={setName}
-      onClick={() => setClicked(true)}
-      className="card"
+      onClick={() => {
+        handleFlippedCard(card.id);
+        setClicked(true);
+      }}
     />
   );
 }

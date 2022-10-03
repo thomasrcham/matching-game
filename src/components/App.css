@@ -32,7 +32,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  right:0;
+  right: 0;
   text-align: center;
   background: #1abc9c;
   color: #8B4513;
@@ -52,13 +52,14 @@
 }
 
 .sidebar button {
-display: block;
-margin: auto;
-font-family: "Optima", Optima;
-padding: 8px;
-background-color: #FFFACD;
-border-radius: 30px;
-width: 150px;
+  display: block;
+  margin: auto;
+  font-family: "Optima", Optima;
+  padding: 8px;
+  background-color: #FFFACD;
+  border-radius: 30px;
+  width: 150px;
+}
 
 img.card {
   width: 75px;

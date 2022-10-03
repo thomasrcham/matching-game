@@ -1,13 +1,13 @@
 .sidebarComponent {
-  width: fixed;
+  width: 160px;
   float: left;
   position: fixed;
   /* z-index: 1; */
   top: 175px;
   /* left: 0; */
   height: 100vh;
-  background-color: #8B4513;
-  color: #FFFACD;
+  background-color: #8b4513;
+  color: #fffacd;
   overflow-x: hidden;
   padding-top: 60px;
   font-family: "Optima", Optima;
@@ -15,23 +15,34 @@
   padding-right: 10px;
 }
 
+.mainWindow {
+  height: 75%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 175px;
+  left: 180px;
+  background-color: rgb(233, 255, 182);
+  padding: 3%;
+  overflow-y: scroll;
+}
+
 .header {
   height: 175px;
   position: fixed;
   top: 0;
   left: 0;
-  right:0;
+  right: 0;
   text-align: center;
   background: #1abc9c;
-  color: #8B4513;
+  color: #8b4513;
   font-size: 30px;
   background-image: linear-gradient(45deg, #f3ec78, #af4261);
   font-family: "Optima", Optima;
   z-index: 3;
   -webkit-text-stroke: 0.8px brown;
-  text-shadow: 2px 2px #FFFACD;
+  text-shadow: 2px 2px #fffacd;
 }
-
 
 .sidebar {
   position: relative;
@@ -40,13 +51,32 @@
 }
 
 .sidebar button {
-display: block;
-margin: auto;
-font-family: "Optima", Optima;
-padding: 8px;
-background-color: #FFFACD;
-border-radius: 30px;
-width: 150px;
+  display: block;
+  margin: auto;
+  font-family: "Optima", Optima;
+  padding: 8px;
+  background-color: #fffacd;
+  border-radius: 30px;
+  width: 150px;
+}
+
+img.card {
+  width: 150px;
+}
+
+.displayWrapper {
+  height: 65%;
+  border-width: 1px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+.displayWrapper img {
+  width: 100%;
+  height: auto;
 }
 
 .container {

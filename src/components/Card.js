@@ -1,10 +1,32 @@
-function Card({ cardSets, cardSetID }) {
-  let thing = cardSets[0].frontCard;
-  console.log({ thing });
-  return (
-  <div className="container">
-    <img src={thing} alt={cardSets[0].setName} />
-  </div>
+import { useState, useEffect } from "react";
+
+function Card({ card, frontCard, setName, handleFlippedCard, matched }) {
+  const [clicked, setClicked] = useState(false);
+
+  useEffect(() => {
+    setTimeout(setClicked(false), 1000);
+  }, [matched]);
+
+  return clicked ? (
+    <img
+      className="card"
+      src={card.image}
+      alt={card.alt}
+      onClick={() => {
+        handleFlippedCard(card.id);
+        setClicked(false);
+      }}
+    />
+  ) : (
+    <img
+      className="card"
+      src={frontCard}
+      alt={setName}
+      onClick={() => {
+        handleFlippedCard(card.id);
+        setClicked(true);
+      }}
+    />
   );
 }
 

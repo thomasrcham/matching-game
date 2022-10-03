@@ -4,14 +4,44 @@
       "id": 1,
       "setName": "pumpkins",
       "frontCard": "../images/pumpkins/pumpkins-card-front.png",
-      "cards": {
-        "card-1": "./images/pumpkins/pumpkins-1.png",
-        "card-2": "./images/pumpkins/pumpkins-2.png",
-        "card-3": "./images/pumpkins/pumpkins-3.png",
-        "card-4": "./images/pumpkins/pumpkins-4.png",
-        "card-5": "./images/pumpkins/pumpkins-5.png",
-        "card-6": "./images/pumpkins/pumpkins-6.png"
-      }
+      "cards": [
+        {
+          "id": "1",
+          "image": "./images/pumpkins/pumpkins-1.png",
+          "alt": "4side eyes, craggy mouth",
+          "clicked": "false"
+        },
+        {
+          "id": "2",
+          "image": "./images/pumpkins/pumpkins-2.png",
+          "alt": "crescent eyes, four teeth",
+          "clicked": "false"
+        },
+        {
+          "id": "3",
+          "image": "./images/pumpkins/pumpkins-3.png",
+          "alt": "triangle eyes, five teeth",
+          "clicked": "false"
+        },
+        {
+          "id": "4",
+          "image": "./images/pumpkins/pumpkins-4.png",
+          "alt": "wonky crescent eyes, frown mouth",
+          "clicked": "false"
+        },
+        {
+          "id": "5",
+          "image": "./images/pumpkins/pumpkins-5.png",
+          "alt": "crescent eyes, round mouth with teeth",
+          "clicked": "false"
+        },
+        {
+          "id": "6",
+          "image": "./images/pumpkins/pumpkins-6.png",
+          "alt": "crescent eyes left, O mouth",
+          "clicked": "false"
+        }
+      ]
     }
   ]
 }

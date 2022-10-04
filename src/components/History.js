@@ -1,25 +1,31 @@
-function History() {
-  // let scoresToDisplay = sortedScoresArray.map((entry) => (
-  //   <tr key={entry.score}>
-  //     <td>{entry.user}</td>
-  //     <td>{entry.score}</td>
-  //   </tr>
-  // ));
+function History({ userHistory }) {
+  let historyToDisplay = userHistory.map((entry) => (
+    <tr key={entry.id}>
+      <td>{entry.user}</td>
+      <td>{entry.dateTime}</td>
+      <td>{entry.score}</td>
+      <td>{entry.moves}</td>
+      <td>{entry.timer}</td>
+    </tr>
+  ));
 
-  // return (
-  //   <div className="dataDisplay">
-  //     <h1>Previous Gamesw</h1>
-  //     <table>
-  //       <thead>
-  //         <tr>
-  //           <th>User</th>
-  //           <th>Score</th>
-  //         </tr>
-  //       </thead>
-  //       {/* <tbody>{scoresToDisplay}</tbody> */}
-  //     </table>
-  //   </div>
-  return null;
+  return (
+    <div className="dataDisplay">
+      <h1>Previous Games</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>User</th>
+            <th>Date/Time</th>
+            <th>Score</th>
+            <th># of Moves</th>
+            <th>Timer</th>
+          </tr>
+        </thead>
+        <tbody>{historyToDisplay}</tbody>
+      </table>
+    </div>
+  );
 }
 
 export default History;

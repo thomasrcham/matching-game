@@ -1,20 +1,31 @@
-import { useState } from "react";
 import "@blueprintjs/core/lib/css/blueprint.css";
 import { Overlay, Classes, Button } from "@blueprintjs/core";
 
 import { NavLink } from "react-router-dom";
 // import MyStopwatch from "./Stopwatch";
 
-function Bobverlay( {start, pause, reset, handleTimerToScore} ) {
-  const [isOpen, setIsOpen] = useState(false);
-
+function Bobverlay({
+  start,
+  pause,
+  reset,
+  handleTimerValueSet,
+  setIsOpen,
+  isOpen,
+  calledTimerValue,
+}) {
   return (
     <>
       <button onClick={start}>Start</button>
-        <button onClick={pause}>Pause</button>
-        <button onClick={() => {
-          reset();pause()}}>Reset</button>
-        <button onClick={handleTimerToScore}>log score</button>
+      <button onClick={pause}>Pause</button>
+      <button
+        onClick={() => {
+          reset();
+          pause();
+        }}
+      >
+        Reset
+      </button>
+      <button onClick={handleTimerValueSet}>log score</button>
       <div
         style={{
           display: "block",
@@ -27,15 +38,20 @@ function Bobverlay( {start, pause, reset, handleTimerToScore} ) {
         <Button
           onClick={() => {
             setIsOpen(true);
+            handleTimerValueSet();
           }}
         >
           Toggle Overlay
         </Button>
 
-        <Overlay className={Classes.OVERLAY_SCROLL_CONTAINER} isOpen={isOpen}>
+        <Overlay
+          className={Classes.OVERLAY_SCROLL_CONTAINER}
+          isOpen={isOpen}
+          calledTimerValue={calledTimerValue}
+        >
           <div className="overlay">
             <p>Great Job!!</p>
-            <p>Time: 3m51</p>
+            <p>Time: {calledTimerValue}</p>
             <p>Total Moves: 4</p>
             <p>Final Score: 3994</p>
             <NavLink to="/">

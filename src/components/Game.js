@@ -25,6 +25,8 @@ function Game() {
     const [flipped, setFlipped] = useState(null);
     const [matched, setMatched] = useState(null);
     const [movesCount, setMovesCount] = useState(0);
+    const [newGame, setNewGame] = useState(false);
+    const [shuffledDeck, setShuffledDeck] = useState(null);
 
     //scoring
     const [highScores, setHighScores] = useState(null);
@@ -53,6 +55,27 @@ function Game() {
 
     //game logic
 
+    //shuffle the cards before handing to component because React hates conditionally calling hooks (and you can't shuffle until the deck is available)
+
+    function shuffleDeck(deckToShuffle) {
+        let shuffledCards = [...deckToShuffle, ...deckToShuffle]; //duplicates the deck
+        // https://www.w3docs.com/snippets/javascript/how-to-randomize-shuffle-a-javascript-array.html
+        for (let i = shuffledCards.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffledCards[i], shuffledCards[j]] = [shuffledCards[j], shuffledCards[i]];
+        }
+        return shuffledCards;
+    }
+
+
+    useEffect(() => {
+        if (decks !== null && deckId !== null) {
+            let singleDeck = decks[deckId];
+            setShuffledDeck([...shuffleDeck(singleDeck.cards)]);
+            console.log({ shuffledDeck })
+        }
+    }, [newGame])
+
     /*
     flipping 
         adds one to number of moves
@@ -73,21 +96,30 @@ function Game() {
 
 
 
+
+
     return (
         <div>
             <div className="sidebar">
-                <Sidebar CurrentScore={CurrentScore} />
+                <Sidebar
+                    CurrentScore={CurrentScore}
+                    newGame={newGame}
+                    setNewGame={setNewGame}
+                />
             </div>
             <div className="mainWindow">
                 <Route exact path="/">
                     {decks ? (
                         <CardContainer
-                            deck={decks[deckId]}
+                            decks={decks}
+                            deckId={deckId}
                             flipped={flipped}
                             handleFlip={handleFlip}
                             setFlipped={setFlipped}
                             matched={matched}
                             setMatched={setMatched}
+                            newGame={newGame}
+                            shuffledDeck={shuffledDeck}
                         />
                     ) : null}
                 </Route>

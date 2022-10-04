@@ -9,7 +9,7 @@ check on array length of 2 for equality.
     if unequal
       remove from array */
 
-function handleFlip(cardClickEvent) {
+function handleFlip(cardClickEvent,) {
     console.log({ cardClickEvent })
     return null;
 }

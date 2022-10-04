@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-function Sidebar() {
+function Sidebar({ newGame, setNewGame }) {
   const [dropDown, setDropDown] = useState(false);
 
   function handleDropDown() {
@@ -11,7 +11,9 @@ function Sidebar() {
   return (
     <div className="sidebarComponent">
       <div className="sidebar div top">
-        <button> New Game </button>
+        <button onClick={() => {
+          setNewGame(!newGame)
+        }}> New Game </button>
         <NavLink to="/">
           <button> Existing Game </button>
         </NavLink>

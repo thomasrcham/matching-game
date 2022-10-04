@@ -8,17 +8,17 @@ import CurrentScore from "./CurrentScore";
 
 function Game() {
 
-  const [highScores, setHighScores] = useState(null);
+    const [highScores, setHighScores] = useState(null);
     const backend = "http://localhost:3001";
     const [decks, setDecks] = useState(null);
     const [deckId, setDeckId] = useState(0);
     const [matched, setMatched] = useState(null);
 
-  useEffect(() => {
-    fetch(`${backend}/highScores`)
-      .then((r) => r.json())
-      .then((d) => setHighScores(d));
-  }, []);
+    useEffect(() => {
+        fetch(`${backend}/highScores`)
+            .then((r) => r.json())
+            .then((d) => setHighScores(d));
+    }, []);
 
     useEffect(() => {
         fetch(`${backend}/cardSets`)

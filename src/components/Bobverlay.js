@@ -49,7 +49,7 @@ function Bobverlay() {
                 See High Scores
               </button>
             </NavLink>
-            <NavLink to="/userHistory">
+            <NavLink to="/History">
               <button
                 onClick={() => {
                   setIsOpen(false);

@@ -46,18 +46,13 @@ function Sidebar() {
 
         {dropDown ? (
           <div className="dd-list">
-            <button onClick={handleDropDown} id="choose-theme-button">
-              Choose a Theme!
-            </button>
-            <button id="halloween-button" className="dd-list-item">
-              Halloween
-            </button>
-            <button id="leaves-button" className="dd-list-item">
-              Autumn Leaves
-            </button>
-            <button id="misc-button" className="dd-list-item">
-              Misc
-            </button>
+
+            <button onClick={handleDropDown} id="choose-theme-button">Choose a Theme!</button>
+            <button id="halloween-button" className="dd-list-item">Halloween</button>
+            <button id="leaves-button" className="dd-list-item">Autumn Leaves</button>
+            <button id="harvest-button" className="dd-list-item">Harvest</button>
+            <button id="surprise-me" className="dd-list-item">SURPRISE ME!</button>
+
           </div>
         ) : (
           <div className="dd-closed">

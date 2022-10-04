@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 
-function Card({ card, frontCard, setName, handleFlippedCard, matched }) {
+function Card({ card, cardBack, setName, matched }) {
   const [clicked, setClicked] = useState(false);
 
   useEffect(() => {
     setTimeout(setClicked(false), 1000);
-  }, [matched]);
+  }, [matched]); //?????
 
   return clicked ? (
     <img
@@ -13,17 +13,15 @@ function Card({ card, frontCard, setName, handleFlippedCard, matched }) {
       src={card.image}
       alt={card.alt}
       onClick={() => {
-        handleFlippedCard(card.id);
         setClicked(false);
       }}
     />
   ) : (
     <img
       className="card"
-      src={frontCard}
+      src={cardBack}
       alt={setName}
       onClick={() => {
-        handleFlippedCard(card.id);
         setClicked(true);
       }}
     />

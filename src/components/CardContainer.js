@@ -17,7 +17,7 @@ function CardContainer({ deck, flipped, handleFlip, setFlipped, matched, setMatc
   }
 
 
-  let shuffledCards = shuffleDeck(deck);
+  const shuffledCards = shuffleDeck(deck);
 
   let tableauCards = shuffledCards.map((card, index) => (
 

@@ -5,7 +5,7 @@ import Bobverlay from "./Bobverlay";
 //Game Components
 import CardContainer from "./CardContainer";
 import CurrentScore from "./CurrentScore";
-import { handleFlip } from "./GameLogic";
+// import { handleFlip } from "./GameLogic";
 import HighScores from "./HighScores";
 import History from "./History";
 import Sidebar from "./Sidebar";
@@ -22,8 +22,9 @@ function Game() {
     const [deckId, setDeckId] = useState(0);
 
     // current gamestate
-    const [matched, setMatched] = useState(null);
     const [flipped, setFlipped] = useState(null);
+    const [matched, setMatched] = useState(null);
+    const [movesCount, setMovesCount] = useState(0);
 
     //scoring
     const [highScores, setHighScores] = useState(null);
@@ -49,6 +50,28 @@ function Game() {
             .then((r) => r.json())
             .then((d) => setUserHistory(d));
     }, []);
+
+    //game logic
+
+    /*
+    flipping 
+        adds one to number of moves
+        adds cards to an array.
+    check on array length of 2 for equality. 
+        if equal
+            add score
+            add to matched array
+        if unequal
+          remove from array */
+
+    function handleFlip(cardClickEvent) {
+        console.log({ cardClickEvent })
+        setMovesCount(movesCount + 1);
+        console.log({ movesCount });
+        return null;
+    }
+
+
 
     return (
         <div>

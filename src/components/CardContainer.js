@@ -1,56 +1,38 @@
 import Card from "./Card.js";
-import { useEffect, useState } from "react";
 
-function CardContainer({ set, cardsID }) {
-  let cardArray = [0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3];
-  const [cardSet, setCardSet] = useState(null);
-  const [flippedOne, setFlippedOne] = useState(null);
-  const [flippedTwo, setFlippedTwo] = useState(null);
-  const [matched, setMatched] = useState(null);
+function CardContainer({ deck, cardsID, matched, setMatched }) {
 
-  function flipOne(id) {
-    setFlippedOne(id);
-  }
-  function flipTwo(id) {
-    setFlippedOne(id);
-    compareFlipped();
+  if (!deck) {
+    return null; //if the deck isn't populated, do not populate the tableau with cards
   }
 
-  function compareFlipped() {
-    flippedOne === flippedTwo ? console.log("true") : console.log("false");
+  function shuffleDeck(arrDeck) {
+    arrDeck = [...arrDeck.cards, ...arrDeck.cards];
+    // https://www.w3docs.com/snippets/javascript/how-to-randomize-shuffle-a-javascript-array.html
+    for (let i = arrDeck.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arrDeck[i], arrDeck[j]] = [arrDeck[j], arrDeck[i]];
+    }
+    return arrDeck;
   }
 
-  function handleFlippedCard(id) {
-    flippedOne ? flipTwo(id) : flipOne(id);
-  }
 
-  let arrayCards = set
-    ? cardArray.map((id) => (
-        <Card
-          card={set.cards[id]}
-          setName={set.setName}
-          frontCard={set.frontCard}
-          handleFlippedCard={handleFlippedCard}
-          matched={matched}
-        />
-      ))
-    : null;
+  let shuffledCards = shuffleDeck(deck);
 
-  // let displayCards = set
-  //   ? set.cards.map((card) => (
-  //       <td>
-  //         <Card
-  //           card={card}
-  //           setName={set.setName}
-  //           frontCard={set.frontCard}
-  //           key={card.alt + card.id}
-  //         />
-  //       </td>
-  //     ))
-  //   : null;
+  let tableauCards = shuffledCards.map((card, index) => (
 
-  return <div className="displayWrapper">{arrayCards}</div>;
-  // return null;
+    <Card
+      key={`tableau${deck.cards.id}${index}`} //fix this later TODO
+      card={card}
+      setName={deck.setName}
+      cardBack={deck.cardBack}
+      matched={matched}
+    />
+  ));
+
+
+  return <div className="displayWrapper">{tableauCards}</div>;
+
 }
 
 export default CardContainer;

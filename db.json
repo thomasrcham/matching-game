@@ -3,7 +3,7 @@
     {
       "id": 1,
       "setName": "pumpkins",
-      "frontCard": "../images/pumpkins/pumpkins-card-front.png",
+      "cardBack": "../images/pumpkins/pumpkins-card-front.png",
       "cards": [
         {
           "id": "1",

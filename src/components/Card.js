@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function Card({ card, cardBack, setName, matched }) {
+function Card({ card, cardBack, flipped, handleFlip, setName, matched }) {
   const [clicked, setClicked] = useState(false);
 
   useEffect(() => {
@@ -13,7 +13,8 @@ function Card({ card, cardBack, setName, matched }) {
     className="card"
     src={clicked ? card.image : cardBack}
     alt={card.alt}
-    onClick={() => {
+    onClick={(event) => {
+      handleFlip(event);
       setClicked(!clicked);
     }}
   />

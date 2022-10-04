@@ -5,7 +5,7 @@ import Bobverlay from "./Bobverlay";
 //Game Components
 import CardContainer from "./CardContainer";
 import CurrentScore from "./CurrentScore";
-import GameLogic from "./GameLogic"; //TODO replace with game functions
+import { handleFlip } from "./GameLogic";
 import HighScores from "./HighScores";
 import History from "./History";
 import Sidebar from "./Sidebar";
@@ -61,6 +61,7 @@ function Game() {
                         <CardContainer
                             deck={decks[deckId]}
                             flipped={flipped}
+                            handleFlip={handleFlip}
                             setFlipped={setFlipped}
                             matched={matched}
                             setMatched={setMatched}

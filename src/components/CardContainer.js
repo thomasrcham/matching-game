@@ -1,6 +1,6 @@
 import Card from "./Card.js";
 
-function CardContainer({ deck, flipped, setFlipped, matched, setMatched }) {
+function CardContainer({ deck, flipped, handleFlip, setFlipped, matched, setMatched }) {
 
   if (!deck) {
     return null; //if the deck isn't populated, do not populate the tableau with cards
@@ -27,6 +27,9 @@ function CardContainer({ deck, flipped, setFlipped, matched, setMatched }) {
       setName={deck.setName}
       cardBack={deck.cardBack}
       matched={matched}
+      flipped={flipped}
+      handleFlip={handleFlip}
+      setFlipped={setFlipped}
     />
   ));
 

@@ -1,42 +1,38 @@
 import Card from "./Card.js";
-import { useEffect, useState } from "react";
 
-function CardContainer({ deck, cardsID }) {
-  let cardArray = [0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3];
-  const [flippedOne, setFlippedOne] = useState(null);
-  const [flippedTwo, setFlippedTwo] = useState(null);
-  const [matched, setMatched] = useState(null);
+function CardContainer({ deck, cardsID, matched, setMatched }) {
 
-  function flipOne(id) {
-    setFlippedOne(id);
-  }
-  function flipTwo(id) {
-    setFlippedTwo(id);
-    compareFlipped();
+  if (!deck) {
+    return null; //if the deck isn't populated, do not populate the tableau with cards
   }
 
-  function compareFlipped() {
-    flippedOne === flippedTwo ? console.log("true") : console.log("false");
+  function shuffleDeck(arrDeck) {
+    // https://www.w3docs.com/snippets/javascript/how-to-randomize-shuffle-a-javascript-array.html
+
+    arrDeck = [...arrDeck.cards, ...arrDeck.cards];
+    for (let i = arrDeck.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arrDeck[i], arrDeck[j]] = [arrDeck[j], arrDeck[i]];
+    }
+    return arrDeck;
   }
 
-  function handleFlippedCard(id) {
-    flippedOne ? flipTwo(id) : flipOne(id);
-  }
 
-  let arrayCards = deck
-    ? cardArray.map((id) => (
-      <Card
-        card={deck.cards[id]}
-        setName={deck.setName}
-        frontCard={deck.frontCard}
-        handleFlippedCard={handleFlippedCard}
-        matched={matched}
-      />
-    ))
-    : null;
+  let shuffledCards = shuffleDeck(deck);
+
+  let tableauCards = shuffledCards.map((card, index) => (
+
+    <Card
+      key={`tableau${deck.cards.id}${index}`} //fix this later
+      card={card}
+      setName={deck.setName}
+      cardBack={deck.cardBack}
+      matched={matched}
+    />
+  ));
 
 
-  return <div className="displayWrapper">{arrayCards}</div>;
+  return <div className="displayWrapper">{tableauCards}</div>;
 
 }
 

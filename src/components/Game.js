@@ -7,6 +7,8 @@ function Game() {
     const backend = "http://localhost:3001";
     const [cards, setCards] = useState(null);
     const [cardSetID, setCardSetID] = useState(0);
+    const [matched, setMatched] = useState(null);
+
 
     useEffect(() => {
         fetch(`${backend}/cardSets`)
@@ -19,7 +21,10 @@ function Game() {
             <Sidebar CurrentScore={CurrentScore} />
         </div>
         <div className="mainWindow">
-            {cards ? <CardContainer deck={cards[cardSetID]} /> : null}
+            {cards ? <CardContainer
+                deck={cards[cardSetID]}
+                matched={matched}
+                setMatched={setMatched} /> : null}
         </div>
     </div>
     );

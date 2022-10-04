@@ -60,10 +60,10 @@ function Game() {
                     {decks ? (
                         <CardContainer
                             deck={decks[deckId]}
-                            matched={matched}
-                            setMatched={setMatched}
                             flipped={flipped}
                             setFlipped={setFlipped}
+                            matched={matched}
+                            setMatched={setMatched}
                         />
                     ) : null}
                 </Route>

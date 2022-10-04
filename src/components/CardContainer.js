@@ -7,9 +7,8 @@ function CardContainer({ deck, cardsID, matched, setMatched }) {
   }
 
   function shuffleDeck(arrDeck) {
-    // https://www.w3docs.com/snippets/javascript/how-to-randomize-shuffle-a-javascript-array.html
-
     arrDeck = [...arrDeck.cards, ...arrDeck.cards];
+    // https://www.w3docs.com/snippets/javascript/how-to-randomize-shuffle-a-javascript-array.html
     for (let i = arrDeck.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [arrDeck[i], arrDeck[j]] = [arrDeck[j], arrDeck[i]];
@@ -23,7 +22,7 @@ function CardContainer({ deck, cardsID, matched, setMatched }) {
   let tableauCards = shuffledCards.map((card, index) => (
 
     <Card
-      key={`tableau${deck.cards.id}${index}`} //fix this later
+      key={`tableau${deck.cards.id}${index}`} //fix this later TODO
       card={card}
       setName={deck.setName}
       cardBack={deck.cardBack}

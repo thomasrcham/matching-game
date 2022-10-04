@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 
 function Card({ card, cardBack, setName, matched }) {
-  console.log({ card })
   const [clicked, setClicked] = useState(false);
 
   useEffect(() => {

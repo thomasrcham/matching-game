@@ -1,11 +1,14 @@
+//libraries
 import { useEffect, useState } from "react";
-import Sidebar from "./Sidebar";
+import { BrowserRouter, Route } from "react-router-dom";
+import Bobverlay from "./Bobverlay";
+//Game Components
 import CardContainer from "./CardContainer";
+import CurrentScore from "./CurrentScore";
 import HighScores from "./HighScores";
 import History from "./History";
-import { BrowserRouter, Route } from "react-router-dom";
-import CurrentScore from "./CurrentScore";
-import Bobverlay from "./Bobverlay";
+import Sidebar from "./Sidebar";
+
 
 function Game() {
     //variables
@@ -19,13 +22,15 @@ function Game() {
 
     // current gamestate
     const [matched, setMatched] = useState(null);
+    const [flipped, setFlipped] = useState(null);
+
     //scoring
     const [highScores, setHighScores] = useState(null);
     const [userHistory, setUserHistory] = useState(null);
 
 
 
-
+    // side effects
     useEffect(() => {
         fetch(`${backend}/highScores`)
             .then((r) => r.json())
@@ -56,6 +61,8 @@ function Game() {
                             deck={decks[deckId]}
                             matched={matched}
                             setMatched={setMatched}
+                            flipped={flipped}
+                            setFlipped={setFlipped}
                         />
                     ) : null}
                 </Route>

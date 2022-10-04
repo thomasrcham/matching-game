@@ -6,22 +6,25 @@ function HighScores({ highScoresArray }) {
     : null;
 
   let scoresToDisplay = sortedScoresArray.map((entry) => (
-    <tr>
+    <tr key={entry.score}>
       <td>{entry.user}</td>
       <td>{entry.score}</td>
     </tr>
   ));
 
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>User</th>
-          <th>Score</th>
-        </tr>
-      </thead>
-      <tbody>{scoresToDisplay}</tbody>
-    </table>
+    <div className="dataDisplay">
+      <h1>Best Scores!</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>User</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>{scoresToDisplay}</tbody>
+      </table>
+    </div>
   );
 }
 

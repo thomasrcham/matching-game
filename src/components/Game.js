@@ -5,6 +5,7 @@ import HighScores from "./HighScores";
 import History from "./History";
 import { BrowserRouter, Route } from "react-router-dom";
 import CurrentScore from "./CurrentScore";
+import Bobverlay from "./Bobverlay";
 
 function Game() {
   const [highScores, setHighScores] = useState(null);
@@ -52,6 +53,9 @@ function Game() {
         </Route>
         <Route path="/History">
           {userHistory ? <History userHistory={userHistory} /> : null}
+        </Route>
+        <Route path="/Bobverlay">
+          <Bobverlay />
         </Route>
       </div>
     </div>

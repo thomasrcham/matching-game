@@ -169,3 +169,32 @@ td {
   border-collapse: collapse;
   margin: auto;
 }
+
+.overlay {
+  left: 40%;
+  top: 40%;
+  text-align: center;
+  border-collapse: collapse;
+  margin: auto;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  font-family: "Optima", Optima;
+  background-color: #8b4513;
+  color: #fffacd;
+  font-size: large;
+  border: 5px solid hsl(82, 27%, 34%);
+  border-radius: 10%;
+  padding: 20px;
+}
+
+.overlay button {
+  display: block;
+  margin-top: 20px;
+  margin: auto;
+  font-family: "Optima", Optima;
+  padding: 8px;
+  background-color: #fffacd;
+  border-radius: 15px;
+  width: 150px;
+}

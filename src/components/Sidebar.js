@@ -41,7 +41,6 @@ function Sidebar( { minutes, seconds } ) {
         </h3>
         <h3 className="timer">
           Timer: <br /> {minutes}:{seconds <= 9 ? "0" + seconds : seconds}
-          
         </h3>
       
       </div>

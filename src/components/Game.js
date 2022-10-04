@@ -7,11 +7,18 @@ import { BrowserRouter, Route } from "react-router-dom";
 import CurrentScore from "./CurrentScore";
 
 function Game() {
+
+  const [highScores, setHighScores] = useState(null);
     const backend = "http://localhost:3001";
     const [decks, setDecks] = useState(null);
     const [deckId, setDeckId] = useState(0);
     const [matched, setMatched] = useState(null);
 
+  useEffect(() => {
+    fetch(`${backend}/highScores`)
+      .then((r) => r.json())
+      .then((d) => setHighScores(d));
+  }, []);
 
     useEffect(() => {
         fetch(`${backend}/cardSets`)
@@ -31,7 +38,7 @@ function Game() {
                     setMatched={setMatched} /> : null}
             </Route>
             <Route path="/HighScores">
-                <HighScores />
+                {highScores ? <HighScores highScoresArray={highScores} /> : null}
             </Route>
             <Route path="/History">
                 <History />

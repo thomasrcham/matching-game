@@ -8,11 +8,18 @@ import { BrowserRouter, Route } from "react-router-dom";
 function Game() {
   const [cards, setCards] = useState(null);
   const [cardSetID, setCardSetID] = useState(0);
+  const [highScores, setHighScores] = useState(null);
 
   useEffect(() => {
     fetch("http://localhost:3001/cardSets")
       .then((r) => r.json())
       .then((d) => setCards(d));
+  }, []);
+
+  useEffect(() => {
+    fetch("http://localhost:3001/highScores")
+      .then((r) => r.json())
+      .then((d) => setHighScores(d));
   }, []);
 
   return (
@@ -25,7 +32,7 @@ function Game() {
           {cards ? <CardContainer set={cards[cardSetID]} /> : null}
         </Route>
         <Route path="/HighScores">
-          <HighScores />
+          {highScores ? <HighScores highScoresArray={highScores} /> : null}
         </Route>
         <Route path="/History">
           <History />

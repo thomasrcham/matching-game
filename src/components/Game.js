@@ -5,6 +5,7 @@ import Bobverlay from "./Bobverlay";
 //Game Components
 import CardContainer from "./CardContainer";
 import CurrentScore from "./CurrentScore";
+import GameLogic from "./GameLogic"; //TODO replace with game functions
 import HighScores from "./HighScores";
 import History from "./History";
 import Sidebar from "./Sidebar";

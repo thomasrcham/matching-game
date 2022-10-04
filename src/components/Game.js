@@ -8,12 +8,23 @@ import CurrentScore from "./CurrentScore";
 import Bobverlay from "./Bobverlay";
 
 function Game() {
-    const [highScores, setHighScores] = useState(null);
+    //variables
     const backend = "http://localhost:3001";
+
+    //state
+
+    //select and load decks
     const [decks, setDecks] = useState(null);
     const [deckId, setDeckId] = useState(0);
+
+    // current gamestate
     const [matched, setMatched] = useState(null);
+    //scoring
+    const [highScores, setHighScores] = useState(null);
     const [userHistory, setUserHistory] = useState(null);
+
+
+
 
     useEffect(() => {
         fetch(`${backend}/highScores`)

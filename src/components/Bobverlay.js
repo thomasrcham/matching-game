@@ -3,13 +3,18 @@ import "@blueprintjs/core/lib/css/blueprint.css";
 import { Overlay, Classes, Button } from "@blueprintjs/core";
 
 import { NavLink } from "react-router-dom";
-import MyStopwatch from "./Stopwatch";
+// import MyStopwatch from "./Stopwatch";
 
-function Bobverlay() {
+function Bobverlay( {start, pause, reset, handleTimerToScore} ) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
+      <button onClick={start}>Start</button>
+        <button onClick={pause}>Pause</button>
+        <button onClick={() => {
+          reset();pause()}}>Reset</button>
+        <button onClick={handleTimerToScore}>log score</button>
       <div
         style={{
           display: "block",
@@ -26,7 +31,6 @@ function Bobverlay() {
         >
           Toggle Overlay
         </Button>
-        <MyStopwatch />
 
         <Overlay className={Classes.OVERLAY_SCROLL_CONTAINER} isOpen={isOpen}>
           <div className="overlay">

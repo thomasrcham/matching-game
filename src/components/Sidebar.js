@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-function Sidebar() {
+function Sidebar( { minutes, seconds } ) {
   const [dropDown, setDropDown] = useState(false);
 
   function handleDropDown() {
     setDropDown((dropDown) => !dropDown);
   }
 
+  
   return (
     <div className="sidebarComponent">
       <div className="sidebar div top">
@@ -38,9 +39,11 @@ function Sidebar() {
           Moves Remaining:
           <br /> 17
         </h3>
-        <h3>
-          Timer: <br /> 3:45
+        <h3 className="timer">
+          Timer: <br /> {minutes}:{seconds <= 9 ? "0" + seconds : seconds}
+          
         </h3>
+      
       </div>
       <div className="dd-wrapper">
         <div className="dd-header">

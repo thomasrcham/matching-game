@@ -69,6 +69,21 @@
       "id": "5",
       "user": "cooper",
       "score": "4552"
+    },
+    {
+      "id": "6",
+      "user": "cho",
+      "score": "4551"
+    }
+  ],
+  "userHistory": [
+    {
+      "id": "1",
+      "user": "reese",
+      "moves": "21",
+      "timer": "1552",
+      "score": "4546",
+      "dateTime": ""
     }
   ]
 }

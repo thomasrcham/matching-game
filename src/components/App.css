@@ -88,7 +88,6 @@ img.card {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-row-gap: 10px;
-  
 }
 
 img {
@@ -99,8 +98,8 @@ img {
   max-width: 100%;
 }
 
-img:hover{
-  border-color: #af4261af
+img:hover {
+  border-color: #af4261af;
 }
 
 #choose-theme-button {
@@ -139,7 +138,7 @@ img:hover{
 
 #surprise-me {
   color: white;
-  background-color: #D2691E;
+  background-color: #d2691e;
   border-radius: 15px;
 }
 
@@ -147,5 +146,25 @@ img:hover{
   color: #000000;
 }
 
+.dataDisplay {
+  font-family: "Optima", Optima;
+  background-color: #8b4513;
+  color: #fffacd;
+  font-size: large;
+  border: 5px solid hsl(82, 27%, 34%);
+  border-radius: 10%;
+  padding: 20px;
+  padding-left: 30px;
+  padding-bottom: 50px;
+  display: inline-block;
+}
 
-
+.dataDisplay table,
+tr,
+td {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #fffacd;
+  border-collapse: collapse;
+  margin: auto;
+}

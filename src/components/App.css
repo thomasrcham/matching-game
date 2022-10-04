@@ -161,6 +161,7 @@ img:hover {
 
 .dataDisplay table,
 tr,
+th,
 td {
   text-align: center;
   padding: 10px;

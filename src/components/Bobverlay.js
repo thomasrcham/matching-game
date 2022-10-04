@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "@blueprintjs/core/lib/css/blueprint.css";
 import { Overlay, Classes, Button } from "@blueprintjs/core";
-
 import { NavLink } from "react-router-dom";
 
 function Bobverlay() {

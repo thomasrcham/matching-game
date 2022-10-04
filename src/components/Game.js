@@ -6,6 +6,7 @@ import History from "./History";
 import { BrowserRouter, Route } from "react-router-dom";
 import CurrentScore from "./CurrentScore";
 import Bobverlay from "./Bobverlay";
+import { useStopwatch } from "react-timer-hook"
 
 function Game() {
     //variables
@@ -24,7 +25,11 @@ function Game() {
     const [userHistory, setUserHistory] = useState(null);
 
 
-
+    const { seconds, minutes, isRunning, start, pause, reset } = useStopwatch({
+        autoStart: false,
+      });
+    
+      
 
     useEffect(() => {
         fetch(`${backend}/highScores`)
@@ -44,10 +49,16 @@ function Game() {
             .then((d) => setUserHistory(d));
     }, []);
 
+    function handleTimerToScore() {
+        let totalTime = minutes * 60 + seconds
+        console.log(totalTime)
+      }
+    
+
     return (
         <div>
             <div className="sidebar">
-                <Sidebar CurrentScore={CurrentScore} />
+                <Sidebar CurrentScore={CurrentScore} seconds={seconds} minutes={minutes}/>
             </div>
             <div className="mainWindow">
                 <Route exact path="/">
@@ -66,7 +77,7 @@ function Game() {
                     {userHistory ? <History userHistory={userHistory} /> : null}
                 </Route>
                 <Route path="/Bobverlay">
-                    <Bobverlay />
+                    <Bobverlay handleTimerToScore={handleTimerToScore} start={start} pause={pause} reset={reset}/>
                 </Route>
             </div>
         </div>

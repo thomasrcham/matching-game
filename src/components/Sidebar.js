@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter, Route, NavLink, Switch } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Sidebar() {
   const [dropDown, setDropDown] = useState(false);
@@ -20,6 +20,9 @@ function Sidebar() {
         </NavLink>
         <NavLink to="/History">
           <button> History</button>
+        </NavLink>
+        <NavLink to="/Bobverlay">
+          <button> Overlay Testing</button>
         </NavLink>
       </div>
       <div className="sidebar div middle">
@@ -46,13 +49,21 @@ function Sidebar() {
 
         {dropDown ? (
           <div className="dd-list">
-
-            <button onClick={handleDropDown} id="choose-theme-button">Choose a Theme!</button>
-            <button id="halloween-button" className="dd-list-item">Halloween</button>
-            <button id="leaves-button" className="dd-list-item">Autumn Leaves</button>
-            <button id="harvest-button" className="dd-list-item">Harvest</button>
-            <button id="surprise-me" className="dd-list-item">SURPRISE ME!</button>
-
+            <button onClick={handleDropDown} id="choose-theme-button">
+              Choose a Theme!
+            </button>
+            <button id="halloween-button" className="dd-list-item">
+              Halloween
+            </button>
+            <button id="leaves-button" className="dd-list-item">
+              Autumn Leaves
+            </button>
+            <button id="harvest-button" className="dd-list-item">
+              Harvest
+            </button>
+            <button id="surprise-me" className="dd-list-item">
+              SURPRISE ME!
+            </button>
           </div>
         ) : (
           <div className="dd-closed">

@@ -1,10 +1,8 @@
 .sidebarComponent {
-  width: 160px;
+  width: 170px;
   float: left;
   position: fixed;
-  /* z-index: 1; */
   top: 175px;
-  /* left: 0; */
   height: 100vh;
   background-color: #8b4513;
   color: #fffacd;
@@ -16,15 +14,14 @@
 }
 
 .mainWindow {
-  height: 75%;
-  width: 100%;
+  height: calc(100% - 175px);
+  width: calc(100% - 170px);
   position: fixed;
   z-index: 1;
   top: 175px;
-  left: 180px;
+  left: 170px;
   background-color: #778b4e;
   padding: 3%;
-  overflow-y: scroll;
 }
 
 .header {
@@ -72,7 +69,6 @@ img.card {
   grid-template-rows: repeat(4, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 10px;
-  width: calc(100% - 165px);
   min-width: 50%;
   min-height: 50%;
   max-height: 400px;
@@ -88,7 +84,6 @@ img.card {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-row-gap: 10px;
-  
 }
 
 img {
@@ -99,8 +94,8 @@ img {
   max-width: 100%;
 }
 
-img:hover{
-  border-color: #af4261af
+img:hover {
+  border-color: #af4261af;
 }
 
 #choose-theme-button {
@@ -139,7 +134,7 @@ img:hover{
 
 #surprise-me {
   color: white;
-  background-color: #D2691E;
+  background-color: #d2691e;
   border-radius: 15px;
 }
 
@@ -147,5 +142,55 @@ img:hover{
   color: #000000;
 }
 
+.dataDisplay {
+  font-family: "Optima", Optima;
+  background-color: #8b4513;
+  color: #fffacd;
+  font-size: large;
+  border: 5px solid hsl(82, 27%, 34%);
+  border-radius: 10%;
+  padding: 20px;
+  padding-left: 30px;
+  padding-bottom: 50px;
+  display: inline-block;
+}
 
+.dataDisplay table,
+tr,
+th,
+td {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #fffacd;
+  border-collapse: collapse;
+  margin: auto;
+}
 
+.overlay {
+  left: 40%;
+  top: 40%;
+  text-align: center;
+  border-collapse: collapse;
+  margin: auto;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  font-family: "Optima", Optima;
+  background-color: #8b4513;
+  color: #fffacd;
+  font-size: large;
+  border: 5px solid hsl(82, 27%, 34%);
+  border-radius: 10%;
+  padding: 20px;
+}
+
+.overlay button {
+  display: block;
+  margin-top: 20px;
+  margin: auto;
+  font-family: "Optima", Optima;
+  padding: 8px;
+  background-color: #fffacd;
+  border-radius: 15px;
+  width: 150px;
+}

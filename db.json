@@ -3,7 +3,7 @@
     {
       "id": 1,
       "setName": "pumpkins",
-      "frontCard": "../images/pumpkins/pumpkins-card-front.png",
+      "cardBack": "../images/pumpkins/pumpkins-card-front.png",
       "cards": [
         {
           "id": "1",
@@ -42,6 +42,33 @@
           "clicked": "false"
         }
       ]
+    }
+  ],
+  "highScores": [
+    {
+      "id": "1",
+      "user": "deryn",
+      "score": "15100"
+    },
+    {
+      "id": "2",
+      "user": "nils' baby",
+      "score": "5101"
+    },
+    {
+      "id": "3",
+      "user": "robocop",
+      "score": "8707"
+    },
+    {
+      "id": "4",
+      "user": "hal 9000",
+      "score": "11292"
+    },
+    {
+      "id": "5",
+      "user": "cooper",
+      "score": "4552"
     }
   ]
 }

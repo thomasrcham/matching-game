@@ -22,7 +22,7 @@ function Game() {
 
     // current gamestate
     const [flipped, setFlipped] = useState([]);
-    const [matched, setMatched] = useState(null);
+    const [matched, setMatched] = useState([]);
     const [movesCount, setMovesCount] = useState(0);
     const [newGame, setNewGame] = useState(false);
     const [shuffledDeck, setShuffledDeck] = useState(null);
@@ -36,16 +36,24 @@ function Game() {
     });
 
     // side effects
-    useEffect(() => {
-        fetch(`${backend}/highScores`)
-            .then((r) => r.json())
-            .then((d) => setHighScores(d));
-    }, []);
-
+    // - fetch cards
     useEffect(() => {
         fetch(`${backend}/cardSets`)
             .then((r) => r.json())
             .then((d) => setDecks(d));
+    }, []);
+    // - shuffle the selected deck of cards
+    useEffect(() => {
+        if (decks !== null && deckId !== null) {
+            let singleDeck = decks[deckId];
+            setShuffledDeck([...shuffleDeck(singleDeck.cards)]);
+        }
+    }, [newGame])
+
+    useEffect(() => {
+        fetch(`${backend}/highScores`)
+            .then((r) => r.json())
+            .then((d) => setHighScores(d));
     }, []);
 
     useEffect(() => {
@@ -86,15 +94,6 @@ function Game() {
         return shuffledCards;
     }
 
-
-    useEffect(() => {
-        if (decks !== null && deckId !== null) {
-            let singleDeck = decks[deckId];
-            setShuffledDeck([...shuffleDeck(singleDeck.cards)]);
-            console.log({ shuffledDeck })
-        }
-    }, [newGame])
-
     /**
     *-flipping
     *    - adds one to number of moves // done
@@ -112,25 +111,43 @@ function Game() {
     * @param {array} [matched] state affected - lists successful matches
     */
     function handleFlip(cardClickEvent) {
-        console.log({ cardClickEvent })
         let clickedCardId = cardClickEvent.target.attributes.cardid.value;
         let clickedCardFlippedId = cardClickEvent.target.attributes.flippedid.value;
 
         // adds one to the number of moves
         setMovesCount(movesCount + 1);
-        console.log({ movesCount });
+        // console.log({ movesCount });
 
         //check to see if the flipped state array has two elements in it
-        if (flipped.length >= 2) {
-            console.log(`flipped length: ${flipped.length}`);
-            // setFlipped([])
+        if (flipped.length >= 1) { //once it is 2, check for equality.
+            if (flipped[0] == flipped[1]) {
+                /*
+                if equal
+                     - add score
+                      - add to matched array and removed from flipped array
+                 */
+                console.log("add to score");
+                let newMatchedArray = [...matched, ...flipped];
+                setMatched(newMatchedArray);
+                console.log({ matched });
+            }
+            else {
+                /*
+    *    - if unequal
+    *        - remove from flipped array
+    *        - after some period of time, the cards need to unflip 
+                */
+                setFlipped([]);
+
+            }
+        }
+        else {
+            //adds card to the flipped state array
+            let newFlippedCardsArray = [...flipped, clickedCardFlippedId];
+
+            setFlipped(newFlippedCardsArray);
         }
 
-        //adds card to the flipped state array
-        let newFlippedCardsArray = [...flipped, clickedCardFlippedId];
-
-        setFlipped(newFlippedCardsArray);
-        console.log({ newFlippedCardsArray });
 
         return null;
     }

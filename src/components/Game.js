@@ -1,8 +1,10 @@
 //libraries
 import { useEffect, useState } from "react";
-
+import "@blueprintjs/core/lib/css/blueprint.css";
+import { Overlay, Classes } from "@blueprintjs/core";
+import Confetti from "react-confetti";
+import { NavLink } from "react-router-dom";
 import { Route } from "react-router-dom";
-import Bobverlay from "./Bobverlay";
 import { useStopwatch } from "react-timer-hook";
 //Game Components
 import CardContainer from "./CardContainer";
@@ -11,14 +13,15 @@ import CurrentScore from "./CurrentScore";
 import HighScores from "./HighScores";
 import History from "./History";
 import Sidebar from "./Sidebar";
+// import Bobverlay from "./Bobverlay";
 
 function Game() {
   //variables
   const backend = "http://localhost:3001";
 
-  //state
+  // STATE
 
-  //timer state
+  // will be used to calculate score
   const [calledTimerValue, setCalledTimerValue] = useState("unset");
 
   // current gamestate
@@ -28,11 +31,11 @@ function Game() {
   const [newGame, setNewGame] = useState(false);
   const [shuffledDeck, setShuffledDeck] = useState(null);
 
-  //scoring
+  //d isplays for other pages
   const [highScores, setHighScores] = useState(null);
   const [userHistory, setUserHistory] = useState(null);
 
-  //overlay state
+  // overlay state
   const [isOpen, setIsOpen] = useState(false);
 
   // side effects
@@ -56,7 +59,7 @@ function Game() {
 
   //select and load decks
   const [decks, setDecks] = useState(null);
-  const [deckId, setDeckId] = useState(0);
+  const [deckId, setDeckId] = useState(1);
 
   // timer hook
   const { seconds, minutes, start, pause, reset } = useStopwatch({
@@ -120,7 +123,7 @@ function Game() {
     setIsOpen(true);
     //stop timer
     pause();
-    //*****check score versus high score
+    //*****NEEDS WORK: check score versus high score
     //create new user history object, add to db.json, display in userHistory
     let newUserHistoryObj = {
       moves: movesCount,
@@ -145,9 +148,62 @@ function Game() {
 
   return (
     <div>
+      <div classname="overlay-container">
+        <Overlay
+          className={Classes.OVERLAY_SCROLL_CONTAINER}
+          isOpen={isOpen}
+          hasBackdrop={false}
+        >
+          <Confetti
+            width={window.innerWidth}
+            gravity={0.1}
+            numberOfPieces={1000}
+            tweenDuration={10000}
+          />
+
+          <div className="overlay">
+            <p>Great Job!!</p>
+            <p>
+              Time: {minutes}:{seconds <= 9 ? "0" + seconds : seconds}
+            </p>
+            <p>Matches Attempted: {Math.floor(movesCount / 2)}</p>
+            <p>Final Score: "NEEDS FIXING"</p>
+            <NavLink to="/">
+              <button
+                onClick={() => {
+                  setIsOpen(false);
+                  reset();
+                  setNewGame(!newGame);
+                }}
+              >
+                New Game!
+              </button>
+            </NavLink>
+            <NavLink to="/highScores">
+              <button
+                onClick={() => {
+                  setIsOpen(false);
+                }}
+              >
+                See High Scores
+              </button>
+            </NavLink>
+            <NavLink to="/History">
+              <button
+                onClick={() => {
+                  setIsOpen(false);
+                }}
+              >
+                See Previous Scores
+              </button>
+            </NavLink>
+          </div>
+        </Overlay>
+      </div>
       <div className="sidebar">
         <Sidebar
           CurrentScore={CurrentScore}
+          endGame={endGame}
           minutes={minutes}
           movesCount={movesCount}
           newGame={newGame}
@@ -179,7 +235,7 @@ function Game() {
         <Route path="/History">
           {userHistory ? <History userHistory={userHistory} /> : null}
         </Route>
-        <Route path="/Bobverlay">
+        {/* <Route path="/Bobverlay">
           <Bobverlay
             handleTimerValueSet={handleTimerValueSet}
             start={start}
@@ -195,7 +251,7 @@ function Game() {
             seconds={seconds}
             setNewGame={setNewGame}
           />
-        </Route>
+        </Route> */}
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
-import "@blueprintjs/core/lib/css/blueprint.css";
-import { Overlay, Classes, Button } from "@blueprintjs/core";
-import Confetti from "react-confetti";
-import { NavLink } from "react-router-dom";
+// import "@blueprintjs/core/lib/css/blueprint.css";
+// import { Overlay, Classes, Button } from "@blueprintjs/core";
+// import Confetti from "react-confetti";
+// import { NavLink } from "react-router-dom";
 
 function Bobverlay({
   pause,
@@ -43,17 +43,17 @@ function Bobverlay({
       >
         <h4>ReactJS Blueprint Overlay Component</h4>
 
-        <Button
+        {/* <Button
           onClick={() => {
             setIsOpen(true);
             handleTimerValueSet();
           }}
         >
           Toggle Overlay
-        </Button>
+        </Button> */}
         {/* end testing buttons */}
         {/* create and display end of game overlay*/}
-        <Overlay
+        {/* <Overlay
           className={Classes.OVERLAY_SCROLL_CONTAINER}
           isOpen={isOpen}
           hasBackdrop={false}
@@ -102,7 +102,7 @@ function Bobverlay({
               </button>
             </NavLink>
           </div>
-        </Overlay>
+        </Overlay> */}
       </div>
     </>
   );

@@ -113,6 +113,7 @@ function Game() {
 
   function endGame() {
     setIsOpen(true);
+    pause();
     //check score versus high score
     let newUserHistoryObj = {
       moves: movesCount,
@@ -143,6 +144,7 @@ function Game() {
           minutes={minutes}
           movesCount={movesCount}
           newGame={newGame}
+          reset={reset}
           setNewGame={setNewGame}
           seconds={seconds}
           start={start}

@@ -4,9 +4,7 @@ import Confetti from "react-confetti";
 import { NavLink } from "react-router-dom";
 
 function Bobverlay({
-  start,
   pause,
-  reset,
   handleTimerValueSet,
   setIsOpen,
   endGame,
@@ -14,8 +12,10 @@ function Bobverlay({
   minutes,
   movesCount,
   newGame,
+  reset,
   seconds,
   setNewGame,
+  start,
 }) {
   return (
     <>
@@ -57,8 +57,8 @@ function Bobverlay({
           hasBackdrop={false}
         >
           <Confetti
-            width={window.innerWidths}
-            gravity={0.2}
+            width={window.innerWidth}
+            gravity={0.1}
             numberOfPieces={1000}
             tweenDuration={10000}
           />
@@ -66,14 +66,15 @@ function Bobverlay({
           <div className="overlay">
             <p>Great Job!!</p>
             <p>
-              Time: {minutes}:{seconds}
+              Time: {minutes}:{seconds <= 9 ? "0" + seconds : seconds}
             </p>
             <p>Matches Attempted: {Math.floor(movesCount / 2)}</p>
-            <p>Final Score: 3994</p>
+            <p>Final Score: "NEEDS FIXING"</p>
             <NavLink to="/">
               <button
                 onClick={() => {
                   setIsOpen(false);
+                  reset();
                   setNewGame(!newGame);
                 }}
               >

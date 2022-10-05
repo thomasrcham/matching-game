@@ -10,6 +10,7 @@ function Sidebar({
   start,
   reset,
 }) {
+  //state and function for dropdown
   const [dropDown, setDropDown] = useState(false);
 
   function handleDropDown() {
@@ -19,6 +20,7 @@ function Sidebar({
   return (
     <div className="sidebarComponent">
       <div className="sidebar div top">
+        {/*top of sidebar, buttons for navigation*/}
         <NavLink to="/">
           <button
             onClick={() => {
@@ -45,6 +47,7 @@ function Sidebar({
         </NavLink>
       </div>
       <div className="sidebar div middle">
+        {/*middle of sidebar, display of game state information*/}
         <h3>
           Current Score:
           <br /> NEEDS FIXING
@@ -62,6 +65,7 @@ function Sidebar({
         </h3>
       </div>
       <div className="dd-wrapper">
+        {/*dropdown for choosing card deck*/}
         <div className="dd-header">
           <div className="dd-header-title"></div>
         </div>

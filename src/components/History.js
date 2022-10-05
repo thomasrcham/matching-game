@@ -1,4 +1,5 @@
 function History({ userHistory }) {
+  //creates display of historical games
   let historyToDisplay = userHistory.map((entry) => (
     <tr key={entry.id}>
       <td>{entry.dateTime}</td>

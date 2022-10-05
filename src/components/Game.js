@@ -63,6 +63,8 @@ function Game() {
     autoStart: false,
   });
 
+  //handle timer for scoring
+
   function handleTimerValueSet() {
     let totalTime = minutes * 60 + seconds;
     setCalledTimerValue(totalTime);
@@ -111,10 +113,15 @@ function Game() {
     return null;
   }
 
+  //function to call when end of game is called
+
   function endGame() {
+    //open overlay
     setIsOpen(true);
+    //stop timer
     pause();
-    //check score versus high score
+    //*****check score versus high score
+    //create new user history object, add to db.json, display in userHistory
     let newUserHistoryObj = {
       moves: movesCount,
       timer: {

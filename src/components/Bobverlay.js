@@ -13,7 +13,9 @@ function Bobverlay({
   isOpen,
   minutes,
   movesCount,
+  newGame,
   seconds,
+  setNewGame,
 }) {
   return (
     <>
@@ -54,7 +56,12 @@ function Bobverlay({
           isOpen={isOpen}
           hasBackdrop={false}
         >
-          <Confetti width={window.innerWidths} />
+          <Confetti
+            width={window.innerWidths}
+            gravity={0.2}
+            numberOfPieces={1000}
+            tweenDuration={10000}
+          />
 
           <div className="overlay">
             <p>Great Job!!</p>
@@ -67,6 +74,7 @@ function Bobverlay({
               <button
                 onClick={() => {
                   setIsOpen(false);
+                  setNewGame(!newGame);
                 }}
               >
                 New Game!

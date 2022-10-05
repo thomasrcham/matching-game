@@ -181,7 +181,9 @@ function Game() {
             isOpen={isOpen}
             minutes={minutes}
             movesCount={movesCount}
+            newGame={newGame}
             seconds={seconds}
+            setNewGame={setNewGame}
           />
         </Route>
       </div>

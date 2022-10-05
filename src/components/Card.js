@@ -1,23 +1,21 @@
 import { useState, useEffect } from "react";
 
 function Card({ card, cardBack, flipped, handleFlip, setName, matched }) {
-  const [clicked, setClicked] = useState(false);
+  const [amIFlipped, setAmIFlipped] = useState(false);
 
   useEffect(() => {
     console.log("a card was clicked")
-  }, [clicked]);
-
-
+  }, [amIFlipped]);
 
   return <img
     className="card"
     cardid={card.id} //adds card value to event for handleflip
     flippedid={card.flippedid} //adds card id to event for handleflip
-    src={clicked ? card.image : cardBack}
+    src={amIFlipped ? card.image : cardBack}
     alt={card.alt}
     onClick={(event) => {
       handleFlip(event);
-      setClicked(!clicked);
+      setAmIFlipped(!amIFlipped);
     }}
   />
 

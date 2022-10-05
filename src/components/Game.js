@@ -64,31 +64,20 @@ function Game() {
     //shuffle the cards before handing to component because React hates conditionally calling hooks (and you can't shuffle until the deck is available)
 
     function shuffleDeck(deckToShuffle) {
-        //duplicates the deck
-        let dupedCards = [...deckToShuffle];
-        dupedCards = [...dupedCards, ...deckToShuffle];
-        console.log({ dupedCards });
+        //duplicates the deck with a shallow copy
+        let dupedCards = [...deckToShuffle, ...deckToShuffle];
 
-        //test duplicates the deck using json parsing + stringify
+        //duplicates the deck using json parsing + stringify to force a deeper copy
         let clonedArray = dupedCards.map((card) => {
             let newCardElement = JSON.parse(JSON.stringify(card))
             return newCardElement;
         })
-        console.log({ clonedArray });
-
-        let clonedArrayWithFlippedId = clonedArray.map((card, index) => {
+        let shuffledCards = clonedArray.map((card, index) => {
             card.flippedid = index
             return card;
         })
-        console.log({ clonedArrayWithFlippedId });
+        //end duplicating
 
-        //end test
-
-        let shuffledCards = dupedCards.map((card, index) => {
-            card.flippedid = index
-            return card;
-        })
-        console.log({ shuffledCards })
         // https://www.w3docs.com/snippets/javascript/how-to-randomize-shuffle-a-javascript-array.html
         for (let i = shuffledCards.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -124,14 +113,18 @@ function Game() {
     */
     function handleFlip(cardClickEvent) {
         console.log({ cardClickEvent })
+        let clickedCardId = cardClickEvent.target.attributes.cardid.value;
+        let clickedCardFlippedId = cardClickEvent.target.attributes.flippedid.value;
 
         // adds one to the number of moves
         setMovesCount(movesCount + 1);
         console.log({ movesCount });
 
         //adds card to the flipped state array
-        let newFlippedStateArray = `card value: ${cardClickEvent.target.attributes.cardid.value}; card id: ${cardClickEvent.target.attributes.flippedid.value}`;
-        console.log({ newFlippedStateArray })
+
+
+        let newFlippedStateArrayLog = `card value: ${clickedCardId}; card id: ${clickedCardFlippedId}`;
+        console.log({ newFlippedStateArrayLog })
 
         return null;
     }

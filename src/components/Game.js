@@ -112,7 +112,7 @@ function Game() {
   }
 
   function endGame() {
-    //set bobverlay to true
+    setIsOpen(true);
     //check score versus high score
     let newUserHistoryObj = {
       moves: movesCount,

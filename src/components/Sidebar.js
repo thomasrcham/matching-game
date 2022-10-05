@@ -11,14 +11,16 @@ function Sidebar({ minutes, newGame, seconds, setNewGame, movesCount }) {
   return (
     <div className="sidebarComponent">
       <div className="sidebar div top">
-        <button
-          onClick={() => {
-            setNewGame(!newGame);
-          }}
-        >
-          {" "}
-          New Game{" "}
-        </button>
+        <NavLink to="/">
+          <button
+            onClick={() => {
+              setNewGame(!newGame);
+            }}
+          >
+            {" "}
+            New Game{" "}
+          </button>
+        </NavLink>
         <NavLink to="/">
           <button> Existing Game </button>
         </NavLink>

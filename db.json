@@ -109,13 +109,56 @@
           "clicked": "false"
         }
       ]
+    },
+    {
+      "id": 2,
+      "setName": "halloween",
+      "cardBack": "../images/halloween/halloween-card-back.png",
+      "cards": [
+        {
+          "id": "1",
+          "image": "./images/halloween/halloween-1.png",
+          "alt": "hat",
+          "clicked": "false"
+        },
+        {
+          "id": "2",
+          "image": "./images/halloween/halloween-2.png",
+          "alt": "candy",
+          "clicked": "false"
+        },
+        {
+          "id": "3",
+          "image": "./images/halloween/halloween-3.png",
+          "alt": "web",
+          "clicked": "false"
+        },
+        {
+          "id": "4",
+          "image": "./images/halloween/halloween-4.png",
+          "alt": "ghost",
+          "clicked": "false"
+        },
+        {
+          "id": "5",
+          "image": "./images/halloween/halloween-5.png",
+          "alt": "cat",
+          "clicked": "false"
+        },
+        {
+          "id": "6",
+          "image": "./images/halloween/halloween-6.png",
+          "alt": "bats",
+          "clicked": "false"
+        }
+      ]
     }
   ],
   "highScores": [
     {
       "id": "1",
       "user": "deryn",
-      "score": "15100"
+      "score": "5100"
     },
     {
       "id": "2",
@@ -146,7 +189,6 @@
   "userHistory": [
     {
       "id": "1",
-      "user": "reese",
       "moves": "21",
       "timer": {
         "minutes": "4",
@@ -157,7 +199,6 @@
     },
     {
       "id": "2",
-      "user": "reese",
       "moves": "19",
       "timer": {
         "minutes": "4",
@@ -165,6 +206,46 @@
       },
       "score": "5536",
       "dateTime": ""
+    },
+    {
+      "moves": 0,
+      "timer": {
+        "minutes": 0,
+        "seconds": 0
+      },
+      "score": "{USERSCORE-DOES-NOT-EXIST}",
+      "dateTime": "10/5/2022, 4:30:17 PM",
+      "id": "j7na0D_"
+    },
+    {
+      "moves": 0,
+      "timer": {
+        "minutes": 0,
+        "seconds": 3
+      },
+      "score": "{USERSCORE-DOES-NOT-EXIST}",
+      "dateTime": "10/5/2022, 4:31:03 PM",
+      "id": "UYD3M8A"
+    },
+    {
+      "moves": 0,
+      "timer": {
+        "minutes": 0,
+        "seconds": 0
+      },
+      "score": "{USERSCORE-DOES-NOT-EXIST}",
+      "dateTime": "10/5/2022, 4:32:06 PM",
+      "id": "a-v1I46"
+    },
+    {
+      "moves": 0,
+      "timer": {
+        "minutes": 0,
+        "seconds": 0
+      },
+      "score": "{USERSCORE-DOES-NOT-EXIST}",
+      "dateTime": "10/5/2022, 4:33:28 PM",
+      "id": "wcGuWln"
     }
   ]
 }

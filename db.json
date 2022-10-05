@@ -54,6 +54,61 @@
           "clicked": "false"
         }
       ]
+    },
+    {
+      "id": 2,
+      "setName": "leaves",
+      "cardBack": "../images/leaves/leaves-card-front.png",
+      "cards": [      
+        {
+          "id": "1",
+          "image": "./images/leaves/leaves-1.png",
+          "alt": "red, 7 points, wide",
+          "clicked": "false"
+        },
+        {
+          "id": "2",
+          "image": "./images/leaves/leaves-2.png",
+          "alt": "light green, 1 leaf, thin",
+          "clicked": "false"
+        },
+        {
+          "id": "3",
+          "image": "./images/leaves/leaves-3.png",
+          "alt": "yellow, 3 leaves, triangle shape",
+          "clicked": "false"
+        },
+        {
+          "id": "4",
+          "image": "./images/leaves/leaves-4.png",
+          "alt": "dark green, 1 leaf, thin",
+          "clicked": "false"
+        },
+        {
+          "id": "5",
+          "image": "./images/leaves/leaves-5.png",
+          "alt": "orange, 6 points, wide",
+          "clicked": "false"
+        },
+        {
+          "id": "6",
+          "image": "./images/leaves/leaves-6.png",
+          "alt": "light green, 1 leaf, wide, heart-shape",
+          "clicked": "false"
+        },
+        {
+          "id": "7",
+          "image": "./images/leaves/leaves-7.png",
+          "alt": "red, 1 leaf, many points, thin",
+          "clicked": "false"
+        },
+        {
+          "id": "8",
+          "image": "./images/leaves/leaves-8.png",
+          "alt": "yellow, 7 leaves, flowery, wide",
+          "clicked": "false"
+        }
+      ]
     }
   ],
   "highScores": [

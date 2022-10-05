@@ -11,6 +11,7 @@ import CurrentScore from "./CurrentScore";
 import HighScores from "./HighScores";
 import History from "./History";
 import Sidebar from "./Sidebar";
+import CreditOverlay from "./CreditOverlay";
 
 function Game() {
   //variables
@@ -34,6 +35,7 @@ function Game() {
 
   //overlay state
   const [isOpen, setIsOpen] = useState(false);
+  const [creditsOpen, setCreditsOpen] = useState(true);
 
   // side effects
   useEffect(() => {
@@ -120,6 +122,8 @@ function Game() {
           newGame={newGame}
           setNewGame={setNewGame}
           seconds={seconds}
+          creditsOpen={creditsOpen}
+          setCreditsOpen={setCreditsOpen}
         />
       </div>
       <div className="mainWindow">
@@ -153,8 +157,16 @@ function Game() {
             setIsOpen={setIsOpen}
             isOpen={isOpen}
             calledTimerValue={calledTimerValue}
+            creditsOpen={creditsOpen}
+            setCreditsOpen={setCreditsOpen}
           />
         </Route>
+        {/* <Route>
+          <CreditOverlay
+            creditsOpen={creditsOpen}
+            setCreditsOpen={setCreditsOpen}
+          />
+        </Route> */}
       </div>
     </div>
   );

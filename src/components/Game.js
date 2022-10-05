@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 
 import { Route } from "react-router-dom";
-import Bobverlay from "./Bobverlay";
 import { useStopwatch } from "react-timer-hook";
 //Game Components
 import CardContainer from "./CardContainer";
@@ -11,14 +10,15 @@ import CurrentScore from "./CurrentScore";
 import HighScores from "./HighScores";
 import History from "./History";
 import Sidebar from "./Sidebar";
+import Bobverlay from "./Bobverlay";
 
 function Game() {
   //variables
   const backend = "http://localhost:3001";
 
-  //state
+  // STATE
 
-  //timer state
+  // will be used to calculate score
   const [calledTimerValue, setCalledTimerValue] = useState("unset");
 
   // current gamestate
@@ -28,11 +28,11 @@ function Game() {
   const [newGame, setNewGame] = useState(false);
   const [shuffledDeck, setShuffledDeck] = useState(null);
 
-  //scoring
+  //d isplays for other pages
   const [highScores, setHighScores] = useState(null);
   const [userHistory, setUserHistory] = useState(null);
 
-  //overlay state
+  // overlay state
   const [isOpen, setIsOpen] = useState(false);
 
   // side effects
@@ -120,7 +120,7 @@ function Game() {
     setIsOpen(true);
     //stop timer
     pause();
-    //*****check score versus high score
+    //*****NEEDS WORK: check score versus high score
     //create new user history object, add to db.json, display in userHistory
     let newUserHistoryObj = {
       moves: movesCount,

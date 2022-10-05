@@ -54,7 +54,7 @@ function Bobverlay({
           isOpen={isOpen}
           hasBackdrop={false}
         >
-          <Confetti />
+          <Confetti width={window.innerWidths} />
 
           <div className="overlay">
             <p>Great Job!!</p>

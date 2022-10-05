@@ -57,8 +57,8 @@ function Bobverlay({
           hasBackdrop={false}
         >
           <Confetti
-            width={window.innerWidths}
-            gravity={0.2}
+            width={window.innerWidth}
+            gravity={0.1}
             numberOfPieces={1000}
             tweenDuration={10000}
           />

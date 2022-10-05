@@ -79,7 +79,6 @@
   "userHistory": [
     {
       "id": "1",
-      "user": "reese",
       "moves": "21",
       "timer": {
         "minutes": "4",
@@ -90,7 +89,6 @@
     },
     {
       "id": "2",
-      "user": "reese",
       "moves": "19",
       "timer": {
         "minutes": "4",

@@ -10,6 +10,7 @@ function Bobverlay({
   reset,
   handleTimerValueSet,
   setIsOpen,
+  endGame,
   isOpen,
   minutes,
   movesCount,
@@ -28,6 +29,9 @@ function Bobverlay({
         Reset
       </button>
       <button onClick={handleTimerValueSet}>log score</button>
+      <div>
+        <button onClick={endGame}>EndGame Test</button>
+      </div>
       <div
         style={{
           display: "block",

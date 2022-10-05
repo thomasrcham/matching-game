@@ -40,6 +40,18 @@
           "image": "./images/pumpkins/pumpkins-6.png",
           "alt": "crescent eyes left, O mouth",
           "clicked": "false"
+        },
+        {
+        "id": "7",
+        "image": "./images/pumpkins/pumpkins-7.png",
+        "alt": "sad eyes, pointy mouth",
+        "clicked": "false"
+        },
+        {
+          "id": "8",
+          "image": "./images/pumpkins/pumpkins-8.png",
+          "alt": "rectangle eyes, rectangle mouth",
+          "clicked": "false"
         }
       ]
     }

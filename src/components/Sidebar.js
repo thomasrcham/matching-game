@@ -44,13 +44,11 @@ function Sidebar({ minutes, newGame, seconds, setNewGame }) {
         <h3 className="timer">
           Timer: <br /> {minutes}:{seconds <= 9 ? "0" + seconds : seconds}
         </h3>
-
       </div>
       <div className="dd-wrapper">
         <div className="dd-header">
           <div className="dd-header-title"></div>
         </div>
-
         {dropDown ? (
           <div className="dd-list">
             <button onClick={handleDropDown} id="choose-theme-button">
@@ -77,6 +75,15 @@ function Sidebar({ minutes, newGame, seconds, setNewGame }) {
           </div>
         )}
       </div>
+      {/* <div>
+        <button
+        onClick={() => {
+          setNewGame(!newGame)
+        }}> Credits </button>
+        <NavLink to="/CreditsOverlay">
+          <button> Credits</button>
+        </NavLink>
+      </div> */}
     </div>
   );
 }

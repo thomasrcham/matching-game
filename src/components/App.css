@@ -73,6 +73,7 @@ img.card {
   min-height: 50%;
   max-height: 400px;
   max-width: 800px;
+  place-items: center;
 }
 
 .displayWrapper img {

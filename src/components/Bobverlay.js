@@ -11,7 +11,9 @@ function Bobverlay({
   handleTimerValueSet,
   setIsOpen,
   isOpen,
-  calledTimerValue,
+  minutes,
+  movesCount,
+  seconds,
 }) {
   return (
     <>
@@ -44,15 +46,13 @@ function Bobverlay({
           Toggle Overlay
         </Button>
 
-        <Overlay
-          className={Classes.OVERLAY_SCROLL_CONTAINER}
-          isOpen={isOpen}
-          calledTimerValue={calledTimerValue}
-        >
+        <Overlay className={Classes.OVERLAY_SCROLL_CONTAINER} isOpen={isOpen}>
           <div className="overlay">
             <p>Great Job!!</p>
-            <p>Time: {calledTimerValue}</p>
-            <p>Total Moves: 4</p>
+            <p>
+              Time: {minutes}:{seconds}
+            </p>
+            <p>Matches Attempted: {Math.floor(movesCount / 2)}</p>
             <p>Final Score: 3994</p>
             <NavLink to="/">
               <button

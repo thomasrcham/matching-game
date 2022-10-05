@@ -13,6 +13,7 @@ import CurrentScore from "./CurrentScore";
 import HighScores from "./HighScores";
 import History from "./History";
 import Sidebar from "./Sidebar";
+
 // import Bobverlay from "./Bobverlay";
 
 function Game() {
@@ -37,6 +38,7 @@ function Game() {
 
   // overlay state
   const [isOpen, setIsOpen] = useState(false);
+  const [creditsOpen, setCreditsOpen] = useState(true);
 
   // side effects
   useEffect(() => {
@@ -210,7 +212,6 @@ function Game() {
           reset={reset}
           setNewGame={setNewGame}
           seconds={seconds}
-          start={start}
         />
       </div>
       <div className="mainWindow">
@@ -251,6 +252,7 @@ function Game() {
             seconds={seconds}
             setNewGame={setNewGame}
           />
+
         </Route> */}
       </div>
     </div>

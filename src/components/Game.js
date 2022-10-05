@@ -21,7 +21,7 @@ function Game() {
     const [deckId, setDeckId] = useState(0);
 
     // current gamestate
-    const [flipped, setFlipped] = useState(null);
+    const [flipped, setFlipped] = useState([]);
     const [matched, setMatched] = useState(null);
     const [movesCount, setMovesCount] = useState(0);
     const [newGame, setNewGame] = useState(false);
@@ -98,8 +98,8 @@ function Game() {
     /**
     *-flipping
     *    - adds one to number of moves // done
+    *     - check for array length of 2 
     *    - adds cards to the flipped state array
-    *    - check for array length of 2 
     *- once it is 2, check for equality.
     *    - if equal
     *        - add score
@@ -120,11 +120,17 @@ function Game() {
         setMovesCount(movesCount + 1);
         console.log({ movesCount });
 
+        //check to see if the flipped state array has two elements in it
+        if (flipped.length >= 2) {
+            console.log(`flipped length: ${flipped.length}`);
+            // setFlipped([])
+        }
+
         //adds card to the flipped state array
+        let newFlippedCardsArray = [...flipped, clickedCardFlippedId];
 
-
-        let newFlippedStateArrayLog = `card value: ${clickedCardId}; card id: ${clickedCardFlippedId}`;
-        console.log({ newFlippedStateArrayLog })
+        setFlipped(newFlippedCardsArray);
+        console.log({ newFlippedCardsArray });
 
         return null;
     }

@@ -1,8 +1,7 @@
 import "@blueprintjs/core/lib/css/blueprint.css";
 import { Overlay, Classes, Button } from "@blueprintjs/core";
-
+import Confetti from "react-confetti";
 import { NavLink } from "react-router-dom";
-// import MyStopwatch from "./Stopwatch";
 
 function Bobverlay({
   start,
@@ -50,7 +49,13 @@ function Bobverlay({
           Toggle Overlay
         </Button>
 
-        <Overlay className={Classes.OVERLAY_SCROLL_CONTAINER} isOpen={isOpen}>
+        <Overlay
+          className={Classes.OVERLAY_SCROLL_CONTAINER}
+          isOpen={isOpen}
+          hasBackdrop={false}
+        >
+          <Confetti width={window.innerWidths} />
+
           <div className="overlay">
             <p>Great Job!!</p>
             <p>

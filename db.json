@@ -42,6 +42,49 @@
           "clicked": "false"
         }
       ]
+    },
+    {
+      "id": 2,
+      "setName": "halloween",
+      "cardBack": "../images/halloween/halloween-card-back.png",
+      "cards": [
+        {
+          "id": "1",
+          "image": "./images/halloween/halloween-1.png",
+          "alt": "hat",
+          "clicked": "false"
+        },
+        {
+          "id": "2",
+          "image": "./images/halloween/halloween-2.png",
+          "alt": "candy",
+          "clicked": "false"
+        },
+        {
+          "id": "3",
+          "image": "./images/halloween/halloween-3.png",
+          "alt": "web",
+          "clicked": "false"
+        },
+        {
+          "id": "4",
+          "image": "./images/halloween/halloween-4.png",
+          "alt": "ghost",
+          "clicked": "false"
+        },
+        {
+          "id": "5",
+          "image": "./images/halloween/halloween-5.png",
+          "alt": "cat",
+          "clicked": "false"
+        },
+        {
+          "id": "6",
+          "image": "./images/halloween/halloween-6.png",
+          "alt": "bats",
+          "clicked": "false"
+        }
+      ]
     }
   ],
   "highScores": [

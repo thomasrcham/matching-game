@@ -76,11 +76,11 @@ function Sidebar({ minutes, newGame, seconds, setNewGame, CreditOverlay }) {
           </div>
         )}
       </div>
-      <div>
+      {/* <div>
         <NavLink to="/CreditsOverlay">
           <button onClick={() => CreditOverlay()}> Credits</button>
         </NavLink>
-      </div>
+      </div> */}
     </div>
   );
 }

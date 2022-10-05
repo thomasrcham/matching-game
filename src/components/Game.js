@@ -56,7 +56,7 @@ function Game() {
 
   //select and load decks
   const [decks, setDecks] = useState(null);
-  const [deckId, setDeckId] = useState(0);
+  const [deckId, setDeckId] = useState(1);
 
   // timer hook
   const { seconds, minutes, start, pause, reset } = useStopwatch({

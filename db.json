@@ -96,36 +96,6 @@
       },
       "score": "5536",
       "dateTime": ""
-    },
-    {
-      "moves": 23,
-      "timer": {
-        "minutes": 1,
-        "seconds": 10
-      },
-      "score": "{USERSCORE-DOES-NOT-EXIST}",
-      "dateTime": "10/5/2022, 1:03:48 PM",
-      "id": "qF17DJp"
-    },
-    {
-      "moves": 23,
-      "timer": {
-        "minutes": 1,
-        "seconds": 34
-      },
-      "score": "{USERSCORE-DOES-NOT-EXIST}",
-      "dateTime": "10/5/2022, 1:04:12 PM",
-      "id": "0PIUgHG"
-    },
-    {
-      "moves": 23,
-      "timer": {
-        "minutes": 1,
-        "seconds": 43
-      },
-      "score": "{USERSCORE-DOES-NOT-EXIST}",
-      "dateTime": "10/5/2022, 1:04:22 PM",
-      "id": "8yaDKz2"
     }
   ]
 }

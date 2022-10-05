@@ -111,6 +111,30 @@ function Game() {
     return null;
   }
 
+  function endGame() {
+    //set bobverlay to true
+    //check score versus high score
+    let newUserHistoryObj = {
+      moves: movesCount,
+      timer: {
+        minutes: minutes,
+        seconds: seconds,
+      },
+      score: "{USERSCORE-DOES-NOT-EXIST}",
+      dateTime: new Date().toLocaleString() + "",
+    };
+    fetch(`${backend}/userHistory`, {
+      method: "POST",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify(newUserHistoryObj),
+    })
+      .then((r) => r.json())
+      .then((d) => {
+        const addToUserHistory = [...userHistory, d];
+        setUserHistory(addToUserHistory);
+      });
+  }
+
   return (
     <div>
       <div className="sidebar">
@@ -152,6 +176,8 @@ function Game() {
             pause={pause}
             reset={reset}
             setIsOpen={setIsOpen}
+            backend={backend}
+            endGame={endGame}
             isOpen={isOpen}
             minutes={minutes}
             movesCount={movesCount}

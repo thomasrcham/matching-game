@@ -1,20 +1,24 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-function Sidebar({ minutes, newGame, seconds, setNewGame }) {
+function Sidebar({ minutes, newGame, seconds, setNewGame, movesCount }) {
   const [dropDown, setDropDown] = useState(false);
 
   function handleDropDown() {
     setDropDown((dropDown) => !dropDown);
   }
 
-
   return (
     <div className="sidebarComponent">
       <div className="sidebar div top">
-        <button onClick={() => {
-          setNewGame(!newGame)
-        }}> New Game </button>
+        <button
+          onClick={() => {
+            setNewGame(!newGame);
+          }}
+        >
+          {" "}
+          New Game{" "}
+        </button>
         <NavLink to="/">
           <button> Existing Game </button>
         </NavLink>
@@ -38,13 +42,12 @@ function Sidebar({ minutes, newGame, seconds, setNewGame }) {
           <br /> 3
         </h3>
         <h3>
-          Moves Remaining:
-          <br /> 17
+          Matches Attempted:
+          <br /> {Math.floor(movesCount / 2)}
         </h3>
         <h3 className="timer">
           Timer: <br /> {minutes}:{seconds <= 9 ? "0" + seconds : seconds}
         </h3>
-
       </div>
       <div className="dd-wrapper">
         <div className="dd-header">

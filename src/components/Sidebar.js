@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { startTransition, useState } from "react";
 import { NavLink } from "react-router-dom";
 
-function Sidebar({ minutes, newGame, seconds, setNewGame, movesCount }) {
+function Sidebar({ minutes, movesCount, newGame, seconds, setNewGame, start }) {
   const [dropDown, setDropDown] = useState(false);
 
   function handleDropDown() {
@@ -15,6 +15,7 @@ function Sidebar({ minutes, newGame, seconds, setNewGame, movesCount }) {
           <button
             onClick={() => {
               setNewGame(!newGame);
+              start();
             }}
           >
             {" "}

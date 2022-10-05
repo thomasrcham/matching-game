@@ -112,7 +112,7 @@ function Game() {
   }
 
   function endGame() {
-    //set bobverlay to true
+    setIsOpen(true);
     //check score versus high score
     let newUserHistoryObj = {
       moves: movesCount,
@@ -141,10 +141,11 @@ function Game() {
         <Sidebar
           CurrentScore={CurrentScore}
           minutes={minutes}
+          movesCount={movesCount}
           newGame={newGame}
           setNewGame={setNewGame}
           seconds={seconds}
-          movesCount={movesCount}
+          start={start}
         />
       </div>
       <div className="mainWindow">

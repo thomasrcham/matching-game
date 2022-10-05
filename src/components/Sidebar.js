@@ -1,7 +1,8 @@
-import React, { startTransition, useState } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 function Sidebar({
+  endGame,
   minutes,
   movesCount,
   newGame,
@@ -45,6 +46,7 @@ function Sidebar({
         <NavLink to="/Bobverlay">
           <button> Overlay Testing</button>
         </NavLink>
+        <button onClick={endGame}>end</button>
       </div>
       <div className="sidebar div middle">
         {/*middle of sidebar, display of game state information*/}

@@ -1,6 +1,9 @@
 //libraries
 import { useEffect, useState } from "react";
-
+import "@blueprintjs/core/lib/css/blueprint.css";
+import { Overlay, Classes } from "@blueprintjs/core";
+import Confetti from "react-confetti";
+import { NavLink } from "react-router-dom";
 import { Route } from "react-router-dom";
 import { useStopwatch } from "react-timer-hook";
 //Game Components
@@ -10,7 +13,7 @@ import CurrentScore from "./CurrentScore";
 import HighScores from "./HighScores";
 import History from "./History";
 import Sidebar from "./Sidebar";
-import Bobverlay from "./Bobverlay";
+// import Bobverlay from "./Bobverlay";
 
 function Game() {
   //variables
@@ -145,9 +148,62 @@ function Game() {
 
   return (
     <div>
+      <div classname="overlay-container">
+        <Overlay
+          className={Classes.OVERLAY_SCROLL_CONTAINER}
+          isOpen={isOpen}
+          hasBackdrop={false}
+        >
+          <Confetti
+            width={window.innerWidth}
+            gravity={0.1}
+            numberOfPieces={1000}
+            tweenDuration={10000}
+          />
+
+          <div className="overlay">
+            <p>Great Job!!</p>
+            <p>
+              Time: {minutes}:{seconds <= 9 ? "0" + seconds : seconds}
+            </p>
+            <p>Matches Attempted: {Math.floor(movesCount / 2)}</p>
+            <p>Final Score: "NEEDS FIXING"</p>
+            <NavLink to="/">
+              <button
+                onClick={() => {
+                  setIsOpen(false);
+                  reset();
+                  setNewGame(!newGame);
+                }}
+              >
+                New Game!
+              </button>
+            </NavLink>
+            <NavLink to="/highScores">
+              <button
+                onClick={() => {
+                  setIsOpen(false);
+                }}
+              >
+                See High Scores
+              </button>
+            </NavLink>
+            <NavLink to="/History">
+              <button
+                onClick={() => {
+                  setIsOpen(false);
+                }}
+              >
+                See Previous Scores
+              </button>
+            </NavLink>
+          </div>
+        </Overlay>
+      </div>
       <div className="sidebar">
         <Sidebar
           CurrentScore={CurrentScore}
+          endGame={endGame}
           minutes={minutes}
           movesCount={movesCount}
           newGame={newGame}
@@ -179,7 +235,7 @@ function Game() {
         <Route path="/History">
           {userHistory ? <History userHistory={userHistory} /> : null}
         </Route>
-        <Route path="/Bobverlay">
+        {/* <Route path="/Bobverlay">
           <Bobverlay
             handleTimerValueSet={handleTimerValueSet}
             start={start}
@@ -195,7 +251,7 @@ function Game() {
             seconds={seconds}
             setNewGame={setNewGame}
           />
-        </Route>
+        </Route> */}
       </div>
     </div>
   );

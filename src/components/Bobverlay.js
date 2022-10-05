@@ -17,6 +17,7 @@ function Bobverlay({
   setNewGame,
   start,
 }) {
+  //start testing buttons. will not be in final commit
   return (
     <>
       <button onClick={start}>Start</button>
@@ -50,7 +51,8 @@ function Bobverlay({
         >
           Toggle Overlay
         </Button>
-
+        {/* end testing buttons */}
+        {/* create and display end of game overlay*/}
         <Overlay
           className={Classes.OVERLAY_SCROLL_CONTAINER}
           isOpen={isOpen}

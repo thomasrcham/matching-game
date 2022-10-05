@@ -121,16 +121,20 @@ function Game() {
         console.log({ movesCount });
 
         //check to see if the flipped state array has two elements in it
-        if (flipped.length >= 2) {
+        if (flipped.length <= 1) {
             console.log(`flipped length: ${flipped.length}`);
             // setFlipped([])
+
+            //adds card to the flipped state array
+            let newFlippedCardsArray = [...flipped, clickedCardFlippedId];
+
+            setFlipped(newFlippedCardsArray);
+            console.log({ newFlippedCardsArray });
         }
-
-        //adds card to the flipped state array
-        let newFlippedCardsArray = [...flipped, clickedCardFlippedId];
-
-        setFlipped(newFlippedCardsArray);
-        console.log({ newFlippedCardsArray });
+        else {
+            console.log(`flipped length: ${flipped.length}`);
+            console.log({ flipped });
+        }
 
         return null;
     }

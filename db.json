@@ -81,7 +81,10 @@
       "id": "1",
       "user": "reese",
       "moves": "21",
-      "timer": "1552",
+      "timer": {
+        "minutes": "4",
+        "seconds": "22"
+      },
       "score": "4546",
       "dateTime": ""
     },
@@ -89,7 +92,10 @@
       "id": "2",
       "user": "reese",
       "moves": "19",
-      "timer": "1342",
+      "timer": {
+        "minutes": "4",
+        "seconds": "51"
+      },
       "score": "5536",
       "dateTime": ""
     }

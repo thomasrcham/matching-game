@@ -1,5 +1,6 @@
 //libraries
 import { useEffect, useState } from "react";
+
 import { BrowserRouter, Route } from "react-router-dom";
 import Bobverlay from "./Bobverlay";
 import { useStopwatch } from "react-timer-hook"
@@ -11,15 +12,16 @@ import HighScores from "./HighScores";
 import History from "./History";
 import Sidebar from "./Sidebar";
 
+
 function Game() {
-    //variables
-    const backend = "http://localhost:3001";
+  //variables
+  const backend = "http://localhost:3001";
 
-    //state
+  //state
 
-    //select and load decks
-    const [decks, setDecks] = useState(null);
-    const [deckId, setDeckId] = useState(0);
+  //timer state
+  const [calledTimerValue, setCalledTimerValue] = useState("unset");
+
 
     // current gamestate
     const [flipped, setFlipped] = useState(null);
@@ -31,6 +33,9 @@ function Game() {
     //scoring
     const [highScores, setHighScores] = useState(null);
     const [userHistory, setUserHistory] = useState(null);
+        
+    //overlay state
+    const [isOpen, setIsOpen] = useState(false);
 
     const { seconds, minutes, isRunning, start, pause, reset } = useStopwatch({
         autoStart: false,
@@ -43,17 +48,28 @@ function Game() {
             .then((d) => setHighScores(d));
     }, []);
 
-    useEffect(() => {
-        fetch(`${backend}/cardSets`)
-            .then((r) => r.json())
-            .then((d) => setDecks(d));
-    }, []);
+  //select and load decks
+  const [decks, setDecks] = useState(null);
+  const [deckId, setDeckId] = useState(0);
 
-    useEffect(() => {
-        fetch(`${backend}/userHistory`)
-            .then((r) => r.json())
-            .then((d) => setUserHistory(d));
-    }, []);
+  // timer hook
+  const { seconds, minutes, start, pause, reset } = useStopwatch({
+    autoStart: false,
+  });
+
+
+  useEffect(() => {
+    fetch(`${backend}/highScores`)
+      .then((r) => r.json())
+      .then((d) => setHighScores(d));
+  }, []);
+
+  useEffect(() => {
+    fetch(`${backend}/cardSets`)
+      .then((r) => r.json())
+      .then((d) => setDecks(d));
+  }, []);
+
 
     //game logic
 
@@ -133,12 +149,31 @@ function Game() {
                 </Route>
                 <Route path="/History">
                     {userHistory ? <History userHistory={userHistory} /> : null}
-                </Route>
-                <Route path="/Bobverlay">
-                    <Bobverlay handleTimerToScore={handleTimerToScore} start={start} pause={pause} reset={reset} />
-                </Route>
+        <Route path="/Bobverlay">
+          <Bobverlay
+            handleTimerValueSet={handleTimerValueSet}
+            start={start}
+            pause={pause}
+            reset={reset}
+            setIsOpen={setIsOpen}
+            isOpen={isOpen}
+            calledTimerValue={calledTimerValue}
+          />
+        </Route>
             </div>
         </div >
     );
+    
+    useEffect(() => {
+    fetch(`${backend}/userHistory`)
+      .then((r) => r.json())
+      .then((d) => setUserHistory(d));
+  }, []);
+
+  function handleTimerValueSet() {
+    let totalTime = minutes * 60 + seconds;
+    setCalledTimerValue(totalTime);
+  }
+
 }
 export default Game;

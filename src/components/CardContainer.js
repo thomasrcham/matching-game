@@ -12,12 +12,12 @@ function CardContainer({ decks, deckId, flipped, handleFlip, setFlipped, matched
     <Card
       key={`tableau${deckId}${index}`} //fix this later TODO
       card={card}
-      cardBack={decks[deckId].cardBack}
-      handleFlip={handleFlip}
-      flipped={flipped}
-      matched={matched}
-      setFlipped={setFlipped}
       setName={decks[deckId].setName}
+      cardBack={decks[deckId].cardBack}
+      matched={matched}
+      flipped={flipped}
+      handleFlip={handleFlip}
+      setFlipped={setFlipped}
     />
   ));
 

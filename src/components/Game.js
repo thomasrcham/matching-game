@@ -153,7 +153,9 @@ function Game() {
             reset={reset}
             setIsOpen={setIsOpen}
             isOpen={isOpen}
-            calledTimerValue={calledTimerValue}
+            minutes={minutes}
+            movesCount={movesCount}
+            seconds={seconds}
           />
         </Route>
       </div>

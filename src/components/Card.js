@@ -11,6 +11,8 @@ function Card({ card, cardBack, flipped, handleFlip, setName, matched }) {
 
   return <img
     className="card"
+    cardid={card.id} //adds card value to event for handleflip
+    flippedid={card.flippedid} //adds card id to event for handleflip
     src={clicked ? card.image : cardBack}
     alt={card.alt}
     onClick={(event) => {
@@ -20,5 +22,4 @@ function Card({ card, cardBack, flipped, handleFlip, setName, matched }) {
   />
 
 }
-
 export default Card;

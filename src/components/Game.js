@@ -120,6 +120,7 @@ function Game() {
           newGame={newGame}
           setNewGame={setNewGame}
           seconds={seconds}
+          movesCount={movesCount}
         />
       </div>
       <div className="mainWindow">

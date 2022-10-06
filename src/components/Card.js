@@ -10,10 +10,6 @@ function Card({
 }) {
   const [flipped, setFlipped] = useState(true);
 
-  useEffect(() => {
-    console.log("has matched");
-  }, [matchedArray]);
-
   // if (flippedArray.includes(card.flippedid)) {
   //   console.log(card.flippedid + "is flipped");
   // }

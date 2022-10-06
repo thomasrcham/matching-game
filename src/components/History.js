@@ -6,7 +6,10 @@ function History({ userHistory }) {
       <td>{entry.score}</td>
       <td>{entry.moves}</td>
       <td>
-        {entry.timer.minutes}:{entry.timer.seconds}
+        {entry.timer.minutes}:
+        {entry.timer.seconds <= 9
+          ? "0" + entry.timer.seconds
+          : entry.timer.seconds}
       </td>
     </tr>
   ));

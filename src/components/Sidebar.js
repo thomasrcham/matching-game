@@ -1,14 +1,16 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import CreditOverlay from "./CreditOverlay";
 
 function Sidebar({
   endGame,
+  matchesCount,
   minutes,
   movesCount,
   newGame,
+  score,
   seconds,
   setNewGame,
+  setScore,
   start,
   reset,
   deckId,
@@ -35,6 +37,7 @@ function Sidebar({
           <button
             onClick={() => {
               setNewGame(!newGame);
+              setScore(0);
               reset();
               start();
             }}
@@ -58,11 +61,11 @@ function Sidebar({
         {/*middle of sidebar, display of game state information*/}
         <h3>
           Current Score:
-          <br /> NEEDS FIXING
+          <br /> {score}
         </h3>
         <h3>
           Successful Matches:
-          <br /> NEEDS FIXING
+          <br /> {matchesCount}
         </h3>
         <h3>
           Matches Attempted:

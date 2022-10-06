@@ -8,7 +8,6 @@ import { Route } from "react-router-dom";
 import { useStopwatch } from "react-timer-hook";
 //Game Components
 import CardContainer from "./CardContainer";
-import CurrentScore from "./CurrentScore";
 import HighScores from "./HighScores";
 import History from "./History";
 import Sidebar from "./Sidebar";
@@ -19,13 +18,14 @@ function Game() {
 
   // STATE
 
-  // will be used to calculate score
-  const [calledTimerValue, setCalledTimerValue] = useState("unset");
+  // state for generating and tracking score
+  const [score, setScore] = useState(0);
 
   // current gamestate
   const [flippedArray, setFlippedArray] = useState([]);
   const [matchedArray, setMatchedArray] = useState([]);
   const [checkMatch, setCheckMatch] = useState([]);
+  const [matchesCount, setMatchesCount] = useState(-1);
   const [movesCount, setMovesCount] = useState(0);
   const [newGame, setNewGame] = useState(false);
   const [shuffledDeck, setShuffledDeck] = useState(null);
@@ -64,13 +64,6 @@ function Game() {
       .then((r) => r.json())
       .then((d) => setUserHistory(d));
   }, []);
-
-  //handle timer for scoring
-
-  function handleTimerValueSet() {
-    let totalTime = minutes * 60 + seconds;
-    setCalledTimerValue(totalTime);
-  }
 
   //GAME LOGIC
 
@@ -133,6 +126,14 @@ function Game() {
     let newCheckCardsArray = [...checkMatch, clickedCardId];
     setCheckMatch(newCheckCardsArray);
   }
+
+  function handleMatch() {
+    let totalTime = minutes * 60 + seconds;
+    let newScore = 100 * totalTime + score;
+    setScore(newScore);
+    setMatchesCount(matchesCount + 1);
+  }
+
   useEffect(() => {
     if (checkMatch.length % 2 === 0) {
       if (
@@ -140,6 +141,7 @@ function Game() {
       ) {
         let newMatched = [...matchedArray, ...flippedArray];
         setMatchedArray(newMatched);
+        handleMatch();
         setTimeout(() => setFlippedArray([]), 800);
         setTimeout(() => setCheckMatch([]), 800);
       } else {
@@ -164,7 +166,7 @@ function Game() {
         minutes: minutes,
         seconds: seconds,
       },
-      score: "{USERSCORE-DOES-NOT-EXIST}",
+      score: score,
       dateTime: new Date().toLocaleString() + "",
     };
     fetch(`${backend}/userHistory`, {
@@ -200,13 +202,14 @@ function Game() {
               Time: {minutes}:{seconds <= 9 ? "0" + seconds : seconds}
             </p>
             <p>Matches Attempted: {Math.floor(movesCount / 2)}</p>
-            <p>Final Score: "NEEDS FIXING"</p>
+            <p>Final Score: {score}</p>
             <NavLink to="/">
               <button
                 onClick={() => {
                   setIsOpen(false);
                   reset();
                   setNewGame(!newGame);
+                  setScore(0);
                 }}
               >
                 New Game!
@@ -250,13 +253,15 @@ function Game() {
       </div>
       <div className="sidebar">
         <Sidebar
-          CurrentScore={CurrentScore}
           endGame={endGame}
+          matchesCount={matchesCount}
           minutes={minutes}
           movesCount={movesCount}
           newGame={newGame}
           reset={reset}
+          score={score}
           setNewGame={setNewGame}
+          setScore={setScore}
           seconds={seconds}
           start={start}
           // creditsOpen={creditsOpen}

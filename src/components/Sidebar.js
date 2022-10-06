@@ -2,7 +2,6 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import CreditOverlay from "./CreditOverlay";
 
-
 function Sidebar({
   endGame,
   minutes,

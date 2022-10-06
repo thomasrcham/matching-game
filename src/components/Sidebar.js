@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import CreditOverlay from "./CreditOverlay";
 
 
+
 function Sidebar({
   endGame,
   minutes,
@@ -12,6 +13,8 @@ function Sidebar({
   setNewGame,
   start,
   reset,
+  deckId,
+  setDeckId
 }) {
   //state and function for dropdown
 
@@ -19,6 +22,12 @@ function Sidebar({
 
   function handleDropDown() {
     setDropDown((dropDown) => !dropDown);
+  }
+
+
+  function handleThemeClick(e) {
+    setDeckId(parseInt(e.target.attributes.deckidnumber.nodeValue))
+    setNewGame(!newGame)
   }
 
   return (
@@ -79,16 +88,16 @@ function Sidebar({
             <button onClick={handleDropDown} id="choose-theme-button">
               Choose a Theme!
             </button>
-            <button id="halloween-button" className="dd-list-item">
+            <button deckidnumber="2" onClick={(e) => handleThemeClick(e)} id="halloween-button" className="dd-list-item">
               Halloween
             </button>
-            <button id="leaves-button" className="dd-list-item">
+            <button deckidnumber="1" onClick={(e) => handleThemeClick(e)} id="leaves-button" className="dd-list-item">
               Autumn Leaves
             </button>
-            <button id="harvest-button" className="dd-list-item">
-              Harvest
+            <button deckidnumber="0" onClick={(e) => handleThemeClick(e)} id="pumpkins-button" className="dd-list-item">
+              Pumpkins
             </button>
-            <button id="surprise-me" className="dd-list-item">
+            <button deckidnumber="3" onClick={(e) => handleThemeClick(e)} id="surprise-me" className="dd-list-item">
               SURPRISE ME!
             </button>
           </div>

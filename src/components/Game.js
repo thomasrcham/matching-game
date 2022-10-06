@@ -98,7 +98,7 @@ function Game() {
       setShuffledDeck([...shuffleDeck(singleDeck.cards)]);
       console.log({ shuffledDeck });
     }
-  }, [newGame]);
+  }, [newGame, deckId]);
 
   /*
     flipping
@@ -212,6 +212,10 @@ function Game() {
           reset={reset}
           setNewGame={setNewGame}
           seconds={seconds}
+          creditsOpen={creditsOpen}
+          setCreditsOpen={setCreditsOpen}
+          deckId={deckId}
+          setDeckId={setDeckId} 
         />
       </div>
       <div className="mainWindow">
@@ -227,6 +231,7 @@ function Game() {
               setMatched={setMatched}
               newGame={newGame}
               shuffledDeck={shuffledDeck}
+              
             />
           ) : null}
         </Route>

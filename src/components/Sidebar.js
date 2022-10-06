@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import CreditOverlay from "./CreditOverlay";
+
 
 
 
@@ -54,9 +54,6 @@ function Sidebar({
         </NavLink>
         <NavLink to="/History">
           <button> History</button>
-        </NavLink>
-        <NavLink to="/Bobverlay">
-          <button> Overlay Testing</button>
         </NavLink>
         <button onClick={endGame}>end</button>
       </div>

@@ -114,7 +114,6 @@ function Game() {
           remove from array */
 
   function handleFlip(cardClickEvent) {
-    console.log({ cardClickEvent });
     let clickedCardId = cardClickEvent.target.attributes.cardid.value;
     let clickedCardFlippedId = cardClickEvent.target.attributes.flippedid.value;
 
@@ -151,7 +150,25 @@ function Game() {
     }
   }, [movesCount]);
 
+  useEffect(() => {
+    if (shuffledDeck !== null) {
+      if (shuffledDeck.length === matchedArray.length) {
+        endGame();
+      }
+    }
+  }, [matchedArray]);
+
   //function to call when end of game is called
+
+  function newGameStart() {
+    reset();
+    start();
+    setFlippedArray([]);
+    setMatchedArray([]);
+    setScore(0);
+    setMatchesCount(0);
+    setMovesCount(0);
+  }
 
   function endGame() {
     //open overlay
@@ -207,9 +224,8 @@ function Game() {
               <button
                 onClick={() => {
                   setIsOpen(false);
-                  reset();
                   setNewGame(!newGame);
-                  setScore(0);
+                  newGameStart();
                 }}
               >
                 New Game!
@@ -234,7 +250,7 @@ function Game() {
               </button>
             </NavLink>
 
-            <div>
+            <div className="credits">
               <p>Credits:</p>
               <ul>
                 <li>
@@ -258,6 +274,7 @@ function Game() {
           minutes={minutes}
           movesCount={movesCount}
           newGame={newGame}
+          newGameStart={newGameStart}
           reset={reset}
           score={score}
           setNewGame={setNewGame}

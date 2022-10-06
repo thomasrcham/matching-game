@@ -7,6 +7,7 @@ function Sidebar({
   minutes,
   movesCount,
   newGame,
+  newGameStart,
   score,
   seconds,
   setNewGame,
@@ -37,9 +38,7 @@ function Sidebar({
           <button
             onClick={() => {
               setNewGame(!newGame);
-              setScore(0);
-              reset();
-              start();
+              newGameStart();
             }}
           >
             {" "}

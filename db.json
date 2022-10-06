@@ -42,10 +42,10 @@
           "clicked": "false"
         },
         {
-        "id": "7",
-        "image": "./images/pumpkins/pumpkins-7.png",
-        "alt": "sad eyes, pointy mouth",
-        "clicked": "false"
+          "id": "7",
+          "image": "./images/pumpkins/pumpkins-7.png",
+          "alt": "sad eyes, pointy mouth",
+          "clicked": "false"
         },
         {
           "id": "8",
@@ -59,7 +59,7 @@
       "id": 2,
       "setName": "leaves",
       "cardBack": "../images/leaves/leaves-card-front.png",
-      "cards": [      
+      "cards": [
         {
           "id": "1",
           "image": "./images/leaves/leaves-1.png",
@@ -111,7 +111,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": 3,
       "setName": "halloween",
       "cardBack": "../images/halloween/halloween-card-back.png",
       "cards": [

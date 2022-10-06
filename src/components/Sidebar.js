@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import CreditOverlay from "./CreditOverlay";
+
 
 function Sidebar({
   endGame,
@@ -12,6 +14,7 @@ function Sidebar({
   reset,
 }) {
   //state and function for dropdown
+
   const [dropDown, setDropDown] = useState(false);
 
   function handleDropDown() {
@@ -71,7 +74,6 @@ function Sidebar({
         <div className="dd-header">
           <div className="dd-header-title"></div>
         </div>
-
         {dropDown ? (
           <div className="dd-list">
             <button onClick={handleDropDown} id="choose-theme-button">
@@ -98,6 +100,11 @@ function Sidebar({
           </div>
         )}
       </div>
+      {/* <div>
+        <NavLink to="/CreditsOverlay">
+          <button onClick={() => CreditOverlay()}> Credits</button>
+        </NavLink>
+      </div> */}
     </div>
   );
 }

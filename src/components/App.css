@@ -34,7 +34,7 @@
   background: #1abc9c;
   color: #8b4513;
   font-size: 30px;
-  background-image: linear-gradient(45deg, #f3ec78, #af4261);
+  background-image: linear-gradient(45deg,#af4261, #fffacd, #f3d678, #8b4513);
   font-family: "Optima", Optima;
   z-index: 3;
   -webkit-text-stroke: 0.8px brown;
@@ -73,6 +73,7 @@ img.card {
   min-height: 50%;
   max-height: 400px;
   max-width: 800px;
+  place-items: center;
 }
 
 .displayWrapper img {
@@ -104,7 +105,7 @@ img:hover {
 
 #halloween-button {
   color: white;
-  background-color: #8b4513;
+  background-color: #875b3c;
   border-radius: 15px;
 }
 
@@ -114,7 +115,7 @@ img:hover {
 
 #leaves-button {
   color: white;
-  background-color: #8b4513;
+  background-color: #875b3c;
   border-radius: 15px;
 }
 
@@ -124,7 +125,7 @@ img:hover {
 
 #harvest-button {
   color: white;
-  background-color: #8b4513;
+  background-color: #875b3c;
   border-radius: 15px;
 }
 

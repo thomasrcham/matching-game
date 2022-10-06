@@ -58,7 +58,7 @@ function Game() {
 
   //select and load decks
   const [decks, setDecks] = useState(null);
-  const [deckId, setDeckId] = useState(0);
+  const [deckId, setDeckId] = useState(1);
 
   // timer hook
   const { seconds, minutes, start, pause, reset } = useStopwatch({
@@ -93,7 +93,7 @@ function Game() {
       setShuffledDeck([...shuffleDeck(singleDeck.cards)]);
       console.log({ shuffledDeck });
     }
-  }, [newGame]);
+  }, [newGame, deckId]);
 
   /*
     flipping
@@ -124,6 +124,8 @@ function Game() {
           seconds={seconds}
           creditsOpen={creditsOpen}
           setCreditsOpen={setCreditsOpen}
+          deckId={deckId}
+          setDeckId={setDeckId} 
         />
       </div>
       <div className="mainWindow">
@@ -139,6 +141,7 @@ function Game() {
               setMatched={setMatched}
               newGame={newGame}
               shuffledDeck={shuffledDeck}
+              
             />
           ) : null}
         </Route>

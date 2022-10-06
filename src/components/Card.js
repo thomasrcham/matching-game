@@ -1,37 +1,25 @@
 import { useState, useEffect } from "react";
 
-function Card({ card, cardBack, flipped, handleFlip, setName, matched }) {
-  const [amIFlipped, setAmIFlipped] = useState(false);
-  const [clicked, setClicked] = useState(false);
+function Card({ card, cardBack, flippedArray, handleFlip, setName, matched }) {
+  const [flipped, setFlipped] = useState(true);
 
-  useEffect(() => {
-    console.log("a card was clicked")
-    if (flipped !== []) {
-      // if (flipped.filter(card.flippedid) ) {
-      //   console.log(`found card id ${card.flippedid}in flipped array`)
-      // }
-      let checkIfFlipped = flipped.find((flippedElement) => {
-        if (flippedElement === card.flippedid) {
-          setAmIFlipped(true);
-        }
-      });
-      console.log({ checkIfFlipped });
-    }
-  }, [clicked]);
+  // useEffect(() => {
+  //   if (flippedArray.contains(card.flippedid)) {
+  //     console.log(card.flippedid + "is flipped");
+  //   }
+  // }, [flippedArray]);
 
-
-
-  return <img
-    className="card"
-    cardid={card.id} //adds card value to event for handleflip
-    flippedid={card.flippedid} //adds card id to event for handleflip
-    src={clicked ? card.image : cardBack}
-    alt={card.alt}
-    onClick={(event) => {
-      handleFlip(event);
-      setClicked(!clicked);
-    }}
-  />
-
+  return (
+    <img
+      className="card"
+      cardid={card.id} //adds card value to event for handleflip
+      flippedid={card.flippedid} //adds card id to event for handleflip
+      src={flipped ? card.image : cardBack}
+      alt={card.alt}
+      onClick={(event) => {
+        handleFlip(event);
+      }}
+    />
+  );
 }
 export default Card;

@@ -107,7 +107,7 @@ function Game() {
       let deckOfCards = decks[deckId].cards;
       handleDeckShuffle(deckOfCards);
     }
-  }, [newGame]);
+  }, [newGame, deckId]);
 
   /*
     flipping
@@ -230,6 +230,15 @@ function Game() {
                 See Previous Scores
               </button>
             </NavLink>
+            
+            <div>
+              <p>Credits:</p>
+              <ul>
+                <li><a href="https://github.com/thomasrcham">Reese Chamberlain</a></li>
+                <li><a href="https://github.com/pikeminnow">Ashton MacKenzie</a></li>
+                <li><a href="https://github.com/dbrown13"> Deryn Brown</a></li>
+              </ul>
+            </div>
           </div>
         </Overlay>
       </div>
@@ -244,6 +253,11 @@ function Game() {
           setNewGame={setNewGame}
           seconds={seconds}
           start={start}
+          creditsOpen={creditsOpen}
+          setCreditsOpen={setCreditsOpen}
+          deckId={deckId}
+          setDeckId={setDeckId} 
+
         />
       </div>
       <div className="mainWindow">
@@ -256,6 +270,7 @@ function Game() {
               handleFlip={handleFlip}
               matched={matchedArray}
               shuffledDeck={shuffledDeck}
+              
             />
           ) : null}
         </Route>

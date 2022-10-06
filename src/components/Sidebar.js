@@ -61,8 +61,8 @@ function Sidebar({ minutes, newGame, seconds, setNewGame, CreditOverlay }) {
             <button id="leaves-button" className="dd-list-item">
               Autumn Leaves
             </button>
-            <button id="harvest-button" className="dd-list-item">
-              Harvest
+            <button id="pumpkins-button" className="dd-list-item">
+              Pumpkins
             </button>
             <button id="surprise-me" className="dd-list-item">
               SURPRISE ME!

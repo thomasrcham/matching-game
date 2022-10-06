@@ -273,6 +273,16 @@
       },
       "score": "5536",
       "dateTime": ""
+    },
+    {
+      "moves": 0,
+      "timer": {
+        "minutes": 0,
+        "seconds": 0
+      },
+      "score": "{USERSCORE-DOES-NOT-EXIST}",
+      "dateTime": "10/6/2022, 2:27:17 PM",
+      "id": "VP0jqhQ"
     }
   ]
 }

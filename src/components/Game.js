@@ -230,13 +230,19 @@ function Game() {
                 See Previous Scores
               </button>
             </NavLink>
-            
+
             <div>
               <p>Credits:</p>
               <ul>
-                <li><a href="https://github.com/thomasrcham">Reese Chamberlain</a></li>
-                <li><a href="https://github.com/pikeminnow">Ashton MacKenzie</a></li>
-                <li><a href="https://github.com/dbrown13"> Deryn Brown</a></li>
+                <li>
+                  <a href="https://github.com/thomasrcham">Reese Chamberlain</a>
+                </li>
+                <li>
+                  <a href="https://github.com/pikeminnow">Ashton MacKenzie</a>
+                </li>
+                <li>
+                  <a href="https://github.com/dbrown13"> Deryn Brown</a>
+                </li>
               </ul>
             </div>
           </div>
@@ -253,11 +259,10 @@ function Game() {
           setNewGame={setNewGame}
           seconds={seconds}
           start={start}
-          creditsOpen={creditsOpen}
-          setCreditsOpen={setCreditsOpen}
+          // creditsOpen={creditsOpen}
+          // setCreditsOpen={setCreditsOpen}
           deckId={deckId}
-          setDeckId={setDeckId} 
-
+          setDeckId={setDeckId}
         />
       </div>
       <div className="mainWindow">
@@ -270,7 +275,6 @@ function Game() {
               handleFlip={handleFlip}
               matched={matchedArray}
               shuffledDeck={shuffledDeck}
-              
             />
           ) : null}
         </Route>
@@ -280,24 +284,6 @@ function Game() {
         <Route path="/History">
           {userHistory ? <History userHistory={userHistory} /> : null}
         </Route>
-        {/* <Route path="/Bobverlay">
-          <Bobverlay
-            handleTimerValueSet={handleTimerValueSet}
-            start={start}
-            pause={pause}
-            reset={reset}
-            setIsOpen={setIsOpen}
-            backend={backend}
-            endGame={endGame}
-            isOpen={isOpen}
-            minutes={minutes}
-            movesCount={movesCount}
-            newGame={newGame}
-            seconds={seconds}
-            setNewGame={setNewGame}
-          />
-
-        </Route> */}
       </div>
     </div>
   );

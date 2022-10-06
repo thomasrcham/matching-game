@@ -12,7 +12,7 @@ function Sidebar({
   start,
   reset,
   deckId,
-  setDeckId
+  setDeckId,
 }) {
   //state and function for dropdown
 
@@ -22,10 +22,9 @@ function Sidebar({
     setDropDown((dropDown) => !dropDown);
   }
 
-
   function handleThemeClick(e) {
-    setDeckId(parseInt(e.target.attributes.deckidnumber.nodeValue))
-    setNewGame(!newGame)
+    setDeckId(parseInt(e.target.attributes.deckidnumber.nodeValue));
+    setNewGame(!newGame);
   }
 
   return (
@@ -52,9 +51,6 @@ function Sidebar({
         </NavLink>
         <NavLink to="/History">
           <button> History</button>
-        </NavLink>
-        <NavLink to="/Bobverlay">
-          <button> Overlay Testing</button>
         </NavLink>
         <button onClick={endGame}>end</button>
       </div>
@@ -86,16 +82,36 @@ function Sidebar({
             <button onClick={handleDropDown} id="choose-theme-button">
               Choose a Theme!
             </button>
-            <button deckidnumber="2" onClick={(e) => handleThemeClick(e)} id="halloween-button" className="dd-list-item">
+            <button
+              deckidnumber="2"
+              onClick={(e) => handleThemeClick(e)}
+              id="halloween-button"
+              className="dd-list-item"
+            >
               Halloween
             </button>
-            <button deckidnumber="1" onClick={(e) => handleThemeClick(e)} id="leaves-button" className="dd-list-item">
+            <button
+              deckidnumber="1"
+              onClick={(e) => handleThemeClick(e)}
+              id="leaves-button"
+              className="dd-list-item"
+            >
               Autumn Leaves
             </button>
-            <button deckidnumber="0" onClick={(e) => handleThemeClick(e)} id="pumpkins-button" className="dd-list-item">
+            <button
+              deckidnumber="0"
+              onClick={(e) => handleThemeClick(e)}
+              id="pumpkins-button"
+              className="dd-list-item"
+            >
               Pumpkins
             </button>
-            <button deckidnumber="3" onClick={(e) => handleThemeClick(e)} id="surprise-me" className="dd-list-item">
+            <button
+              deckidnumber="3"
+              onClick={(e) => handleThemeClick(e)}
+              id="surprise-me"
+              className="dd-list-item"
+            >
               SURPRISE ME!
             </button>
           </div>

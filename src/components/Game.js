@@ -199,6 +199,15 @@ function Game() {
                 See Previous Scores
               </button>
             </NavLink>
+            
+            <div>
+              <p>Credits:</p>
+              <ul>
+                <li><a href="https://github.com/thomasrcham">Reese Chamberlain</a></li>
+                <li><a href="https://github.com/pikeminnow">Ashton MacKenzie</a></li>
+                <li><a href="https://github.com/dbrown13"> Deryn Brown</a></li>
+              </ul>
+            </div>
           </div>
         </Overlay>
       </div>

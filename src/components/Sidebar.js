@@ -1,20 +1,21 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import CreditOverlay from "./CreditOverlay";
-
-
 
 function Sidebar({
   endGame,
+  matchesCount,
   minutes,
   movesCount,
   newGame,
+  newGameStart,
+  score,
   seconds,
   setNewGame,
+  setScore,
   start,
   reset,
   deckId,
-  setDeckId
+  setDeckId,
 }) {
   //state and function for dropdown
 
@@ -24,10 +25,9 @@ function Sidebar({
     setDropDown((dropDown) => !dropDown);
   }
 
-
   function handleThemeClick(e) {
-    setDeckId(parseInt(e.target.attributes.deckidnumber.nodeValue))
-    setNewGame(!newGame)
+    setDeckId(parseInt(e.target.attributes.deckidnumber.nodeValue));
+    setNewGame(!newGame);
   }
 
   return (
@@ -38,8 +38,7 @@ function Sidebar({
           <button
             onClick={() => {
               setNewGame(!newGame);
-              reset();
-              start();
+              newGameStart();
             }}
           >
             {" "}
@@ -55,20 +54,17 @@ function Sidebar({
         <NavLink to="/History">
           <button> History</button>
         </NavLink>
-        <NavLink to="/Bobverlay">
-          <button> Overlay Testing</button>
-        </NavLink>
         <button onClick={endGame}>end</button>
       </div>
       <div className="sidebar div middle">
         {/*middle of sidebar, display of game state information*/}
         <h3>
           Current Score:
-          <br /> NEEDS FIXING
+          <br /> {score}
         </h3>
         <h3>
           Successful Matches:
-          <br /> NEEDS FIXING
+          <br /> {matchesCount}
         </h3>
         <h3>
           Matches Attempted:
@@ -88,16 +84,36 @@ function Sidebar({
             <button onClick={handleDropDown} id="choose-theme-button">
               Choose a Theme!
             </button>
-            <button deckidnumber="2" onClick={(e) => handleThemeClick(e)} id="halloween-button" className="dd-list-item">
+            <button
+              deckidnumber="2"
+              onClick={(e) => handleThemeClick(e)}
+              id="halloween-button"
+              className="dd-list-item"
+            >
               Halloween
             </button>
-            <button deckidnumber="1" onClick={(e) => handleThemeClick(e)} id="leaves-button" className="dd-list-item">
+            <button
+              deckidnumber="1"
+              onClick={(e) => handleThemeClick(e)}
+              id="leaves-button"
+              className="dd-list-item"
+            >
               Autumn Leaves
             </button>
-            <button deckidnumber="0" onClick={(e) => handleThemeClick(e)} id="pumpkins-button" className="dd-list-item">
+            <button
+              deckidnumber="0"
+              onClick={(e) => handleThemeClick(e)}
+              id="pumpkins-button"
+              className="dd-list-item"
+            >
               Pumpkins
             </button>
-            <button deckidnumber="3" onClick={(e) => handleThemeClick(e)} id="surprise-me" className="dd-list-item">
+            <button
+              deckidnumber="3"
+              onClick={(e) => handleThemeClick(e)}
+              id="surprise-me"
+              className="dd-list-item"
+            >
               SURPRISE ME!
             </button>
           </div>

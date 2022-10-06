@@ -8,13 +8,9 @@ import { Route } from "react-router-dom";
 import { useStopwatch } from "react-timer-hook";
 //Game Components
 import CardContainer from "./CardContainer";
-import CurrentScore from "./CurrentScore";
-// import { handleFlip } from "./GameLogic";
 import HighScores from "./HighScores";
 import History from "./History";
 import Sidebar from "./Sidebar";
-
-// import Bobverlay from "./Bobverlay";
 
 function Game() {
   //variables
@@ -22,12 +18,14 @@ function Game() {
 
   // STATE
 
-  // will be used to calculate score
-  const [calledTimerValue, setCalledTimerValue] = useState("unset");
+  // state for generating and tracking score
+  const [score, setScore] = useState(0);
 
   // current gamestate
-  const [flipped, setFlipped] = useState(null);
-  const [matched, setMatched] = useState(null);
+  const [flippedArray, setFlippedArray] = useState([]);
+  const [matchedArray, setMatchedArray] = useState([]);
+  const [checkMatch, setCheckMatch] = useState([]);
+  const [matchesCount, setMatchesCount] = useState(-1);
   const [movesCount, setMovesCount] = useState(0);
   const [newGame, setNewGame] = useState(false);
   const [shuffledDeck, setShuffledDeck] = useState(null);
@@ -38,7 +36,15 @@ function Game() {
 
   // overlay state
   const [isOpen, setIsOpen] = useState(false);
-  const [creditsOpen, setCreditsOpen] = useState(true);
+
+  //select and load decks
+  const [decks, setDecks] = useState(null);
+  const [deckId, setDeckId] = useState(1);
+
+  // timer hook
+  const { seconds, minutes, start, pause, reset } = useStopwatch({
+    autoStart: false,
+  });
 
   // side effects
   useEffect(() => {
@@ -59,44 +65,40 @@ function Game() {
       .then((d) => setUserHistory(d));
   }, []);
 
-  //select and load decks
-  const [decks, setDecks] = useState(null);
-  const [deckId, setDeckId] = useState(1);
-
-  // timer hook
-  const { seconds, minutes, start, pause, reset } = useStopwatch({
-    autoStart: false,
-  });
-
-  //handle timer for scoring
-
-  function handleTimerValueSet() {
-    let totalTime = minutes * 60 + seconds;
-    setCalledTimerValue(totalTime);
-  }
-
   //GAME LOGIC
 
   //shuffle the cards before handing to component because React hates conditionally calling hooks (and you can't shuffle until the deck is available)
 
-  function shuffleDeck(deckToShuffle) {
-    let shuffledCards = [...deckToShuffle, ...deckToShuffle]; //duplicates the deck
+  function handleDeckShuffle(deckToShuffle) {
+    //duplicates the deck with a shallow copy
+    let dupedCards = [...deckToShuffle, ...deckToShuffle];
+
+    //duplicates the deck using json parsing + stringify to force a deeper copy
+    let clonedArray = dupedCards.map((card) => {
+      let newCardElement = JSON.parse(JSON.stringify(card));
+      return newCardElement;
+    });
+    let cardsToShuffle = clonedArray.map((card, index) => {
+      card.flippedid = index;
+      return card;
+    });
+    //end duplicating
+
     // https://www.w3docs.com/snippets/javascript/how-to-randomize-shuffle-a-javascript-array.html
-    for (let i = shuffledCards.length - 1; i > 0; i--) {
+    for (let i = cardsToShuffle.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [shuffledCards[i], shuffledCards[j]] = [
-        shuffledCards[j],
-        shuffledCards[i],
+      [cardsToShuffle[i], cardsToShuffle[j]] = [
+        cardsToShuffle[j],
+        cardsToShuffle[i],
       ];
     }
-    return shuffledCards;
+    setShuffledDeck(cardsToShuffle);
   }
 
   useEffect(() => {
     if (decks !== null && deckId !== null) {
-      let singleDeck = decks[deckId];
-      setShuffledDeck([...shuffleDeck(singleDeck.cards)]);
-      console.log({ shuffledDeck });
+      let deckOfCards = decks[deckId].cards;
+      handleDeckShuffle(deckOfCards);
     }
   }, [newGame, deckId]);
 
@@ -112,13 +114,61 @@ function Game() {
           remove from array */
 
   function handleFlip(cardClickEvent) {
-    console.log({ cardClickEvent });
+    let clickedCardId = cardClickEvent.target.attributes.cardid.value;
+    let clickedCardFlippedId = cardClickEvent.target.attributes.flippedid.value;
+
+    // adds one to the number of moves
     setMovesCount(movesCount + 1);
-    console.log({ movesCount });
-    return null;
+
+    let newFlippedCardsArray = [...flippedArray, clickedCardFlippedId];
+    setFlippedArray(newFlippedCardsArray);
+    let newCheckCardsArray = [...checkMatch, clickedCardId];
+    setCheckMatch(newCheckCardsArray);
   }
 
+  function handleMatch() {
+    let totalTime = minutes * 60 + seconds;
+    let newScore = 100 * totalTime + score;
+    setScore(newScore);
+    setMatchesCount(matchesCount + 1);
+  }
+
+  useEffect(() => {
+    if (checkMatch.length % 2 === 0) {
+      if (
+        checkMatch[checkMatch.length - 1] === checkMatch[checkMatch.length - 2]
+      ) {
+        let newMatched = [...matchedArray, ...flippedArray];
+        setMatchedArray(newMatched);
+        handleMatch();
+        setTimeout(() => setFlippedArray([]), 800);
+        setTimeout(() => setCheckMatch([]), 800);
+      } else {
+        setTimeout(() => setFlippedArray([]), 800);
+        setTimeout(() => setCheckMatch([]), 800);
+      }
+    }
+  }, [movesCount]);
+
+  useEffect(() => {
+    if (shuffledDeck !== null) {
+      if (shuffledDeck.length === matchedArray.length) {
+        endGame();
+      }
+    }
+  }, [matchedArray]);
+
   //function to call when end of game is called
+
+  function newGameStart() {
+    reset();
+    start();
+    setFlippedArray([]);
+    setMatchedArray([]);
+    setScore(0);
+    setMatchesCount(0);
+    setMovesCount(0);
+  }
 
   function endGame() {
     //open overlay
@@ -133,7 +183,7 @@ function Game() {
         minutes: minutes,
         seconds: seconds,
       },
-      score: "{USERSCORE-DOES-NOT-EXIST}",
+      score: score,
       dateTime: new Date().toLocaleString() + "",
     };
     fetch(`${backend}/userHistory`, {
@@ -150,7 +200,7 @@ function Game() {
 
   return (
     <div>
-      <div classname="overlay-container">
+      <div className="overlay-container">
         <Overlay
           className={Classes.OVERLAY_SCROLL_CONTAINER}
           isOpen={isOpen}
@@ -169,13 +219,13 @@ function Game() {
               Time: {minutes}:{seconds <= 9 ? "0" + seconds : seconds}
             </p>
             <p>Matches Attempted: {Math.floor(movesCount / 2)}</p>
-            <p>Final Score: "NEEDS FIXING"</p>
+            <p>Final Score: {score}</p>
             <NavLink to="/">
               <button
                 onClick={() => {
                   setIsOpen(false);
-                  reset();
                   setNewGame(!newGame);
+                  newGameStart();
                 }}
               >
                 New Game!
@@ -199,13 +249,19 @@ function Game() {
                 See Previous Scores
               </button>
             </NavLink>
-            
-            <div>
+
+            <div className="credits">
               <p>Credits:</p>
               <ul>
-                <li><a href="https://github.com/thomasrcham">Reese Chamberlain</a></li>
-                <li><a href="https://github.com/pikeminnow">Ashton MacKenzie</a></li>
-                <li><a href="https://github.com/dbrown13"> Deryn Brown</a></li>
+                <li>
+                  <a href="https://github.com/thomasrcham">Reese Chamberlain</a>
+                </li>
+                <li>
+                  <a href="https://github.com/pikeminnow">Ashton MacKenzie</a>
+                </li>
+                <li>
+                  <a href="https://github.com/dbrown13"> Deryn Brown</a>
+                </li>
               </ul>
             </div>
           </div>
@@ -213,18 +269,22 @@ function Game() {
       </div>
       <div className="sidebar">
         <Sidebar
-          CurrentScore={CurrentScore}
           endGame={endGame}
+          matchesCount={matchesCount}
           minutes={minutes}
           movesCount={movesCount}
           newGame={newGame}
+          newGameStart={newGameStart}
           reset={reset}
+          score={score}
           setNewGame={setNewGame}
+          setScore={setScore}
           seconds={seconds}
-          creditsOpen={creditsOpen}
-          setCreditsOpen={setCreditsOpen}
+          start={start}
+          // creditsOpen={creditsOpen}
+          // setCreditsOpen={setCreditsOpen}
           deckId={deckId}
-          setDeckId={setDeckId} 
+          setDeckId={setDeckId}
         />
       </div>
       <div className="mainWindow">
@@ -233,14 +293,10 @@ function Game() {
             <CardContainer
               decks={decks}
               deckId={deckId}
-              flipped={flipped}
+              flipped={flippedArray}
               handleFlip={handleFlip}
-              setFlipped={setFlipped}
-              matched={matched}
-              setMatched={setMatched}
-              newGame={newGame}
+              matched={matchedArray}
               shuffledDeck={shuffledDeck}
-              
             />
           ) : null}
         </Route>
@@ -250,24 +306,6 @@ function Game() {
         <Route path="/History">
           {userHistory ? <History userHistory={userHistory} /> : null}
         </Route>
-        {/* <Route path="/Bobverlay">
-          <Bobverlay
-            handleTimerValueSet={handleTimerValueSet}
-            start={start}
-            pause={pause}
-            reset={reset}
-            setIsOpen={setIsOpen}
-            backend={backend}
-            endGame={endGame}
-            isOpen={isOpen}
-            minutes={minutes}
-            movesCount={movesCount}
-            newGame={newGame}
-            seconds={seconds}
-            setNewGame={setNewGame}
-          />
-
-        </Route> */}
       </div>
     </div>
   );

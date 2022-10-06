@@ -275,174 +275,131 @@
       "dateTime": ""
     },
     {
-      "moves": 0,
+      "moves": 16,
       "timer": {
         "minutes": 0,
-        "seconds": 0
+        "seconds": 37
       },
-      "score": "{USERSCORE-DOES-NOT-EXIST}",
-      "dateTime": "10/5/2022, 4:30:17 PM",
-      "id": "j7na0D_"
+      "score": 8400,
+      "dateTime": "10/6/2022, 3:39:29 PM",
+      "id": "ny8MLU5"
     },
     {
-      "moves": 0,
+      "moves": 16,
       "timer": {
         "minutes": 0,
-        "seconds": 3
+        "seconds": 37
       },
-      "score": "{USERSCORE-DOES-NOT-EXIST}",
-      "dateTime": "10/5/2022, 4:31:03 PM",
-      "id": "UYD3M8A"
+      "score": 12100,
+      "dateTime": "10/6/2022, 3:39:29 PM",
+      "id": "io7ojCD"
     },
     {
-      "moves": 0,
-      "timer": {
-        "minutes": 0,
-        "seconds": 0
-      },
-      "score": "{USERSCORE-DOES-NOT-EXIST}",
-      "dateTime": "10/5/2022, 4:32:06 PM",
-      "id": "a-v1I46"
-    },
-    {
-      "moves": 0,
-      "timer": {
-        "minutes": 0,
-        "seconds": 0
-      },
-      "score": "{USERSCORE-DOES-NOT-EXIST}",
-      "dateTime": "10/5/2022, 4:33:28 PM",
-      "id": "wcGuWln"
-    },
-    {
-      "moves": 0,
-      "timer": {
-        "minutes": 0,
-        "seconds": 0
-      },
-      "score": "{USERSCORE-DOES-NOT-EXIST}",
-      "dateTime": "10/6/2022, 8:40:53 AM",
-      "id": "bq-_6t5"
-    },
-    {
-      "moves": 0,
-      "timer": {
-        "minutes": 0,
-        "seconds": 0
-      },
-      "score": "{USERSCORE-DOES-NOT-EXIST}",
-      "dateTime": "10/6/2022, 10:39:36 AM",
-      "id": "Q4Lbo4p"
-    },
-    {
-      "moves": 0,
-      "timer": {
-        "minutes": 0,
-        "seconds": 6
-      },
-      "score": "{USERSCORE-DOES-NOT-EXIST}",
-      "dateTime": "10/6/2022, 10:39:48 AM",
-      "id": "SnQXcYm"
-    },
-    {
-      "moves": 0,
-      "timer": {
-        "minutes": 0,
-        "seconds": 6
-      },
-      "score": "{USERSCORE-DOES-NOT-EXIST}",
-      "dateTime": "10/6/2022, 10:40:00 AM",
-      "id": "CRgFdq5"
-    },
-    {
-      "moves": 8,
-      "timer": {
-        "minutes": 0,
-        "seconds": 26
-      },
-      "score": "{USERSCORE-DOES-NOT-EXIST}",
-      "dateTime": "10/6/2022, 10:40:35 AM",
-      "id": "vL9eg5M"
-    },
-    {
-      "moves": 0,
-      "timer": {
-        "minutes": 0,
-        "seconds": 0
-      },
-      "score": "{USERSCORE-DOES-NOT-EXIST}",
-      "dateTime": "10/6/2022, 10:46:17 AM",
-      "id": "_syDb_k"
-    },
-    {
-      "moves": 0,
-      "timer": {
-        "minutes": 0,
-        "seconds": 0
-      },
-      "score": "{USERSCORE-DOES-NOT-EXIST}",
-      "dateTime": "10/6/2022, 10:46:40 AM",
-      "id": "bIXntOD"
-    },
-    {
-      "moves": 0,
-      "timer": {
-        "minutes": 0,
-        "seconds": 0
-      },
-      "score": "{USERSCORE-DOES-NOT-EXIST}",
-      "dateTime": "10/6/2022, 10:47:56 AM",
-      "id": "PUOXIvU"
-    },
-    {
-      "moves": 0,
-      "timer": {
-        "minutes": 0,
-        "seconds": 0
-      },
-      "score": "{USERSCORE-DOES-NOT-EXIST}",
-      "dateTime": "10/6/2022, 10:51:04 AM",
-      "id": "v1fGs-K"
-    },
-    {
-      "moves": 0,
-      "timer": {
-        "minutes": 0,
-        "seconds": 0
-      },
-      "score": "{USERSCORE-DOES-NOT-EXIST}",
-      "dateTime": "10/6/2022, 10:55:07 AM",
-      "id": "okMjUEf"
-    },
-    {
-      "moves": 0,
-      "timer": {
-        "minutes": 0,
-        "seconds": 0
-      },
-      "score": "{USERSCORE-DOES-NOT-EXIST}",
-      "dateTime": "10/6/2022, 10:56:44 AM",
-      "id": "QjivO2j"
-    },
-    {
-      "moves": 0,
-      "timer": {
-        "minutes": 0,
-        "seconds": 0
-      },
-      "score": "{USERSCORE-DOES-NOT-EXIST}",
-      "dateTime": "10/6/2022, 10:58:12 AM",
-      "id": "ad6kq38"
-    },
-    {
-      "moves": 0,
+      "moves": 16,
       "timer": {
         "minutes": 1,
-        "seconds": 54
+        "seconds": 58
       },
-      "score": "{USERSCORE-DOES-NOT-EXIST}",
-      "dateTime": "10/6/2022, 1:46:40 PM",
-      "id": "Lbv_FJp"
+      "score": 0,
+      "dateTime": "10/6/2022, 3:41:31 PM",
+      "id": "5aD9LRQ"
+    },
+    {
+      "moves": 16,
+      "timer": {
+        "minutes": 1,
+        "seconds": 58
+      },
+      "score": 11800,
+      "dateTime": "10/6/2022, 3:41:31 PM",
+      "id": "bXZBVX7"
+    },
+    {
+      "moves": 16,
+      "timer": {
+        "minutes": 1,
+        "seconds": 58
+      },
+      "score": 11800,
+      "dateTime": "10/6/2022, 3:42:13 PM",
+      "id": "hEoO_eu"
+    },
+    {
+      "moves": 16,
+      "timer": {
+        "minutes": 1,
+        "seconds": 58
+      },
+      "score": 23600,
+      "dateTime": "10/6/2022, 3:42:13 PM",
+      "id": "cLu8JtL"
+    },
+    {
+      "moves": 16,
+      "timer": {
+        "minutes": 0,
+        "seconds": 23
+      },
+      "score": 11000,
+      "dateTime": "10/6/2022, 3:45:34 PM",
+      "id": "S8ylGGL"
+    },
+    {
+      "moves": 16,
+      "timer": {
+        "minutes": 0,
+        "seconds": 23
+      },
+      "score": 11000,
+      "dateTime": "10/6/2022, 3:46:18 PM",
+      "id": "viPcv_2"
+    },
+    {
+      "moves": 16,
+      "timer": {
+        "minutes": 0,
+        "seconds": 23
+      },
+      "score": 13300,
+      "dateTime": "10/6/2022, 3:46:18 PM",
+      "id": "M17-BxA"
+    },
+    {
+      "moves": 16,
+      "timer": {
+        "minutes": 0,
+        "seconds": 23
+      },
+      "score": 13300,
+      "dateTime": "10/6/2022, 3:46:32 PM",
+      "id": "MCiecEx"
+    },
+    {
+      "moves": 16,
+      "timer": {
+        "minutes": 0,
+        "seconds": 23
+      },
+      "score": 15600,
+      "dateTime": "10/6/2022, 3:46:32 PM",
+      "id": "GWq-eej"
+    },
+    {
+      "moves": 0,
+      "timer": {
+        "minutes": 0,
+        "seconds": 0
+      },
+      "score": 0,
+      "dateTime": "10/6/2022, 3:49:53 PM",
+      "id": "wQWzwiE"
+    },
+    {
+      "moves": 0,
+      "timer": {
+        "minutes": 0,
+        "seconds": 0
+      }
     }
   ]
 }

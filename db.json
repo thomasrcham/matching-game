@@ -164,6 +164,61 @@
           "clicked": "false"
         }
       ]
+    },
+    {
+      "id": 4,
+      "setName": "frogs",
+      "cardBack": "../images/frogs/frog-card-back.png",
+      "cards": [
+        {
+          "id": "1",
+          "image": "./images/frogs/frog-1.png",
+          "alt": "bartholomew salience",
+          "clicked": "false"
+        },
+        {
+          "id": "2",
+          "image": "./images/frogs/frog-2.png",
+          "alt": "ladybugs",
+          "clicked": "false"
+        },
+        {
+          "id": "3",
+          "image": "./images/frogs/frog-3.png",
+          "alt": "robot walrus mermaid",
+          "clicked": "false"
+        },
+        {
+          "id": "4",
+          "image": "./images/frogs/frog-4.png",
+          "alt": "fat guy walrus mermaid",
+          "clicked": "false"
+        },
+        {
+          "id": "5",
+          "image": "./images/frogs/frog-5.png",
+          "alt": "bug mars judge",
+          "clicked": "false"
+        },
+        {
+          "id": "6",
+          "image": "./images/frogs/frog-6.png",
+          "alt": "production factory",
+          "clicked": "false"
+        },
+        {
+          "id": "7",
+          "image": "./images/frogs/frog-7.png",
+          "alt": "dragon silhouette",
+          "clicked": "false"
+        },
+        {
+          "id": "8",
+          "image": "./images/frogs/frog-8.png",
+          "alt": "bug oval office",
+          "clicked": "false"
+        }
+      ]
     }
   ],
   "highScores": [

@@ -42,10 +42,10 @@
           "clicked": "false"
         },
         {
-        "id": "7",
-        "image": "./images/pumpkins/pumpkins-7.png",
-        "alt": "sad eyes, pointy mouth",
-        "clicked": "false"
+          "id": "7",
+          "image": "./images/pumpkins/pumpkins-7.png",
+          "alt": "sad eyes, pointy mouth",
+          "clicked": "false"
         },
         {
           "id": "8",
@@ -59,7 +59,7 @@
       "id": 2,
       "setName": "leaves",
       "cardBack": "../images/leaves/leaves-card-front.png",
-      "cards": [      
+      "cards": [
         {
           "id": "1",
           "image": "./images/leaves/leaves-1.png",
@@ -80,32 +80,87 @@
         },
         {
           "id": "4",
-          "image": "./images/leaves/leaves-4.png",
+          "image": "./images/leaves/leaves-4.jpeg",
           "alt": "dark green, 1 leaf, thin",
           "clicked": "false"
         },
         {
           "id": "5",
-          "image": "./images/leaves/leaves-5.png",
+          "image": "./images/leaves/leaves-5.jpeg",
           "alt": "orange, 6 points, wide",
           "clicked": "false"
         },
         {
           "id": "6",
-          "image": "./images/leaves/leaves-6.png",
+          "image": "./images/leaves/leaves-6.jpeg",
           "alt": "light green, 1 leaf, wide, heart-shape",
           "clicked": "false"
         },
         {
           "id": "7",
-          "image": "./images/leaves/leaves-7.png",
+          "image": "./images/leaves/leaves-7.jpeg",
           "alt": "red, 1 leaf, many points, thin",
           "clicked": "false"
         },
         {
           "id": "8",
-          "image": "./images/leaves/leaves-8.png",
+          "image": "./images/leaves/leaves-8.jpeg",
           "alt": "yellow, 7 leaves, flowery, wide",
+          "clicked": "false"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "setName": "halloween",
+      "cardBack": "../images/halloween/halloween-card-back.png",
+      "cards": [
+        {
+          "id": "1",
+          "image": "./images/halloween/halloween-1.png",
+          "alt": "hat",
+          "clicked": "false"
+        },
+        {
+          "id": "2",
+          "image": "./images/halloween/halloween-2.png",
+          "alt": "candy",
+          "clicked": "false"
+        },
+        {
+          "id": "3",
+          "image": "./images/halloween/halloween-3.png",
+          "alt": "web",
+          "clicked": "false"
+        },
+        {
+          "id": "4",
+          "image": "./images/halloween/halloween-4.png",
+          "alt": "ghost",
+          "clicked": "false"
+        },
+        {
+          "id": "5",
+          "image": "./images/halloween/halloween-5.png",
+          "alt": "cat",
+          "clicked": "false"
+        },
+        {
+          "id": "6",
+          "image": "./images/halloween/halloween-6.png",
+          "alt": "bats",
+          "clicked": "false"
+        },
+        {
+          "id": "7",
+          "image": "./images/halloween/halloween-7.png",
+          "alt": "tombstone",
+          "clicked": "false"
+        },
+        {
+          "id": "8",
+          "image": "./images/halloween/halloween-8.png",
+          "alt": "pumpkin",
           "clicked": "false"
         }
       ]
@@ -115,7 +170,7 @@
     {
       "id": "1",
       "user": "deryn",
-      "score": "15100"
+      "score": "5100"
     },
     {
       "id": "2",
@@ -146,7 +201,6 @@
   "userHistory": [
     {
       "id": "1",
-      "user": "reese",
       "moves": "21",
       "timer": {
         "minutes": "4",
@@ -157,7 +211,6 @@
     },
     {
       "id": "2",
-      "user": "reese",
       "moves": "19",
       "timer": {
         "minutes": "4",
@@ -165,6 +218,56 @@
       },
       "score": "5536",
       "dateTime": ""
+    },
+    {
+      "moves": 0,
+      "timer": {
+        "minutes": 0,
+        "seconds": 0
+      },
+      "score": "{USERSCORE-DOES-NOT-EXIST}",
+      "dateTime": "10/5/2022, 4:30:17 PM",
+      "id": "j7na0D_"
+    },
+    {
+      "moves": 0,
+      "timer": {
+        "minutes": 0,
+        "seconds": 3
+      },
+      "score": "{USERSCORE-DOES-NOT-EXIST}",
+      "dateTime": "10/5/2022, 4:31:03 PM",
+      "id": "UYD3M8A"
+    },
+    {
+      "moves": 0,
+      "timer": {
+        "minutes": 0,
+        "seconds": 0
+      },
+      "score": "{USERSCORE-DOES-NOT-EXIST}",
+      "dateTime": "10/5/2022, 4:32:06 PM",
+      "id": "a-v1I46"
+    },
+    {
+      "moves": 0,
+      "timer": {
+        "minutes": 0,
+        "seconds": 0
+      },
+      "score": "{USERSCORE-DOES-NOT-EXIST}",
+      "dateTime": "10/5/2022, 4:33:28 PM",
+      "id": "wcGuWln"
+    },
+    {
+      "moves": 0,
+      "timer": {
+        "minutes": 0,
+        "seconds": 0
+      },
+      "score": "{USERSCORE-DOES-NOT-EXIST}",
+      "dateTime": "10/6/2022, 8:40:53 AM",
+      "id": "bq-_6t5"
     }
   ]
 }

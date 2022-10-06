@@ -1,7 +1,7 @@
 function History({ userHistory }) {
+  //creates display of historical games
   let historyToDisplay = userHistory.map((entry) => (
     <tr key={entry.id}>
-      <td>{entry.user}</td>
       <td>{entry.dateTime}</td>
       <td>{entry.score}</td>
       <td>{entry.moves}</td>
@@ -17,7 +17,6 @@ function History({ userHistory }) {
       <table>
         <thead>
           <tr>
-            <th>User</th>
             <th>Date/Time</th>
             <th>Score</th>
             <th># of Moves</th>

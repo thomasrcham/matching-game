@@ -1,26 +1,51 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import CreditOverlay from "./CreditOverlay";
 
-function Sidebar({ minutes, newGame, seconds, setNewGame, deckId, setDeckId }) {
+
+
+function Sidebar({
+  endGame,
+  minutes,
+  movesCount,
+  newGame,
+  seconds,
+  setNewGame,
+  start,
+  reset,
+  deckId,
+  setDeckId
+}) {
+  //state and function for dropdown
+
   const [dropDown, setDropDown] = useState(false);
 
   function handleDropDown() {
     setDropDown((dropDown) => !dropDown);
   }
 
+
   function handleThemeClick(e) {
     setDeckId(parseInt(e.target.attributes.deckidnumber.nodeValue))
     setNewGame(!newGame)
   }
 
-
   return (
     <div className="sidebarComponent">
       <div className="sidebar div top">
-        <button onClick={() => {
-          setNewGame(!newGame)
-        }}> New Game </button>
+        {/*top of sidebar, buttons for navigation*/}
+        <NavLink to="/">
+          <button
+            onClick={() => {
+              setNewGame(!newGame);
+              reset();
+              start();
+            }}
+          >
+            {" "}
+            New Game{" "}
+          </button>
+        </NavLink>
         <NavLink to="/">
           <button> Existing Game </button>
         </NavLink>
@@ -33,25 +58,28 @@ function Sidebar({ minutes, newGame, seconds, setNewGame, deckId, setDeckId }) {
         <NavLink to="/Bobverlay">
           <button> Overlay Testing</button>
         </NavLink>
+        <button onClick={endGame}>end</button>
       </div>
       <div className="sidebar div middle">
+        {/*middle of sidebar, display of game state information*/}
         <h3>
           Current Score:
-          <br /> 2449
+          <br /> NEEDS FIXING
         </h3>
         <h3>
           Successful Matches:
-          <br /> 3
+          <br /> NEEDS FIXING
         </h3>
         <h3>
-          Moves Remaining:
-          <br /> 17
+          Matches Attempted:
+          <br /> {Math.floor(movesCount / 2)}
         </h3>
         <h3 className="timer">
           Timer: <br /> {minutes}:{seconds <= 9 ? "0" + seconds : seconds}
         </h3>
       </div>
       <div className="dd-wrapper">
+        {/*dropdown for choosing card deck*/}
         <div className="dd-header">
           <div className="dd-header-title"></div>
         </div>

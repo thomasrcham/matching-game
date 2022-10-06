@@ -150,6 +150,18 @@
           "image": "./images/halloween/halloween-6.png",
           "alt": "bats",
           "clicked": "false"
+        },
+        {
+          "id": "7",
+          "image": "./images/halloween/halloween-7.png",
+          "alt": "tombstone",
+          "clicked": "false"
+        },
+        {
+          "id": "8",
+          "image": "./images/halloween/halloween-8.png",
+          "alt": "pumpkin",
+          "clicked": "false"
         }
       ]
     }

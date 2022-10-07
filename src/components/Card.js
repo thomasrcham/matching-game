@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function Card({ card, cardBack, displayArray, handleFlip }) {
   const [flipped, setFlipped] = useState(false);
@@ -24,9 +24,13 @@ function Card({ card, cardBack, displayArray, handleFlip }) {
       flippedid={card.flippedid} //adds card id to event for handleflip
       src={flipped ? card.image : cardBack}
       alt={card.alt}
-      onClick={(event) => {
-        handleFlip(event);
-      }}
+      onClick={
+        flipped
+          ? null
+          : (event) => {
+              handleFlip(event);
+            }
+      }
     />
   );
 }

@@ -134,18 +134,18 @@ function Game() {
   }
 
   useEffect(() => {
-    if (checkMatch.length % 2 === 0) {
+    if (checkMatch.length === 2) {
       if (
         checkMatch[checkMatch.length - 1] === checkMatch[checkMatch.length - 2]
       ) {
         let newMatched = [...matchedArray, ...flippedArray];
         setMatchedArray(newMatched);
         handleMatch();
-        setTimeout(() => setFlippedArray([]), 800);
-        setTimeout(() => setCheckMatch([]), 800);
+        setTimeout(() => setFlippedArray([]), 400);
+        setTimeout(() => setCheckMatch([]), 400);
       } else {
-        setTimeout(() => setFlippedArray([]), 800);
-        setTimeout(() => setCheckMatch([]), 800);
+        setTimeout(() => setFlippedArray([]), 400);
+        setTimeout(() => setCheckMatch([]), 400);
       }
     }
   }, [movesCount]);
@@ -162,9 +162,10 @@ function Game() {
 
   function newGameStart() {
     reset();
-    // start();
+    start();
     setFlippedArray([]);
     setMatchedArray([]);
+    setCheckMatch([]);
     setScore(0);
     setMatchesCount(0);
     setMovesCount(0);
@@ -275,15 +276,9 @@ function Game() {
           movesCount={movesCount}
           newGame={newGame}
           newGameStart={newGameStart}
-          reset={reset}
           score={score}
-          setNewGame={setNewGame}
-          setScore={setScore}
           seconds={seconds}
-          start={start}
-          // creditsOpen={creditsOpen}
-          // setCreditsOpen={setCreditsOpen}
-          deckId={deckId}
+          setNewGame={setNewGame}
           setDeckId={setDeckId}
         />
       </div>

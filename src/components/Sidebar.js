@@ -11,10 +11,6 @@ function Sidebar({
   score,
   seconds,
   setNewGame,
-  setScore,
-  start,
-  reset,
-  deckId,
   setDeckId,
 }) {
   //state and function for dropdown
@@ -125,11 +121,6 @@ function Sidebar({
           </div>
         )}
       </div>
-      {/* <div>
-        <NavLink to="/CreditsOverlay">
-          <button onClick={() => CreditOverlay()}> Credits</button>
-        </NavLink>
-      </div> */}
     </div>
   );
 }

@@ -4,7 +4,8 @@ function History({ userHistory }) {
     <tr key={entry.id}>
       <td>{entry.dateTime}</td>
       <td>{entry.score}</td>
-      <td>{entry.moves}</td>
+      {/* <td>{entry.moves}</td> */}
+      <td>{Math.floor(entry.moves / 2)}</td>
       <td>
         {entry.timer.minutes}:
         {entry.timer.seconds <= 9
@@ -22,7 +23,7 @@ function History({ userHistory }) {
           <tr>
             <th>Date/Time</th>
             <th>Score</th>
-            <th># of Moves</th>
+            <th>Matches Attempted</th>
             <th>Timer</th>
           </tr>
         </thead>

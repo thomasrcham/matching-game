@@ -1,20 +1,22 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-function Card({
-  card,
-  cardBack,
-  flippedArray,
-  handleFlip,
-  setName,
-  matchedArray,
-}) {
-  // const [flipped, setFlipped] = useState(false);
+function Card({ card, cardBack, displayArray, handleFlip }) {
+  const [flipped, setFlipped] = useState(false);
 
-  let flipped = false;
 
-  // if (flippedArray.includes(card.flippedid)) {
-  //   console.log(card.flippedid + "is flipped");
-  // }
+  if (flipped === false) {
+    if (displayArray.includes(card.flippedid.toString())) {
+      setFlipped(true);
+    } else {
+    }
+  }
+
+  if (flipped === true) {
+    if (displayArray.includes(card.flippedid.toString())) {
+    } else {
+      setFlipped(false);
+    }
+  }
 
   // check to see if something is in the matched/flipped array
   // two function calls (matched || flipped)
@@ -52,9 +54,13 @@ function Card({
       flippedid={card.flippedid} //adds card id to event for handleflip
       src={flipped ? card.image : cardBack}
       alt={card.alt}
-      onClick={(event) => {
-        handleFlip(event);
-      }}
+      onClick={
+        flipped
+          ? null
+          : (event) => {
+              handleFlip(event);
+            }
+      }
     />
   );
 }

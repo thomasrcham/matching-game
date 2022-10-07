@@ -25,7 +25,7 @@ function Game() {
   const [flippedArray, setFlippedArray] = useState([]);
   const [matchedArray, setMatchedArray] = useState([]);
   const [checkMatch, setCheckMatch] = useState([]);
-  const [matchesCount, setMatchesCount] = useState(-1);
+  const [matchesCount, setMatchesCount] = useState(0);
   const [movesCount, setMovesCount] = useState(0);
   const [newGame, setNewGame] = useState(false);
   const [shuffledDeck, setShuffledDeck] = useState(null);
@@ -147,18 +147,20 @@ setFlippedArray((currentState) => ([
   }
 
   useEffect(() => {
-    if (checkMatch.length % 2 === 0) {
+    if (checkMatch.length === 2) {
       if (
         checkMatch[checkMatch.length - 1] === checkMatch[checkMatch.length - 2]
       ) {
         let newMatched = [...matchedArray, ...flippedArray];
         setMatchedArray(newMatched);
         handleMatch();
-        setTimeout(() => setFlippedArray([]), 1200);
-        setTimeout(() => setCheckMatch([]), 1200);
+
+        setTimeout(() => setFlippedArray([]), 400);
+        setTimeout(() => setCheckMatch([]), 400);
       } else {
-        setTimeout(() => setFlippedArray([]), 1200);
-        setTimeout(() => setCheckMatch([]), 1200);
+        setTimeout(() => setFlippedArray([]), 400);
+        setTimeout(() => setCheckMatch([]), 400);
+
       }
     }
   }, [movesCount]);
@@ -178,6 +180,7 @@ setFlippedArray((currentState) => ([
     start();
     setFlippedArray([]);
     setMatchedArray([]);
+    setCheckMatch([]);
     setScore(0);
     setMatchesCount(0);
     setMovesCount(0);
@@ -296,16 +299,12 @@ setFlippedArray((currentState) => ([
           movesCount={movesCount}
           newGame={newGame}
           newGameStart={newGameStart}
-          reset={reset}
           score={score}
-          setNewGame={setNewGame}
-          setScore={setScore}
           seconds={seconds}
-          start={start}
-          // creditsOpen={creditsOpen}
-          // setCreditsOpen={setCreditsOpen}
-          deckId={deckId}
+          setNewGame={setNewGame}
           setDeckId={setDeckId}
+          decks={decks}
+          deckId={deckId}
         />
       </div>
       <div className="mainWindow">

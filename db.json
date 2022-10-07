@@ -2,7 +2,7 @@
   "cardSets": [
     {
       "id": 1,
-      "setName": "pumpkins",
+      "setName": "Pumpkins",
       "cardBack": "../images/pumpkins/pumpkins-card-front.png",
       "cards": [
         {
@@ -57,7 +57,7 @@
     },
     {
       "id": 2,
-      "setName": "leaves",
+      "setName": "Leaves",
       "cardBack": "../images/leaves/leaves-card-front.png",
       "cards": [
         {
@@ -112,7 +112,7 @@
     },
     {
       "id": 3,
-      "setName": "halloween",
+      "setName": "Halloween",
       "cardBack": "../images/halloween/halloween-card-back.png",
       "cards": [
         {
@@ -167,7 +167,7 @@
     },
     {
       "id": 4,
-      "setName": "frogs",
+      "setName": "Frogs",
       "cardBack": "../images/frogs/frog-card-back.png",
       "cards": [
         {
@@ -219,6 +219,116 @@
           "clicked": "false"
         }
       ]
+    },
+    {
+      "id": 5,
+      "setName": "Beeatles",
+      "cardBack": "../images/beeatles/beeatles-card-back.png",
+      "cards": [
+        {
+          "id": "1",
+          "image": "./images/beeatles/beeatles-1.png",
+          "alt": "rainbow",
+          "clicked": "false"
+        },
+        {
+          "id": "2",
+          "image": "./images/beeatles/beeatles-2.png",
+          "alt": "rhino",
+          "clicked": "false"
+        },
+        {
+          "id": "3",
+          "image": "./images/beeatles/beeatles-3.png",
+          "alt": "green boy",
+          "clicked": "false"
+        },
+        {
+          "id": "4",
+          "image": "./images/beeatles/beeatles-4.png",
+          "alt": "pincers",
+          "clicked": "false"
+        },
+        {
+          "id": "5",
+          "image": "./images/beeatles/beeatles-5.png",
+          "alt": "john",
+          "clicked": "false"
+        },
+        {
+          "id": "6",
+          "image": "./images/beeatles/beeatles-6.png",
+          "alt": "paul",
+          "clicked": "false"
+        },
+        {
+          "id": "7",
+          "image": "./images/beeatles/beeatles-7.png",
+          "alt": "ringo",
+          "clicked": "false"
+        },
+        {
+          "id": "8",
+          "image": "./images/beeatles/beeatles-8.png",
+          "alt": "george",
+          "clicked": "false"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "setName": "Power Rangers",
+      "cardBack": "../images/powerRangers/powerRangers-card-back.png",
+      "cards": [
+        {
+          "id": "1",
+          "image": "./images/powerRangers/powerRangers-1.png",
+          "alt": "red",
+          "clicked": "false"
+        },
+        {
+          "id": "2",
+          "image": "./images/powerRangers/powerRangers-2.png",
+          "alt": "black",
+          "clicked": "false"
+        },
+        {
+          "id": "3",
+          "image": "./images/powerRangers/powerRangers-3.png",
+          "alt": "pink",
+          "clicked": "false"
+        },
+        {
+          "id": "4",
+          "image": "./images/powerRangers/powerRangers-4.png",
+          "alt": "yellow",
+          "clicked": "false"
+        },
+        {
+          "id": "5",
+          "image": "./images/powerRangers/powerRangers-5.png",
+          "alt": "green",
+          "clicked": "false"
+        },
+        {
+          "id": "6",
+          "image": "./images/powerRangers/powerRangers-6.png",
+          "alt": "blue",
+          "clicked": "false"
+        },
+        {
+          "id": "7",
+          "image": "./images/powerRangers/powerRangers-7.png",
+          "alt": "rita repulsa",
+          "clicked": "false"
+        },
+        {
+          "id": "8",
+          "image": "./images/powerRangers/powerRangers-8.png",
+          "alt": "mega dragonzord",
+          "clicked": "false"
+        }
+      ]
     }
   ],
   "highScores": [
@@ -253,177 +363,7 @@
       "score": "4551"
     }
   ],
-  "userHistory": [
-    {
-      "id": "1",
-      "moves": "21",
-      "timer": {
-        "minutes": "4",
-        "seconds": "22"
-      },
-      "score": "4546",
-      "dateTime": ""
-    },
-    {
-      "id": "2",
-      "moves": "19",
-      "timer": {
-        "minutes": "4",
-        "seconds": "51"
-      },
-      "score": "5536",
-      "dateTime": ""
-    },
-    {
-      "moves": 16,
-      "timer": {
-        "minutes": 0,
-        "seconds": 37
-      },
-      "score": 8400,
-      "dateTime": "10/6/2022, 3:39:29 PM",
-      "id": "ny8MLU5"
-    },
-    {
-      "moves": 16,
-      "timer": {
-        "minutes": 0,
-        "seconds": 37
-      },
-      "score": 12100,
-      "dateTime": "10/6/2022, 3:39:29 PM",
-      "id": "io7ojCD"
-    },
-    {
-      "moves": 16,
-      "timer": {
-        "minutes": 1,
-        "seconds": 58
-      },
-      "score": 0,
-      "dateTime": "10/6/2022, 3:41:31 PM",
-      "id": "5aD9LRQ"
-    },
-    {
-      "moves": 16,
-      "timer": {
-        "minutes": 1,
-        "seconds": 58
-      },
-      "score": 11800,
-      "dateTime": "10/6/2022, 3:41:31 PM",
-      "id": "bXZBVX7"
-    },
-    {
-      "moves": 16,
-      "timer": {
-        "minutes": 1,
-        "seconds": 58
-      },
-      "score": 11800,
-      "dateTime": "10/6/2022, 3:42:13 PM",
-      "id": "hEoO_eu"
-    },
-    {
-      "moves": 16,
-      "timer": {
-        "minutes": 1,
-        "seconds": 58
-      },
-      "score": 23600,
-      "dateTime": "10/6/2022, 3:42:13 PM",
-      "id": "cLu8JtL"
-    },
-    {
-      "moves": 16,
-      "timer": {
-        "minutes": 0,
-        "seconds": 23
-      },
-      "score": 11000,
-      "dateTime": "10/6/2022, 3:45:34 PM",
-      "id": "S8ylGGL"
-    },
-    {
-      "moves": 16,
-      "timer": {
-        "minutes": 0,
-        "seconds": 23
-      },
-      "score": 11000,
-      "dateTime": "10/6/2022, 3:46:18 PM",
-      "id": "viPcv_2"
-    },
-    {
-      "moves": 16,
-      "timer": {
-        "minutes": 0,
-        "seconds": 23
-      },
-      "score": 13300,
-      "dateTime": "10/6/2022, 3:46:18 PM",
-      "id": "M17-BxA"
-    },
-    {
-      "moves": 16,
-      "timer": {
-        "minutes": 0,
-        "seconds": 23
-      },
-      "score": 13300,
-      "dateTime": "10/6/2022, 3:46:32 PM",
-      "id": "MCiecEx"
-    },
-    {
-      "moves": 16,
-      "timer": {
-        "minutes": 0,
-        "seconds": 23
-      },
-      "score": 15600,
-      "dateTime": "10/6/2022, 3:46:32 PM",
-      "id": "GWq-eej"
-    },
-    {
-      "moves": 0,
-      "timer": {
-        "minutes": 0,
-        "seconds": 0
-      },
-      "score": 0,
-      "dateTime": "10/6/2022, 3:49:53 PM",
-      "id": "wQWzwiE"
-    },
-    {
-      "moves": 0,
-      "timer": {
-        "minutes": 0,
-        "seconds": 0
-      }
-    },
-    {
-      "moves": 11,
-      "timer": {
-        "minutes": 4,
-        "seconds": 4
-      },
-      "id": "wiA-X0m"
-    },
-    {
-      "moves": 81,
-      "timer": {
-        "minutes": 4,
-        "seconds": 4
-      },
-      "id": "7lx8PIF"
-    },
-    {
-      "moves": 54,
-      "timer": {
-        "minutes": 4,
-        "seconds": 4
-      },
-      "id": "xtTjUaQ"
-    }
-  ]
+
+  "userHistory": []
 }
+

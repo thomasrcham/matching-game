@@ -31,6 +31,7 @@ function Sidebar({
     let randomDeckId = (Math.floor(Math.random() * decks.length));
     setDeckId(randomDeckId);
     setNewGame(!newGame)
+    newGameStart()
   }
 
   return (

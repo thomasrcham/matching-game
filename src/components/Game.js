@@ -198,6 +198,7 @@ function Game() {
         const addToHighScore = [...highScores, d];
         setHighScores(addToHighScore);
       });
+    setUserHighScoreSuccess(false);
   }
 
   const highScoreDisplay = (

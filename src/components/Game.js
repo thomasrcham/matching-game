@@ -42,9 +42,16 @@ function Game() {
   const [deckId, setDeckId] = useState(1);
 
   // timer hook
-  const { seconds, minutes, start, pause, reset } = useStopwatch({
-    autoStart: false,
-  });
+  // const { seconds, minutes, start, pause, reset } = useStopwatch({
+  //   autoStart: false,
+  // });
+
+const [minutes, setMinutes] = useState(4);
+const [seconds, setSeconds] =useState(4);
+
+const [start, setStart] =useState("");
+const [pause, setPause] =useState("");
+const [reset, setReset] = useState("");
 
   // side effects
   useEffect(() => {
@@ -120,8 +127,14 @@ function Game() {
     // adds one to the number of moves
     setMovesCount(movesCount + 1);
 
-    let newFlippedCardsArray = [...flippedArray, clickedCardFlippedId];
-    setFlippedArray(newFlippedCardsArray);
+setFlippedArray((currentState) => ([
+  ...(currentState ?? []), 
+  clickedCardFlippedId
+]))
+
+    // let newFlippedCardsArray = [...flippedArray, clickedCardFlippedId];
+    // setFlippedArray(newFlippedCardsArray);
+
     let newCheckCardsArray = [...checkMatch, clickedCardId];
     setCheckMatch(newCheckCardsArray);
   }
@@ -141,11 +154,13 @@ function Game() {
         let newMatched = [...matchedArray, ...flippedArray];
         setMatchedArray(newMatched);
         handleMatch();
+
         setTimeout(() => setFlippedArray([]), 400);
         setTimeout(() => setCheckMatch([]), 400);
       } else {
         setTimeout(() => setFlippedArray([]), 400);
         setTimeout(() => setCheckMatch([]), 400);
+
       }
     }
   }, [movesCount]);
@@ -175,18 +190,25 @@ function Game() {
     //open overlay
     setIsOpen(true);
     //stop timer
-    pause();
-    //*****NEEDS WORK: check score versus high score
-    //create new user history object, add to db.json, display in userHistory
-    let newUserHistoryObj = {
+    // pause();
+    // //*****NEEDS WORK: check score versus high score
+    // //create new user history object, add to db.json, display in userHistory
+    let newUserHistoryObj= {
       moves: movesCount,
-      timer: {
+      timer :{
         minutes: minutes,
-        seconds: seconds,
-      },
-      score: score,
-      dateTime: new Date().toLocaleString() + "",
-    };
+        seconds: seconds
+      }
+    }
+    // let newUserHistoryObj = {
+    //   moves: movesCount,
+    //   timer: {
+    //     minutes: minutes,
+    //     seconds: seconds,
+    //   },
+    //   score: score,
+    //   dateTime: new Date().toLocaleString() + "",
+    // };
     fetch(`${backend}/userHistory`, {
       method: "POST",
       headers: { "Content-type": "application/json" },
@@ -198,6 +220,8 @@ function Game() {
         setUserHistory(addToUserHistory);
       });
   }
+
+  console.warn("cute dogs")
 
   return (
     <div>
@@ -223,11 +247,10 @@ function Game() {
             <p>Final Score: {score}</p>
             <NavLink to="/">
               <button
-                onClick={() => {
-                  setIsOpen(false);
-                  setNewGame(!newGame);
-                  newGameStart();
-                }}
+                onClick={newGame ? ()=>{window.location.reload(false)} : () =>{
+              setNewGame(!newGame);
+              newGameStart(); 
+            }}
               >
                 New Game!
               </button>

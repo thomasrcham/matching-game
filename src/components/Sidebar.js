@@ -32,9 +32,9 @@ function Sidebar({
         {/*top of sidebar, buttons for navigation*/}
         <NavLink to="/">
           <button
-            onClick={() => {
+            onClick={newGame ? ()=>{window.location.reload(false)} : () =>{
               setNewGame(!newGame);
-              newGameStart();
+              newGameStart(); 
             }}
           >
             {" "}

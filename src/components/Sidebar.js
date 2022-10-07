@@ -50,7 +50,6 @@ function Sidebar({
         <NavLink to="/History">
           <button> History</button>
         </NavLink>
-        <button onClick={endGame}>end</button>
       </div>
       <div className="sidebar div middle">
         {/*middle of sidebar, display of game state information*/}

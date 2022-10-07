@@ -162,7 +162,7 @@ function Game() {
 
   function newGameStart() {
     reset();
-    start();
+    // start();
     setFlippedArray([]);
     setMatchedArray([]);
     setScore(0);
@@ -293,9 +293,9 @@ function Game() {
             <CardContainer
               decks={decks}
               deckId={deckId}
-              flipped={flippedArray}
+              flippedArray={flippedArray}
               handleFlip={handleFlip}
-              matched={matchedArray}
+              matchedArray={matchedArray}
               shuffledDeck={shuffledDeck}
             />
           ) : null}

@@ -38,7 +38,7 @@ function Sidebar({
           <button
             onClick={() => {
               setNewGame(!newGame);
-              newGameStart();
+              // newGameStart();
             }}
           >
             {" "}

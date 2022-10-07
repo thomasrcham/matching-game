@@ -1,18 +1,12 @@
 import { useState, useEffect } from "react";
 
-function Card({
-  card,
-  cardBack,
-  flippedArray,
-  handleFlip,
-  setName,
-  matchedArray,
-}) {
+function Card({ card, cardBack, displayArray, handleFlip }) {
   const [flipped, setFlipped] = useState(true);
 
-  // if (flippedArray.includes(card.flippedid)) {
-  //   console.log(card.flippedid + "is flipped");
-  // }
+  useEffect(() => {
+    let check = displayArray.filter((id) => id === 4);
+    console.log(check);
+  }, [displayArray]);
 
   return (
     <img

@@ -1,4 +1,5 @@
 import Card from "./Card.js";
+import { useState, useEffect } from "react";
 
 function CardContainer({
   decks,
@@ -8,11 +9,15 @@ function CardContainer({
   matchedArray,
   shuffledDeck,
 }) {
+  const [displayArray, setDisplayArray] = useState([]);
+
+  useEffect(() => {
+    setDisplayArray([...flippedArray, ...matchedArray]);
+  }, [flippedArray, matchedArray]);
+
   if (shuffledDeck === null) {
     return null; //if the deck isn't populated, do not populate the tableau with cards
   }
-
-  let displayArray = [...flippedArray, ...matchedArray];
 
   let tableauCards = shuffledDeck.map((card, index) => (
     <Card

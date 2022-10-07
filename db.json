@@ -219,6 +219,61 @@
           "clicked": "false"
         }
       ]
+    },
+    {
+      "id": 4,
+      "setName": "beeatles",
+      "cardBack": "../images/beeatles/beeatles-card-back.png",
+      "cards": [
+        {
+          "id": "1",
+          "image": "./images/beeatles/beeatles-1.png",
+          "alt": "rainbow",
+          "clicked": "false"
+        },
+        {
+          "id": "2",
+          "image": "./images/beeatles/beeatles-2.png",
+          "alt": "rhino",
+          "clicked": "false"
+        },
+        {
+          "id": "3",
+          "image": "./images/beeatles/beeatles-3.png",
+          "alt": "green boy",
+          "clicked": "false"
+        },
+        {
+          "id": "4",
+          "image": "./images/beeatles/beeatles-4.png",
+          "alt": "pincers",
+          "clicked": "false"
+        },
+        {
+          "id": "5",
+          "image": "./images/beeatles/beeatles-5.png",
+          "alt": "john",
+          "clicked": "false"
+        },
+        {
+          "id": "6",
+          "image": "./images/beeatles/beeatles-6.png",
+          "alt": "paul",
+          "clicked": "false"
+        },
+        {
+          "id": "7",
+          "image": "./images/beeatles/beeatles-7.png",
+          "alt": "ringo",
+          "clicked": "false"
+        },
+        {
+          "id": "8",
+          "image": "./images/beeatles/beeatles-8.png",
+          "alt": "george",
+          "clicked": "false"
+        }
+      ]
     }
   ],
   "highScores": [

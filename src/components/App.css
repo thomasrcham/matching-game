@@ -41,6 +41,10 @@
   text-shadow: 2px 2px #fffacd;
 }
 
+.header #header-project {
+  font-size: 55px;
+}
+
 .sidebar {
   position: relative;
   padding-bottom: 8px;

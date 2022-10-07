@@ -1,50 +1,22 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-function Card({
-  card,
-  cardBack,
-  flippedArray,
-  handleFlip,
-  setName,
-  matchedArray,
-}) {
-  // const [flipped, setFlipped] = useState(false);
+function Card({ card, cardBack, displayArray, handleFlip }) {
+  const [flipped, setFlipped] = useState(false);
 
-  let flipped = false;
-
-  // if (flippedArray.includes(card.flippedid)) {
-  //   console.log(card.flippedid + "is flipped");
-  // }
-
-  // check to see if something is in the matched/flipped array
-  // two function calls (matched || flipped)
-  // if in arrays --> display card face image, disable eventhandler
-  // if not in arrays --> display card back image
-
-  // useEffect(() => {
-  //   const inArray = () => {
-  //     console.log({flippedArray})
-  //     if(flippedArray === undefined ) {
-  //       return null
-  //     }
-  //     let flippedCard = flippedArray.filter((flippedElement) => {
-  //       return flippedElement == card.flippedId ? setFlipped(true) : setFlipped(false);
-  //     })
-  //     console.log({flippedCard})
-  //   }
-  //   let x = inArray()
-  //     console.log(x)
-  // }, [flippedArray])
-  // console.log({card, matchedArray, flippedArray})
-
-  if (matchedArray && matchedArray.includes(card.flippedid.toString(10))) {
-    flipped = true;
+  if (flipped === false) {
+    if (displayArray.includes(card.flippedid.toString())) {
+      setFlipped(true);
+    } else {
+    }
   }
 
-  if (flippedArray && flippedArray.includes(card.flippedid.toString(10))) {
-    console.log("something");
-    flipped = true;
+  if (flipped === true) {
+    if (displayArray.includes(card.flippedid.toString())) {
+    } else {
+      setFlipped(false);
+    }
   }
+
   return (
     <img
       className="card"
@@ -52,9 +24,13 @@ function Card({
       flippedid={card.flippedid} //adds card id to event for handleflip
       src={flipped ? card.image : cardBack}
       alt={card.alt}
-      onClick={(event) => {
-        handleFlip(event);
-      }}
+      onClick={
+        flipped
+          ? null
+          : (event) => {
+              handleFlip(event);
+            }
+      }
     />
   );
 }

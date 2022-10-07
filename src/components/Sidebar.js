@@ -2,7 +2,8 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 function Sidebar({
-  endGame,
+  decks,
+  deckId,
   matchesCount,
   minutes,
   movesCount,
@@ -11,12 +12,7 @@ function Sidebar({
   score,
   seconds,
   setNewGame,
-  setScore,
-  start,
-  reset,
-  deckId,
   setDeckId,
-  decks,
 }) {
   //state and function for dropdown
   // const [decks, setDecks] = useState(1)
@@ -28,7 +24,6 @@ function Sidebar({
 
   function handleThemeClick(e) {
     setDeckId(parseInt(e.target.attributes.deckidnumber.nodeValue));
-    setNewGame(!newGame);
   }
   
 
@@ -65,6 +60,10 @@ function Sidebar({
       </div>
       <div className="sidebar div middle">
         {/*middle of sidebar, display of game state information*/}
+        <h3>
+          Deck Name:
+          <br /> {decks ? decks[deckId].setName : null}
+        </h3>
         <h3>
           Current Score:
           <br /> {score}
@@ -132,11 +131,6 @@ function Sidebar({
           </div>
         )}
       </div>
-      {/* <div>
-        <NavLink to="/CreditsOverlay">
-          <button onClick={() => CreditOverlay()}> Credits</button>
-        </NavLink>
-      </div> */}
     </div>
   );
 }

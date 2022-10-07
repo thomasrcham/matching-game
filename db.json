@@ -363,7 +363,22 @@
       "score": "4551"
     }
   ],
-
-  "userHistory": []
+  "userHistory": [
+    {
+      "moves": 50,
+      "timer": {
+        "minutes": 4,
+        "seconds": 4
+      },
+      "id": 1
+    },
+    {
+      "moves": 32,
+      "timer": {
+        "minutes": 4,
+        "seconds": 4
+      },
+      "id": 2
+    }
+  ]
 }
-

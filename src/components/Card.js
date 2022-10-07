@@ -39,14 +39,14 @@ function Card({ card, cardBack, displayArray, handleFlip }) {
   // }, [flippedArray])
   // console.log({card, matchedArray, flippedArray})
 
-  if (matchedArray && matchedArray.includes(card.flippedid.toString(10))) {
-    flipped = true;
-  }
+  // if (matchedArray && matchedArray.includes(card.flippedid.toString(10))) {
+  //   flipped = true;
+  // }
 
-  if (flippedArray && flippedArray.includes(card.flippedid.toString(10))) {
-    console.log("something");
-    flipped = true;
-  }
+  // if (flippedArray && flippedArray.includes(card.flippedid.toString(10))) {
+  //   console.log("something");
+  //   flipped = true;
+  // }
   return (
     <img
       className="card"
@@ -58,8 +58,8 @@ function Card({ card, cardBack, displayArray, handleFlip }) {
         flipped
           ? null
           : (event) => {
-              handleFlip(event);
-            }
+            handleFlip(event);
+          }
       }
     />
   );

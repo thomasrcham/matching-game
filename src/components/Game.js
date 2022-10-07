@@ -33,6 +33,7 @@ function Game() {
   //d isplays for other pages
   const [highScores, setHighScores] = useState(null);
   const [userHistory, setUserHistory] = useState(null);
+  const [userHighScoreSuccess, setUserHighScoreSuccess] = useState(null);
 
   // overlay state
   const [isOpen, setIsOpen] = useState(false);
@@ -42,16 +43,9 @@ function Game() {
   const [deckId, setDeckId] = useState(1);
 
   // timer hook
-  // const { seconds, minutes, start, pause, reset } = useStopwatch({
-  //   autoStart: false,
-  // });
-
-const [minutes, setMinutes] = useState(4);
-const [seconds, setSeconds] =useState(4);
-
-const [start, setStart] =useState("");
-const [pause, setPause] =useState("");
-const [reset, setReset] = useState("");
+  const { seconds, minutes, start, pause, reset } = useStopwatch({
+    autoStart: false,
+  });
 
   // side effects
   useEffect(() => {
@@ -127,14 +121,8 @@ const [reset, setReset] = useState("");
     // adds one to the number of moves
     setMovesCount(movesCount + 1);
 
-setFlippedArray((currentState) => ([
-  ...(currentState ?? []), 
-  clickedCardFlippedId
-]))
-
-    // let newFlippedCardsArray = [...flippedArray, clickedCardFlippedId];
-    // setFlippedArray(newFlippedCardsArray);
-
+    let newFlippedCardsArray = [...flippedArray, clickedCardFlippedId];
+    setFlippedArray(newFlippedCardsArray);
     let newCheckCardsArray = [...checkMatch, clickedCardId];
     setCheckMatch(newCheckCardsArray);
   }
@@ -154,13 +142,11 @@ setFlippedArray((currentState) => ([
         let newMatched = [...matchedArray, ...flippedArray];
         setMatchedArray(newMatched);
         handleMatch();
-
         setTimeout(() => setFlippedArray([]), 400);
         setTimeout(() => setCheckMatch([]), 400);
       } else {
         setTimeout(() => setFlippedArray([]), 400);
         setTimeout(() => setCheckMatch([]), 400);
-
       }
     }
   }, [movesCount]);
@@ -186,29 +172,68 @@ setFlippedArray((currentState) => ([
     setMovesCount(0);
   }
 
+  function checkScores(endScore) {
+    let sortedScores = highScores.sort((a, b) => {
+      return a.score - b.score;
+    });
+    let scoreComparisonArray = sortedScores.map((entry) => entry.score);
+    if (endScore <= [scoreComparisonArray[scoreComparisonArray.length - 1]]) {
+      setUserHighScoreSuccess(true);
+    }
+  }
+
+  function submitHighScore(e) {
+    e.preventDefault();
+    let newHighScore = {
+      user: e.target.name.value,
+      score: score,
+    };
+    fetch(`${backend}/highScores`, {
+      method: "POST",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify(newHighScore),
+    })
+      .then((r) => r.json())
+      .then((d) => {
+        const addToHighScore = [...highScores, d];
+        setHighScores(addToHighScore);
+      });
+  }
+
+  const highScoreDisplay = (
+    <div>
+      {userHighScoreSuccess ? (
+        <p>
+          You've achieved one of the <br />
+          best scores ever! <br />
+          Please enter your name below:
+          <div style={{ padding: 5 }}>
+            <form onSubmit={(e) => submitHighScore(e)}>
+              <input type="text" placeholder="Your Name" name="name"></input>
+              <button>Enter</button>
+            </form>
+          </div>
+        </p>
+      ) : null}
+    </div>
+  );
+
   function endGame() {
+    checkScores(score);
     //open overlay
     setIsOpen(true);
     //stop timer
-    // pause();
-    // //*****NEEDS WORK: check score versus high score
-    // //create new user history object, add to db.json, display in userHistory
-    let newUserHistoryObj= {
+    pause();
+    //create new user history object, add to db.json, display in userHistory
+    let newUserHistoryObj = {
       moves: movesCount,
-      timer :{
+      timer: {
         minutes: minutes,
-        seconds: seconds
-      }
-    }
-    // let newUserHistoryObj = {
-    //   moves: movesCount,
-    //   timer: {
-    //     minutes: minutes,
-    //     seconds: seconds,
-    //   },
-    //   score: score,
-    //   dateTime: new Date().toLocaleString() + "",
-    // };
+        seconds: seconds,
+      },
+      score: score,
+      dateTime: new Date().toLocaleString() + "",
+    };
     fetch(`${backend}/userHistory`, {
       method: "POST",
       headers: { "Content-type": "application/json" },
@@ -220,8 +245,6 @@ setFlippedArray((currentState) => ([
         setUserHistory(addToUserHistory);
       });
   }
-
-  console.warn("cute dogs")
 
   return (
     <div>
@@ -240,6 +263,7 @@ setFlippedArray((currentState) => ([
 
           <div className="overlay">
             <p>Great Job!!</p>
+            {highScoreDisplay}
             <p>
               Time: {minutes}:{seconds <= 9 ? "0" + seconds : seconds}
             </p>
@@ -247,10 +271,11 @@ setFlippedArray((currentState) => ([
             <p>Final Score: {score}</p>
             <NavLink to="/">
               <button
-                onClick={newGame ? ()=>{window.location.reload(false)} : () =>{
-              setNewGame(!newGame);
-              newGameStart(); 
-            }}
+                onClick={() => {
+                  setIsOpen(false);
+                  setNewGame(!newGame);
+                  newGameStart();
+                }}
               >
                 New Game!
               </button>

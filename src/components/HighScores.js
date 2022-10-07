@@ -6,6 +6,7 @@ function HighScores({ highScoresArray }) {
       })
     : null;
   //creates display for high scores table
+
   let scoresToDisplay = sortedScoresArray.map((entry) => (
     <tr key={entry.score}>
       <td>{entry.user}</td>

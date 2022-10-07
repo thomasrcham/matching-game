@@ -16,9 +16,10 @@ function Sidebar({
   reset,
   deckId,
   setDeckId,
+  decks,
 }) {
   //state and function for dropdown
-
+  // const [decks, setDecks] = useState(1)
   const [dropDown, setDropDown] = useState(false);
 
   function handleDropDown() {
@@ -28,6 +29,13 @@ function Sidebar({
   function handleThemeClick(e) {
     setDeckId(parseInt(e.target.attributes.deckidnumber.nodeValue));
     setNewGame(!newGame);
+  }
+  
+
+  function handleSurpriseClick() {
+    let randomDeckId = (Math.floor(Math.random() * decks.length));
+    setDeckId(randomDeckId);
+    setNewGame(!newGame)
   }
 
   return (
@@ -109,7 +117,7 @@ function Sidebar({
             </button>
             <button
               deckidnumber="3"
-              onClick={(e) => handleThemeClick(e)}
+              onClick={(e) => handleSurpriseClick(e)}
               id="surprise-me"
               className="dd-list-item"
             >

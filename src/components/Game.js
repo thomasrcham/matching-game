@@ -306,6 +306,7 @@ setFlippedArray((currentState) => ([
           // setCreditsOpen={setCreditsOpen}
           deckId={deckId}
           setDeckId={setDeckId}
+          decks={decks}
         />
       </div>
       <div className="mainWindow">

@@ -28,8 +28,8 @@ function Card({ card, cardBack, displayArray, handleFlip }) {
         flipped
           ? null
           : (event) => {
-            handleFlip(event);
-          }
+              handleFlip(event);
+            }
       }
     />
   );

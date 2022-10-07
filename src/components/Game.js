@@ -228,6 +228,7 @@ function Game() {
     pause();
     //create new user history object, add to db.json, display in userHistory
     let newUserHistoryObj = {
+      setName: decks[deckId].setName,
       moves: movesCount,
       timer: {
         minutes: minutes,

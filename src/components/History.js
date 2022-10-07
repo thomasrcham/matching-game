@@ -11,6 +11,7 @@ function History({ userHistory }) {
           ? "0" + entry.timer.seconds
           : entry.timer.seconds}
       </td>
+      <td>{entry.setName}</td>
     </tr>
   ));
 
@@ -24,6 +25,7 @@ function History({ userHistory }) {
             <th>Score</th>
             <th>Match Attempts</th>
             <th>Timer</th>
+            <th>Set Used</th>
           </tr>
         </thead>
         <tbody>{historyToDisplay}</tbody>

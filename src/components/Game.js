@@ -3,8 +3,7 @@ import { useEffect, useState } from "react";
 import "@blueprintjs/core/lib/css/blueprint.css";
 import { Overlay, Classes } from "@blueprintjs/core";
 import Confetti from "react-confetti";
-import { NavLink } from "react-router-dom";
-import { Route } from "react-router-dom";
+import { NavLink, Route } from "react-router-dom";
 import { useStopwatch } from "react-timer-hook";
 //Game Components
 import CardContainer from "./CardContainer";
@@ -162,6 +161,7 @@ function Game() {
   //function to call when end of game is called
 
   function newGameStart() {
+    console.log("start");
     reset();
     start();
     setFlippedArray([]);
@@ -170,6 +170,7 @@ function Game() {
     setScore(0);
     setMatchesCount(0);
     setMovesCount(0);
+    <Route path="/" />;
   }
 
   function checkScores(endScore) {

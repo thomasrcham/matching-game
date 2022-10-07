@@ -24,13 +24,14 @@ function Sidebar({
 
   function handleThemeClick(e) {
     setDeckId(parseInt(e.target.attributes.deckidnumber.nodeValue));
+    newGameStart();
   }
-  
 
   function handleSurpriseClick() {
-    let randomDeckId = (Math.floor(Math.random() * decks.length));
+    let randomDeckId = Math.floor(Math.random() * decks.length);
     setDeckId(randomDeckId);
-    setNewGame(!newGame)
+    setNewGame(!newGame);
+    newGameStart();
   }
 
   return (
@@ -39,10 +40,16 @@ function Sidebar({
         {/*top of sidebar, buttons for navigation*/}
         <NavLink to="/">
           <button
-            onClick={newGame ? ()=>{window.location.reload(false)} : () =>{
-              setNewGame(!newGame);
-              newGameStart(); 
-            }}
+            onClick={
+              newGame
+                ? () => {
+                    window.location.reload(false);
+                  }
+                : () => {
+                    setNewGame(!newGame);
+                    newGameStart();
+                  }
+            }
           >
             {" "}
             New Game{" "}
@@ -82,6 +89,7 @@ function Sidebar({
       </div>
       <div className="dd-wrapper">
         {/*dropdown for choosing card deck*/}
+
         <div className="dd-header">
           <div className="dd-header-title"></div>
         </div>
@@ -114,14 +122,16 @@ function Sidebar({
             >
               Pumpkins
             </button>
-            <button
-              deckidnumber="3"
-              onClick={(e) => handleSurpriseClick(e)}
-              id="surprise-me"
-              className="dd-list-item"
-            >
-              SURPRISE ME!
-            </button>
+            <NavLink exact to="/">
+              <button
+                deckidnumber="3"
+                onClick={(e) => handleSurpriseClick(e)}
+                id="surprise-me"
+                className="dd-list-item"
+              >
+                SURPRISE ME!
+              </button>
+            </NavLink>
           </div>
         ) : (
           <div className="dd-closed">

@@ -36,9 +36,9 @@ function Sidebar({
         {/*top of sidebar, buttons for navigation*/}
         <NavLink to="/">
           <button
-            onClick={() => {
+            onClick={newGame ? ()=>{window.location.reload(false)} : () =>{
               setNewGame(!newGame);
-              newGameStart();
+              newGameStart(); 
             }}
           >
             {" "}
@@ -54,7 +54,6 @@ function Sidebar({
         <NavLink to="/History">
           <button> History</button>
         </NavLink>
-        <button onClick={endGame}>end</button>
       </div>
       <div className="sidebar div middle">
         {/*middle of sidebar, display of game state information*/}

@@ -361,7 +361,43 @@
       "id": "6",
       "user": "cho",
       "score": "4551"
+    },
+    {
+      "user": "Deryn Brown",
+      "score": 0,
+      "id": "B7X8LZb"
     }
   ],
-  "userHistory": []
+  "userHistory": [
+    {
+      "moves": 32,
+      "timer": {
+        "minutes": 0,
+        "seconds": 0
+      },
+      "score": 0,
+      "dateTime": "10/7/2022, 10:48:35 AM",
+      "id": 1
+    },
+    {
+      "moves": 30,
+      "timer": {
+        "minutes": 0,
+        "seconds": 26
+      },
+      "score": 13900,
+      "dateTime": "10/7/2022, 10:52:25 AM",
+      "id": 2
+    },
+    {
+      "moves": 32,
+      "timer": {
+        "minutes": 0,
+        "seconds": 25
+      },
+      "score": 12200,
+      "dateTime": "10/7/2022, 10:54:07 AM",
+      "id": 3
+    }
+  ]
 }

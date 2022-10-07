@@ -303,17 +303,17 @@ function Game() {
 
             <div className="credits">
               <p>Credits:</p>
-              <ul>
-                <li>
+              <span>
+                <p>
                   <a href="https://github.com/thomasrcham">Reese Chamberlain</a>
-                </li>
-                <li>
+                </p>
+                <p>
                   <a href="https://github.com/pikeminnow">Ashton MacKenzie</a>
-                </li>
-                <li>
+                </p>
+                <p>
                   <a href="https://github.com/dbrown13"> Deryn Brown</a>
-                </li>
-              </ul>
+                </p>
+              </span>
             </div>
           </div>
         </Overlay>

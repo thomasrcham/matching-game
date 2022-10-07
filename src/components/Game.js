@@ -25,7 +25,7 @@ function Game() {
   const [flippedArray, setFlippedArray] = useState([]);
   const [matchedArray, setMatchedArray] = useState([]);
   const [checkMatch, setCheckMatch] = useState([]);
-  const [matchesCount, setMatchesCount] = useState(-1);
+  const [matchesCount, setMatchesCount] = useState(0);
   const [movesCount, setMovesCount] = useState(0);
   const [newGame, setNewGame] = useState(false);
   const [shuffledDeck, setShuffledDeck] = useState(null);
@@ -280,6 +280,8 @@ function Game() {
           seconds={seconds}
           setNewGame={setNewGame}
           setDeckId={setDeckId}
+          decks={decks}
+          deckId={deckId}
         />
       </div>
       <div className="mainWindow">

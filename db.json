@@ -274,6 +274,61 @@
           "clicked": "false"
         }
       ]
+    },
+    {
+      "id": 6,
+      "setName": "Power Rangers",
+      "cardBack": "../images/powerRangers/powerRangers-card-back.png",
+      "cards": [
+        {
+          "id": "1",
+          "image": "./images/powerRangers/powerRangers-1.png",
+          "alt": "red",
+          "clicked": "false"
+        },
+        {
+          "id": "2",
+          "image": "./images/powerRangers/powerRangers-2.png",
+          "alt": "black",
+          "clicked": "false"
+        },
+        {
+          "id": "3",
+          "image": "./images/powerRangers/powerRangers-3.png",
+          "alt": "pink",
+          "clicked": "false"
+        },
+        {
+          "id": "4",
+          "image": "./images/powerRangers/powerRangers-4.png",
+          "alt": "yellow",
+          "clicked": "false"
+        },
+        {
+          "id": "5",
+          "image": "./images/powerRangers/powerRangers-5.png",
+          "alt": "green",
+          "clicked": "false"
+        },
+        {
+          "id": "6",
+          "image": "./images/powerRangers/powerRangers-6.png",
+          "alt": "blue",
+          "clicked": "false"
+        },
+        {
+          "id": "7",
+          "image": "./images/powerRangers/powerRangers-7.png",
+          "alt": "rita repulsa",
+          "clicked": "false"
+        },
+        {
+          "id": "8",
+          "image": "./images/powerRangers/powerRangers-8.png",
+          "alt": "mega dragonzord",
+          "clicked": "false"
+        }
+      ]
     }
   ],
   "highScores": [

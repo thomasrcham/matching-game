@@ -33,6 +33,7 @@ function Game() {
   //d isplays for other pages
   const [highScores, setHighScores] = useState(null);
   const [userHistory, setUserHistory] = useState(null);
+  const [userHighScoreSuccess, setUserHighScoreSuccess] = useState(null);
 
   // overlay state
   const [isOpen, setIsOpen] = useState(false);
@@ -171,7 +172,54 @@ function Game() {
     setMovesCount(0);
   }
 
+  function checkScores(endScore) {
+    let sortedScores = highScores.sort((a, b) => {
+      return a.score - b.score;
+    });
+    let scoreComparisonArray = sortedScores.map((entry) => entry.score);
+    if (endScore <= [scoreComparisonArray[scoreComparisonArray.length - 1]]) {
+      setUserHighScoreSuccess(true);
+    }
+  }
+
+  function submitHighScore(e) {
+    e.preventDefault();
+    let newHighScore = {
+      user: e.target.name.value,
+      score: score,
+    };
+    fetch(`${backend}/highScores`, {
+      method: "POST",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify(newHighScore),
+    })
+      .then((r) => r.json())
+      .then((d) => {
+        const addToHighScores = [...highScores, d];
+        setHighScores(addToHighScores);
+      });
+  }
+
+  const highScoreDisplay = (
+    <div>
+      {userHighScoreSuccess ? (
+        <p>
+          You've achieved one of the <br />
+          best scores ever! <br />
+          Please enter your name below:
+          <div style={{ padding: 5 }}>
+            <form onSubmit={(e) => submitHighScore(e)}>
+              <input type="text" placeholder="Your Name" name="name"></input>
+              <button>Enter</button>
+            </form>
+          </div>
+        </p>
+      ) : null}
+    </div>
+  );
+
   function endGame() {
+    checkScores(score);
     //open overlay
     setIsOpen(true);
     //stop timer
@@ -216,6 +264,7 @@ function Game() {
 
           <div className="overlay">
             <p>Great Job!!</p>
+            {highScoreDisplay}
             <p>
               Time: {minutes}:{seconds <= 9 ? "0" + seconds : seconds}
             </p>

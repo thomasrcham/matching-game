@@ -3,53 +3,53 @@
     {
       "id": 1,
       "setName": "Pumpkins",
-      "cardBack": "../images/pumpkins/pumpkins-card-front.png",
+      "cardBack": "/images/pumpkins/pumpkins-card-front.png",
       "cards": [
         {
           "id": "1",
-          "image": "./images/pumpkins/pumpkins-1.png",
+          "image": "/images/pumpkins/pumpkins-1.png",
           "alt": "4side eyes, craggy mouth",
           "clicked": "false"
         },
         {
           "id": "2",
-          "image": "./images/pumpkins/pumpkins-2.png",
+          "image": "/images/pumpkins/pumpkins-2.png",
           "alt": "crescent eyes, four teeth",
           "clicked": "false"
         },
         {
           "id": "3",
-          "image": "./images/pumpkins/pumpkins-3.png",
+          "image": "/images/pumpkins/pumpkins-3.png",
           "alt": "triangle eyes, five teeth",
           "clicked": "false"
         },
         {
           "id": "4",
-          "image": "./images/pumpkins/pumpkins-4.png",
+          "image": "/images/pumpkins/pumpkins-4.png",
           "alt": "wonky crescent eyes, frown mouth",
           "clicked": "false"
         },
         {
           "id": "5",
-          "image": "./images/pumpkins/pumpkins-5.png",
+          "image": "/images/pumpkins/pumpkins-5.png",
           "alt": "crescent eyes, round mouth with teeth",
           "clicked": "false"
         },
         {
           "id": "6",
-          "image": "./images/pumpkins/pumpkins-6.png",
+          "image": "/images/pumpkins/pumpkins-6.png",
           "alt": "crescent eyes left, O mouth",
           "clicked": "false"
         },
         {
           "id": "7",
-          "image": "./images/pumpkins/pumpkins-7.png",
+          "image": "/images/pumpkins/pumpkins-7.png",
           "alt": "sad eyes, pointy mouth",
           "clicked": "false"
         },
         {
           "id": "8",
-          "image": "./images/pumpkins/pumpkins-8.png",
+          "image": "/images/pumpkins/pumpkins-8.png",
           "alt": "rectangle eyes, rectangle mouth",
           "clicked": "false"
         }
@@ -58,53 +58,53 @@
     {
       "id": 2,
       "setName": "Leaves",
-      "cardBack": "../images/leaves/leaves-card-front.png",
+      "cardBack": "/images/leaves/leaves-card-front.png",
       "cards": [
         {
           "id": "1",
-          "image": "./images/leaves/leaves-1.png",
+          "image": "/images/leaves/leaves-1.png",
           "alt": "red, 7 points, wide",
           "clicked": "false"
         },
         {
           "id": "2",
-          "image": "./images/leaves/leaves-2.png",
+          "image": "/images/leaves/leaves-2.png",
           "alt": "light green, 1 leaf, thin",
           "clicked": "false"
         },
         {
           "id": "3",
-          "image": "./images/leaves/leaves-3.png",
+          "image": "/images/leaves/leaves-3.png",
           "alt": "yellow, 3 leaves, triangle shape",
           "clicked": "false"
         },
         {
           "id": "4",
-          "image": "./images/leaves/leaves-4.jpeg",
+          "image": "/images/leaves/leaves-4.jpeg",
           "alt": "dark green, 1 leaf, thin",
           "clicked": "false"
         },
         {
           "id": "5",
-          "image": "./images/leaves/leaves-5.jpeg",
+          "image": "/images/leaves/leaves-5.jpeg",
           "alt": "orange, 6 points, wide",
           "clicked": "false"
         },
         {
           "id": "6",
-          "image": "./images/leaves/leaves-6.jpeg",
+          "image": "/images/leaves/leaves-6.jpeg",
           "alt": "light green, 1 leaf, wide, heart-shape",
           "clicked": "false"
         },
         {
           "id": "7",
-          "image": "./images/leaves/leaves-7.jpeg",
+          "image": "/images/leaves/leaves-7.jpeg",
           "alt": "red, 1 leaf, many points, thin",
           "clicked": "false"
         },
         {
           "id": "8",
-          "image": "./images/leaves/leaves-8.jpeg",
+          "image": "/images/leaves/leaves-8.jpeg",
           "alt": "yellow, 7 leaves, flowery, wide",
           "clicked": "false"
         }
@@ -113,53 +113,53 @@
     {
       "id": 3,
       "setName": "Halloween",
-      "cardBack": "../images/halloween/halloween-card-back.png",
+      "cardBack": "/images/halloween/halloween-card-back.png",
       "cards": [
         {
           "id": "1",
-          "image": "./images/halloween/halloween-1.png",
+          "image": "/images/halloween/halloween-1.png",
           "alt": "hat",
           "clicked": "false"
         },
         {
           "id": "2",
-          "image": "./images/halloween/halloween-2.png",
+          "image": "/images/halloween/halloween-2.png",
           "alt": "candy",
           "clicked": "false"
         },
         {
           "id": "3",
-          "image": "./images/halloween/halloween-3.png",
+          "image": "/images/halloween/halloween-3.png",
           "alt": "web",
           "clicked": "false"
         },
         {
           "id": "4",
-          "image": "./images/halloween/halloween-4.png",
+          "image": "/images/halloween/halloween-4.png",
           "alt": "ghost",
           "clicked": "false"
         },
         {
           "id": "5",
-          "image": "./images/halloween/halloween-5.png",
+          "image": "/images/halloween/halloween-5.png",
           "alt": "cat",
           "clicked": "false"
         },
         {
           "id": "6",
-          "image": "./images/halloween/halloween-6.png",
+          "image": "/images/halloween/halloween-6.png",
           "alt": "bats",
           "clicked": "false"
         },
         {
           "id": "7",
-          "image": "./images/halloween/halloween-7.png",
+          "image": "/images/halloween/halloween-7.png",
           "alt": "tombstone",
           "clicked": "false"
         },
         {
           "id": "8",
-          "image": "./images/halloween/halloween-8.png",
+          "image": "/images/halloween/halloween-8.png",
           "alt": "pumpkin",
           "clicked": "false"
         }
@@ -168,53 +168,53 @@
     {
       "id": 4,
       "setName": "Frogs",
-      "cardBack": "../images/frogs/frog-card-back.png",
+      "cardBack": "/images/frogs/frog-card-back.png",
       "cards": [
         {
           "id": "1",
-          "image": "./images/frogs/frog-1.png",
+          "image": "/images/frogs/frog-1.png",
           "alt": "bartholomew salience",
           "clicked": "false"
         },
         {
           "id": "2",
-          "image": "./images/frogs/frog-2.png",
+          "image": "/images/frogs/frog-2.png",
           "alt": "ladybugs",
           "clicked": "false"
         },
         {
           "id": "3",
-          "image": "./images/frogs/frog-3.png",
+          "image": "/images/frogs/frog-3.png",
           "alt": "robot walrus mermaid",
           "clicked": "false"
         },
         {
           "id": "4",
-          "image": "./images/frogs/frog-4.png",
+          "image": "/images/frogs/frog-4.png",
           "alt": "fat guy walrus mermaid",
           "clicked": "false"
         },
         {
           "id": "5",
-          "image": "./images/frogs/frog-5.png",
+          "image": "/images/frogs/frog-5.png",
           "alt": "bug mars judge",
           "clicked": "false"
         },
         {
           "id": "6",
-          "image": "./images/frogs/frog-6.png",
+          "image": "/images/frogs/frog-6.png",
           "alt": "production factory",
           "clicked": "false"
         },
         {
           "id": "7",
-          "image": "./images/frogs/frog-7.png",
+          "image": "/images/frogs/frog-7.png",
           "alt": "dragon silhouette",
           "clicked": "false"
         },
         {
           "id": "8",
-          "image": "./images/frogs/frog-8.png",
+          "image": "/images/frogs/frog-8.png",
           "alt": "bug oval office",
           "clicked": "false"
         }
@@ -223,53 +223,53 @@
     {
       "id": 5,
       "setName": "Beeatles",
-      "cardBack": "../images/beeatles/beeatles-card-back.png",
+      "cardBack": "/images/beeatles/beeatles-card-back.png",
       "cards": [
         {
           "id": "1",
-          "image": "./images/beeatles/beeatles-1.png",
+          "image": "/images/beeatles/beeatles-1.png",
           "alt": "rainbow",
           "clicked": "false"
         },
         {
           "id": "2",
-          "image": "./images/beeatles/beeatles-2.png",
+          "image": "/images/beeatles/beeatles-2.png",
           "alt": "rhino",
           "clicked": "false"
         },
         {
           "id": "3",
-          "image": "./images/beeatles/beeatles-3.png",
+          "image": "/images/beeatles/beeatles-3.png",
           "alt": "green boy",
           "clicked": "false"
         },
         {
           "id": "4",
-          "image": "./images/beeatles/beeatles-4.png",
+          "image": "/images/beeatles/beeatles-4.png",
           "alt": "pincers",
           "clicked": "false"
         },
         {
           "id": "5",
-          "image": "./images/beeatles/beeatles-5.png",
+          "image": "/images/beeatles/beeatles-5.png",
           "alt": "john",
           "clicked": "false"
         },
         {
           "id": "6",
-          "image": "./images/beeatles/beeatles-6.png",
+          "image": "/images/beeatles/beeatles-6.png",
           "alt": "paul",
           "clicked": "false"
         },
         {
           "id": "7",
-          "image": "./images/beeatles/beeatles-7.png",
+          "image": "/images/beeatles/beeatles-7.png",
           "alt": "ringo",
           "clicked": "false"
         },
         {
           "id": "8",
-          "image": "./images/beeatles/beeatles-8.png",
+          "image": "/images/beeatles/beeatles-8.png",
           "alt": "george",
           "clicked": "false"
         }
@@ -278,53 +278,53 @@
     {
       "id": 6,
       "setName": "Power Rangers",
-      "cardBack": "../images/powerRangers/powerRangers-card-back.png",
+      "cardBack": "/images/powerRangers/powerRangers-card-back.png",
       "cards": [
         {
           "id": "1",
-          "image": "./images/powerRangers/powerRangers-1.png",
+          "image": "/images/powerRangers/powerRangers-1.png",
           "alt": "red",
           "clicked": "false"
         },
         {
           "id": "2",
-          "image": "./images/powerRangers/powerRangers-2.png",
+          "image": "/images/powerRangers/powerRangers-2.png",
           "alt": "black",
           "clicked": "false"
         },
         {
           "id": "3",
-          "image": "./images/powerRangers/powerRangers-3.png",
+          "image": "/images/powerRangers/powerRangers-3.png",
           "alt": "pink",
           "clicked": "false"
         },
         {
           "id": "4",
-          "image": "./images/powerRangers/powerRangers-4.png",
+          "image": "/images/powerRangers/powerRangers-4.png",
           "alt": "yellow",
           "clicked": "false"
         },
         {
           "id": "5",
-          "image": "./images/powerRangers/powerRangers-5.png",
+          "image": "/images/powerRangers/powerRangers-5.png",
           "alt": "green",
           "clicked": "false"
         },
         {
           "id": "6",
-          "image": "./images/powerRangers/powerRangers-6.png",
+          "image": "/images/powerRangers/powerRangers-6.png",
           "alt": "blue",
           "clicked": "false"
         },
         {
           "id": "7",
-          "image": "./images/powerRangers/powerRangers-7.png",
+          "image": "/images/powerRangers/powerRangers-7.png",
           "alt": "Rita Repulsa",
           "clicked": "false"
         },
         {
           "id": "8",
-          "image": "./images/powerRangers/powerRangers-8.png",
+          "image": "/images/powerRangers/powerRangers-8.png",
           "alt": "Mega Dragonzord",
           "clicked": "false"
         }
@@ -361,7 +361,24 @@
       "id": "6",
       "user": "cho",
       "score": "14551"
+    },
+    {
+      "user": "Reese",
+      "score": 11900,
+      "id": "sQCBZCc"
     }
   ],
-  "userHistory": []
+  "userHistory": [
+    {
+      "setName": "Leaves",
+      "moves": 27,
+      "timer": {
+        "minutes": 0,
+        "seconds": 22
+      },
+      "score": 11900,
+      "dateTime": "11/12/2022, 4:43:11 PM",
+      "id": 1
+    }
+  ]
 }
